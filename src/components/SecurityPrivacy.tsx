@@ -88,7 +88,7 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-[#FF6B4A]/20" />
 
-                <div className="relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-slate-200 bg-white px-[20px] py-[16px] sm:px-[32px] sm:py-[28px]">
+                <div className="glass-card-v2 glass-static relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-white/70 px-[20px] py-[16px] sm:px-[32px] sm:py-[28px]">
                   <div className="mb-3 border-b border-slate-200/70 pb-2 sm:mb-5 sm:pb-3">
                     <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
                       {language === 'ko' ? '사용자 개인 정보' : 'User ID Card'}

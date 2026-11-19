@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Check, ChevronLeft, ChevronRight, Mic, Plus } from 'lucide-react';
+import { Check, ChevronLeft, ChevronRight, Mic, Plus, Wifi } from 'lucide-react';
 import { getScenarios } from '../data/landingData';
 
 export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
@@ -17,7 +17,6 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     'cafe-inventory': 'bg-[#FF6B4A]/16',
     'competitor-radar': 'bg-[#2ED9A0]/16',
   };
-  const headerFillMs = hasSecondMessage ? 3900 : 3100;
   const scenarioHeaderLogos: Record<string, { src: string; alt: string }> = {
     'travel-shield': { src: '/assets/aistudio/ktx-logo.webp', alt: 'KTX' },
     'competitor-radar': { src: '/assets/aistudio/mirae-asset-logo.jpg', alt: 'Mirae Asset' },
@@ -148,73 +147,101 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
             className="pointer-events-none absolute left-1/2 top-[-44px] z-30 w-[320px] max-w-none -translate-x-1/2 sm:top-[-36px] sm:w-[460px]"
           />
           <div className="flex justify-center">
-            <div className="relative h-[680px] w-full max-w-[560px] shrink-0 rounded-[52px] border border-white/80 bg-gradient-to-br from-white via-slate-300 to-slate-500 p-[10px] shadow-[inset_0_2px_3px_rgba(255,255,255,0.95),inset_0_-8px_14px_rgba(71,85,105,0.3),0_18px_30px_rgba(51,65,85,0.28),0_40px_80px_-16px_rgba(51,65,85,0.55)] sm:h-[740px] sm:p-3">
-              <div className="pointer-events-none absolute inset-[2px] z-0 rounded-[50px] bg-gradient-to-br from-white/70 via-transparent to-slate-500/25" />
-              <div className="relative z-10 rounded-[44px] border border-slate-500/80 bg-gradient-to-br from-slate-500 via-slate-700 to-slate-950 p-1.5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.55),inset_0_-3px_6px_rgba(0,0,0,0.65)] sm:rounded-[46px]">
-                <div className="overflow-hidden rounded-[36px] bg-white sm:rounded-[38px]">
+            <div className="relative h-[680px] w-full max-w-[560px] shrink-0 sm:h-[740px]">
+              <div className="pointer-events-none absolute -left-[3px] top-[112px] z-20 h-7 w-[3px] rounded-l-[1.5px] bg-[#3a3a3c]" />
+              <div className="pointer-events-none absolute -left-[3px] top-[148px] z-20 h-12 w-[3px] rounded-l-[1.5px] bg-[#3a3a3c]" />
+              <div className="pointer-events-none absolute -left-[3px] top-[204px] z-20 h-12 w-[3px] rounded-l-[1.5px] bg-[#3a3a3c]" />
+              <div className="pointer-events-none absolute -right-[3px] top-[168px] z-20 h-16 w-[3px] rounded-r-[1.5px] bg-[#3a3a3c]" />
+
+              <div className="relative h-full rounded-[44px] bg-[#1c1c1e] p-[12px] shadow-[0_18px_30px_rgba(51,65,85,0.28),0_40px_80px_-16px_rgba(51,65,85,0.55)] ring-1 ring-black/50">
+                <div className="pointer-events-none absolute inset-px z-20 rounded-[43px] ring-1 ring-inset ring-white/20" />
+                <div className="relative h-full overflow-hidden rounded-[32px] bg-white">
                   <div
-                    className="relative flex h-[640px] w-full min-w-0 select-none flex-col overflow-hidden bg-[#EAF3FF] sm:h-[700px]"
+                    className="relative flex h-full w-full min-w-0 select-none flex-col overflow-hidden bg-[#EAF3FF]"
                     style={{
                       backgroundImage: "url('/assets/aistudio/Screenshot_2026-11-10_at_3.10.10_PM_e4e22b65.png')",
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
                   >
-                    <div className="flex min-h-0 flex-1 flex-col">
-                      <div className="relative z-10 flex items-center gap-2 overflow-hidden border-b-0 bg-white/85 py-2.5 pl-4 pr-20 shadow-none">
+                    <div className="relative z-20">
+                      <div
+                        aria-hidden="true"
+                        className={`phone-header-fill ${scenarioHeaderColors[activeScenario.id] ?? 'bg-[#4EA5F1]/18'}`}
+                      />
+                      <div className="relative flex h-11 items-center px-6">
+                        <span className="text-[13px] font-semibold tabular-nums tracking-tight text-slate-900">9:41</span>
                         <div
-                          key={activeScenarioIndex}
                           aria-hidden="true"
-                          className={`phone-header-fill ${scenarioHeaderColors[activeScenario.id] ?? 'bg-[#4EA5F1]/18'}`}
-                          style={{ animationDuration: `${headerFillMs}ms` }}
-                        />
+                          className="absolute left-1/2 top-1/2 h-7 w-[92px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black shadow-[inset_0_1px_2px_rgba(255,255,255,0.12)]"
+                        >
+                          <span className="absolute right-2.5 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#1a1a1c] ring-1 ring-white/15" />
+                        </div>
+                        <div className="ml-auto flex items-center gap-1 text-slate-900" aria-hidden="true">
+                          <span className="flex items-end gap-[2px]">
+                            <span className="h-[5px] w-[3px] rounded-[0.5px] bg-slate-900" />
+                            <span className="h-[7px] w-[3px] rounded-[0.5px] bg-slate-900" />
+                            <span className="h-[9px] w-[3px] rounded-[0.5px] bg-slate-900" />
+                            <span className="h-[11px] w-[3px] rounded-[0.5px] bg-slate-900" />
+                          </span>
+                          <Wifi className="ml-0.5 h-3.5 w-3.5" strokeWidth={2.5} />
+                          <span className="ml-0.5 flex items-center gap-[1px]">
+                            <span className="h-[11px] w-[22px] rounded-[3px] border-[1.5px] border-slate-900 p-px">
+                              <span className="block h-full w-full rounded-[1px] bg-slate-900" />
+                            </span>
+                            <span className="h-[4px] w-[1.5px] rounded-r-[1px] bg-slate-900" />
+                          </span>
+                        </div>
+                      </div>
+                      <div className="relative flex items-center gap-2.5 px-5 pb-2.5 pt-0.5">
                         {scenarioHeaderLogos[activeScenario.id] ? (
                           <img
                             src={scenarioHeaderLogos[activeScenario.id].src}
                             alt={scenarioHeaderLogos[activeScenario.id].alt}
-                            className="h-9 w-9 shrink-0 rounded-lg border border-white/80 object-cover shadow-sm"
+                            className="h-8 w-8 shrink-0 rounded-[9px] object-cover"
                           />
                         ) : (
                           <div
-                            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/80 bg-white/80 shadow-sm"
+                            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[9px] bg-white/90"
                             aria-hidden="true"
                           >
-                            <div className="grid grid-cols-2 gap-[3px]">
-                              <span className="h-2.5 w-2.5 rounded-[3px] bg-[#3D7EED]" />
-                              <span className="h-2.5 w-2.5 rounded-[3px] bg-[#FF6B4A]" />
-                              <span className="h-2.5 w-2.5 rounded-[3px] bg-[#FFC34A]" />
-                              <span className="h-2.5 w-2.5 rounded-[3px] bg-[#2ED9A0]" />
+                            <div className="grid grid-cols-2 gap-[2px]">
+                              <span className="h-2 w-2 rounded-[2px] bg-[#3D7EED]" />
+                              <span className="h-2 w-2 rounded-[2px] bg-[#FF6B4A]" />
+                              <span className="h-2 w-2 rounded-[2px] bg-[#FFC34A]" />
+                              <span className="h-2 w-2 rounded-[2px] bg-[#2ED9A0]" />
                             </div>
                           </div>
                         )}
                         <div className="min-w-0 flex-1">
-                          <span className="block truncate text-sm font-bold leading-tight text-slate-900">
+                          <span className="block truncate text-[15px] font-semibold leading-tight text-slate-900">
                             {activeScenario.title}
                           </span>
+                        </div>
+                        <div className="flex shrink-0 items-center gap-1.5">
+                          <button
+                            type="button"
+                            onClick={() => navigateScenario(-1)}
+                            aria-label={language === 'ko' ? '이전 사례' : 'Previous scenario'}
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/70 text-slate-600 transition hover:bg-white hover:text-slate-900"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => navigateScenario(1)}
+                            aria-label={language === 'ko' ? '다음 사례' : 'Next scenario'}
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/70 text-slate-600 transition hover:bg-white hover:text-slate-900"
+                          >
+                            <ChevronRight className="h-4 w-4" />
+                          </button>
                         </div>
                       </div>
                     </div>
 
-                    <div className="absolute right-3 top-2.5 z-20 flex items-center gap-1">
-                      <button
-                        type="button"
-                        onClick={() => navigateScenario(-1)}
-                        aria-label={language === 'ko' ? '이전 사례' : 'Previous scenario'}
-                        className="flex h-7 w-7 items-center justify-center rounded-full border border-white/80 bg-white/70 text-slate-600 shadow-sm transition hover:bg-white hover:text-slate-900"
-                      >
-                        <ChevronLeft className="h-4 w-4" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => navigateScenario(1)}
-                        aria-label={language === 'ko' ? '다음 사례' : 'Next scenario'}
-                        className="flex h-7 w-7 items-center justify-center rounded-full border border-white/80 bg-white/70 text-slate-600 shadow-sm transition hover:bg-white hover:text-slate-900"
-                      >
-                        <ChevronRight className="h-4 w-4" />
-                      </button>
-                    </div>
+                    <div className="min-h-0 flex-1" />
 
-                    <div className="glass-card-v2 glass-static z-10 flex items-center gap-[8px] border-t border-slate-200/70 px-[16px] py-[12px]">
+                    <div className="glass-card-v2 glass-static z-10 flex items-center gap-[8px] border-t border-slate-200/70 px-[16px] pb-6 pt-[12px]">
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500">
                         <Plus className="h-4 w-4" />
                       </div>
@@ -223,6 +250,10 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                         <Mic className="ml-3 h-3.5 w-3.5 shrink-0" />
                       </div>
                     </div>
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute bottom-2 left-1/2 z-20 h-[5px] w-[120px] -translate-x-1/2 rounded-full bg-slate-900/80"
+                    />
                   </div>
                 </div>
               </div>
@@ -231,7 +262,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                   key={activeScenarioIndex}
                   className={`${isSwipingOut ? 'scenario-swipe-out' : 'scenario-swipe-in'} absolute inset-0`}
                 >
-                  <div className="absolute inset-x-0 top-[85px] flex flex-col gap-2 max-[375px]:top-[70px] max-[375px]:gap-1">
+                  <div className="absolute inset-x-0 top-[118px] flex flex-col gap-2 max-[375px]:top-[106px] max-[375px]:gap-1">
                     <div className="ml-[-16px] flex w-full flex-col gap-2 max-[375px]:gap-1 sm:ml-[-80px]">
                       {(showTyping1 || showMsg1) && messageBubble(messages[0] || '', !showMsg1)}
                       {(showTyping2 || showMsg2) && messageBubble(messages[1] || '', !showMsg2)}

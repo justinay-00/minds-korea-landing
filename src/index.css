@@ -335,23 +335,6 @@ body {
 .phone-header-fill {
   position: absolute;
   inset: 0;
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation-name: phone-header-fill;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes phone-header-fill {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .phone-header-fill {
-    animation: none;
-    transform: scaleX(1);
-  }
 }
 
 .reveal-on-scroll .reveal-item {
