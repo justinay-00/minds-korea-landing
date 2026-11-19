@@ -1,14 +1,7 @@
-import { useState } from 'react';
-import { 
-  ShieldCheck, 
-  Lock, 
-  Check, 
-  Sparkles, 
-  Database, 
-  Layers, 
-  Wifi,
-  ArrowUpRight 
+import {
+  ArrowUpRight,
 } from 'lucide-react';
+import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 interface SecurityPrivacyProps {
   onOpenModal: () => void;
@@ -16,28 +9,24 @@ interface SecurityPrivacyProps {
 }
 
 export default function SecurityPrivacy({ onOpenModal, language }: SecurityPrivacyProps) {
-  const [dataToggle, setDataToggle] = useState<boolean>(true);
-
+  const revealRef = useRevealOnScroll<HTMLElement>();
   const pillars = language === 'ko' ? [
     {
       number: '01',
       title: '내 데이터는 내가 소유',
-      description: 'Mind의 기억은 온전히 사용자의 것이에요. 서비스를 떠나거나 초기화해도 데이터는 사용자와 함께해요. 광고 중개업체와 공유하지 않아요.',
-      icon: Database,
+      description: '마인즈의 기억은 온전히 사용자의 것이에요. 서비스를 떠나거나 초기화해도 데이터는 사용자와 함께해요. 광고 중개업체와 공유하지 않아요.',
       tag: '직접 관리',
     },
     {
       number: '02',
       title: '암호화된 작업 공간',
       description: '루틴과 확인 작업은 사용자만 승인할 수 있는 분리된 비공개 환경에서 실행돼요.',
-      icon: Lock,
       tag: '정보 유출 방지',
     },
     {
       number: '03',
       title: 'Moca Network 기반',
       description: '탈중앙화 신원 기술을 바탕으로 복잡한 설정 없이도 높은 수준의 보안을 제공해요.',
-      icon: Layers,
       tag: '탈중앙화 ID',
       hasReadMore: true,
     },
@@ -46,229 +35,129 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
       number: '01',
       title: 'True Data Ownership',
       description: 'You own your data and preferences. If you leave or reset, your data goes with you. No advertiser brokers, ever.',
-      icon: Database,
       tag: 'Self-Custody',
     },
     {
       number: '02',
       title: 'Encrypted Task Sandboxes',
       description: 'Routines and checks execute in isolated, private environments that only you can authorize.',
-      icon: Lock,
       tag: 'Zero-Leak',
     },
     {
       number: '03',
       title: 'Powered by Moca Network',
       description: 'Built on decentralized identity tech, delivering institutional-grade security with zero complicated setup.',
-      icon: Layers,
       tag: 'Decentralized ID',
       hasReadMore: true,
     },
   ];
 
   return (
-    <section id="security" className="py-[60px] sm:py-[60px] bg-white border-t border-slate-200 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] glow-ambient pointer-events-none -z-10" />
+    <section id="security" ref={revealRef} className="reveal-on-scroll relative overflow-hidden border-t border-slate-200/60 bg-gradient-to-r from-[#EAF3FF]/70 via-slate-50 to-[#FF6B4A]/8 py-[24px] sm:py-[44px]">
+      <div className="privacy-grain pointer-events-none absolute inset-0 -z-0" />
 
-      <div className="max-w-5xl mx-auto px-[24px] sm:px-[40px] lg:px-[48px]">
+      <div className="relative z-10 mx-auto max-w-5xl px-[24px] sm:px-[40px] lg:px-[48px]">
         {/* 1. Section Header & Copy */}
-        <div className="mx-auto mb-[24px] max-w-4xl text-center sm:mb-[40px]">
-          <h2 className="mb-[12px] text-3xl font-extrabold tracking-tight text-slate-950 text-balance sm:text-4xl xl:text-5xl">
+        <div className="reveal-item mb-[12px] w-full text-left sm:mb-[24px] sm:text-center" style={{ ['--reveal-delay' as string]: '0ms' }}>
+          <h2 className="mb-[8px] text-2xl font-bold tracking-tight text-slate-950 text-balance sm:text-4xl xl:text-5xl">
             <span className="block">
               {language === 'ko' ? '개인정보는 엄격하게 보호돼요.' : 'Your data stays yours.'}
             </span>
             <span className="block">
-              {language === 'ko' ? '데이터는 저희가 책임질테니, 걱정말아요.' : "Don't worry — we specialize in digital identity."}
+              {language === 'ko' ? '데이터는 저희가 책임질 테니, 걱정 말아요.' : "Don't worry — we specialize in digital identity."}
             </span>
           </h2>
-
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-lg">
+            {language === 'ko'
+              ? '모든 기억과 실행 권한은 오직 나만 직접 관리할 수 있어요.'
+              : 'You stay in control of every memory and permission.'}
+          </p>
         </div>
 
         {/* Main Content Grid: Highly Visual Digital Identity Card on Left, 3 Micro-Pillars on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-[24px] lg:gap-[40px] items-center">
+        <div className="grid grid-cols-1 items-start gap-[12px] sm:p-[16px] lg:grid-cols-12 lg:gap-[28px]">
           
           {/* 1. Visual Element: Highly Visual, Clean Digital Identity Card (Left on Desktop, 5 columns) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-start lg:pr-4">
-            <div className="w-full max-w-[420px] relative group">
-              {/* Luminous aura behind card */}
-              <div className="absolute -inset-1.5 bg-gradient-to-tr from-blue-500/35 via-cyan-500/25 to-emerald-400/35 rounded-[36px] blur-xl opacity-80 group-hover:opacity-100 transition duration-500 pointer-events-none -z-10" />
+          <div className="reveal-item flex justify-center lg:col-span-6 lg:justify-start lg:pr-4" style={{ ['--reveal-delay' as string]: '80ms' }}>
+            <div className="relative group w-full max-w-[520px]">
+              <div className="pointer-events-none absolute -inset-2 -z-10 hidden" />
 
-              {/* The Physical-Digital Identity Card Container with Scanning Animation */}
-              <div className="rounded-[30px] p-6 sm:p-7 bg-slate-950/95 backdrop-blur-2xl border border-white/20 shadow-2xl text-white relative overflow-hidden transition-all duration-300">
-                
-                {/* Looping Top-to-Bottom Cyber Scanning Laser Bar + Beam Aura */}
-                <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_15px_rgba(34,211,238,1)] pointer-events-none z-30 animate-card-scanner" />
-                <div className="absolute inset-x-0 h-14 bg-gradient-to-b from-cyan-400/15 via-cyan-400/5 to-transparent pointer-events-none z-20 animate-card-scanner -translate-y-12" />
+              <div className="relative flex flex-col overflow-hidden rounded-[16px] border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#FF6B4A] p-2.5 text-white  aspect-[1.586/1] sm:p-3">
+                <div className="pointer-events-none absolute inset-x-0 z-30 h-px animate-card-scanner bg-gradient-to-r from-transparent via-[#FF6B4A] to-transparent shadow-[0_0_8px_rgba(255,107,74,0.55)]" />
+                <div className="pointer-events-none absolute inset-x-0 z-20 h-8 -translate-y-7 animate-card-scanner bg-gradient-to-b from-[#FF6B4A]/12 via-[#FF6B4A]/4 to-transparent" />
 
-                {/* Holographic Rainbow Foil Shimmer Strip across the top edge */}
-                <div className="h-1 w-full bg-gradient-to-r from-pink-500 via-amber-300 via-emerald-400 via-cyan-400 to-blue-500 rounded-full opacity-90 mb-5 shadow-xs" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-[#FF6B4A]/20" />
 
-                {/* Subtle Guilloche / Cyber Background Grid Pattern */}
-                <div 
-                  className="absolute inset-0 opacity-[0.06] pointer-events-none"
-                  style={{
-                    backgroundImage: 'radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)',
-                    backgroundSize: '16px 16px',
-                  }}
-                />
-
-                {/* Cyber gradient light flares */}
-                <div className="absolute -top-16 -right-16 w-44 h-44 bg-blue-500/25 rounded-full blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-16 -left-16 w-44 h-44 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
-
-                {/* TOP ROW: Green Glowing Status Indicator + Moca Network Pill Badge */}
-                <div className="flex items-center justify-between pb-3.5 border-b border-white/10 relative z-10">
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,1)]" />
-                    </span>
-                    <span className="text-xs font-mono font-semibold text-emerald-400 tracking-wide uppercase">
-                      {language === 'ko' ? '인증된 디지털 ID' : 'Verified Digital ID'}
+                <div className="relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-slate-200 bg-white px-[20px] py-[16px] sm:px-[32px] sm:py-[28px]">
+                  <div className="mb-3 border-b border-slate-200/70 pb-2 sm:mb-5 sm:pb-3">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                      {language === 'ko' ? '사용자 개인 정보' : 'User ID Card'}
                     </span>
                   </div>
-
-                  <span className="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 text-[11px] font-mono font-semibold tracking-wider flex items-center gap-1.5 shadow-2xs">
-                    <Sparkles className="w-3 h-3 text-sky-300" />
-                    Moca Network
-                  </span>
-                </div>
-
-                {/* SMART CARD HARDWARE CHIP & NFC CONTACTLESS ZONE */}
-                <div className="pt-3.5 pb-2 flex items-center justify-between relative z-10">
-                  {/* Metallic EMV Gold Contact Chip */}
-                  <div className="w-10 h-7 rounded-md bg-gradient-to-br from-amber-200 via-amber-300 to-amber-500 border border-amber-200/80 shadow-md p-0.5 flex flex-col justify-between relative overflow-hidden">
-                    <div className="h-[1px] bg-amber-700/50 w-full" />
-                    <div className="flex justify-between items-center h-full px-0.5">
-                      <div className="w-[1px] h-full bg-amber-700/50" />
-                      <div className="w-3 h-2.5 rounded-xs border border-amber-700/60 bg-amber-300/40" />
-                      <div className="w-[1px] h-full bg-amber-700/50" />
-                    </div>
-                    <div className="h-[1px] bg-amber-700/50 w-full" />
-                  </div>
-
-                  <Wifi className="w-4 h-4 rotate-90 text-sky-300/70" />
-                </div>
-
-                {/* Profile header */}
-                <div className="py-2.5 flex items-center gap-4 relative z-10">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-sky-400/40 bg-sky-400/10 text-lg font-bold tracking-wide text-sky-200 shadow-lg">
-                    {language === 'ko' ? '김' : 'JH'}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 text-xl font-bold tracking-tight text-white sm:text-2xl">
-                      <span className="truncate">{language === 'ko' ? '김지호' : 'Ji Ho Kim'}</span>
-                      <span className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-400/50 flex items-center justify-center text-emerald-400 shrink-0">
-                        <Check className="w-3 h-3" />
-                      </span>
-                    </div>
-                    <span className="mt-1 block truncate text-xs font-mono text-slate-400">
-                      @jiho.moca
-                    </span>
-                  </div>
-                </div>
-
-                {/* CLEAN SWITCH / TOGGLE ROW: "Data Access: Private to You Only" */}
-                <div className="p-[16px] rounded-2xl bg-white/[0.05] border border-white/10 my-[12px] flex items-center justify-between gap-[8px] relative z-10">
-                  <span className="min-w-0 pr-[8px] text-left text-xs sm:text-sm font-semibold leading-snug text-white">
-                    {language === 'ko' ? '데이터 접근: 나만 볼 수 있어요' : 'Data Access: Private to You Only'}
-                  </span>
-
-                  <button
-                    type="button"
-                    onClick={() => setDataToggle(!dataToggle)}
-                    aria-label={language === 'ko' ? '데이터 접근 개인정보 설정 전환' : 'Toggle data access privacy'}
-                    className={`w-11 h-6 flex items-center rounded-full p-1 transition-colors duration-200 cursor-pointer ${
-                      dataToggle ? 'bg-emerald-500' : 'bg-slate-700'
-                    }`}
-                  >
+                  <div className="grid grid-cols-[80px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-6">
                     <div
-                      className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-200 ${
-                        dataToggle ? 'translate-x-5' : 'translate-x-0'
-                      }`}
-                    />
-                  </button>
-                </div>
-
-                {/* MICRO-METRIC ROW: "Encryption: 256-bit Sandbox" & "Ad-Tracking: Zero" */}
-                <div className="grid grid-cols-2 gap-2.5 relative z-10 pt-0.5">
-                  <div className="p-3 rounded-xl bg-white/[0.04] border border-white/10">
-                    <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 block mb-0.5">
-                      {language === 'ko' ? '암호화' : 'Encryption'}
-                    </span>
-                    <span className="text-xs sm:text-sm font-bold text-white font-mono flex items-center gap-1.5">
-                      <Lock className="w-3.5 h-3.5 text-sky-400" />
-                      {language === 'ko' ? '256비트 샌드박스' : '256-bit Sandbox'}
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-white/[0.04] border border-white/10">
-                    <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 block mb-0.5">
-                      {language === 'ko' ? '광고 추적' : 'Ad-Tracking'}
-                    </span>
-                    <span className="text-xs sm:text-sm font-bold text-emerald-400 font-mono flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                      {language === 'ko' ? '없음' : 'Zero'}
-                    </span>
+                      className="relative h-[88px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:h-[128px]"
+                      role="img"
+                      aria-label={language === 'ko' ? '프로필 자리 표시' : 'Profile placeholder'}
+                    >
+                      <div className="absolute left-1/2 top-[16px] h-9 w-9 -translate-x-1/2 rounded-full bg-slate-300 sm:top-[22px] sm:h-12 sm:w-12" />
+                      <div className="absolute -bottom-6 left-1/2 h-16 w-[4.5rem] -translate-x-1/2 rounded-full bg-slate-300" />
+                    </div>
+                    <div className="min-w-0 space-y-2 sm:space-y-4">
+                      <div>
+                        <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                          {language === 'ko' ? '이름' : 'Name'}
+                        </span>
+                        <span className="block truncate text-lg font-bold tracking-tight text-slate-950 sm:text-2xl">
+                          {language === 'ko' ? '김지호' : 'Ji Ho Kim'}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                          {language === 'ko' ? '디지털 ID' : 'Digital ID'}
+                        </span>
+                        <span className="block truncate font-mono text-sm text-slate-600 sm:text-base">@jiho.moca</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                {/* BARCODE GRAPHIC (Visual Only, No Extra Text) */}
-                <div className="mt-3.5 pt-3 border-t border-white/10 flex items-center justify-between relative z-10">
-                  <div className="flex items-center gap-[2px] h-3.5 opacity-40">
-                    {[2, 3, 1, 4, 3, 2, 4, 1, 2, 4, 1, 3, 2, 5, 2, 3, 1, 4, 2, 3].map((w, i) => (
-                      <div 
-                        key={i} 
-                        className="bg-white h-full rounded-xs" 
-                        style={{ width: `${w}px` }} 
-                      />
-                    ))}
-                  </div>
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
-                </div>
-
               </div>
             </div>
           </div>
 
           {/* 2. Micro-Pillars (Right on Desktop, 7 columns) */}
-          <div className="lg:col-span-7 space-y-3 lg:pl-4">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
+          <div className="lg:col-span-6 space-y-1.5 sm:space-y-2 lg:pl-4">
+            {pillars.map((pillar, index) => {
               return (
                 <div
                   key={pillar.number}
-                  className="glass-card-v2 p-[16px] rounded-2xl transition-all duration-200 group"
+                  className="reveal-item"
+                  style={{ ['--reveal-delay' as string]: `${80 + index * 100}ms` }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-blue-700 shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
-                      <Icon className="w-5 h-5" />
+                <div className="glass-card-v2 group rounded-2xl p-[12px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200 sm:p-[16px]">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#FF6B4A]/25 bg-[#FF6B4A]/10 text-xs font-bold tabular-nums tracking-tight text-[#FF6B4A] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
+                      {pillar.number}
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="mb-[8px] flex flex-wrap items-center justify-between gap-[8px]">
-                        <h3 className="text-base sm:text-lg font-bold text-slate-950 tracking-tight">
-                          {pillar.number}. {pillar.title}
-                        </h3>
-                        <span className="text-[10px] font-mono font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-sky-50 text-blue-800 border border-sky-200 shrink-0">
-                          {pillar.tag}
-                        </span>
-                      </div>
+                      <h3 className="mb-[4px] text-base font-bold tracking-tight text-slate-950 sm:mb-[8px] sm:text-lg">
+                        {pillar.title}
+                      </h3>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         {pillar.description}
                       </p>
 
                       {/* Click to read more button for Moca Network pillar */}
                       {pillar.hasReadMore && (
-                        <div className="mt-3">
+                        <div className="mt-2 sm:mt-3">
                           <button
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
                               onOpenModal();
                             }}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 hover:text-sky-600 transition-colors cursor-pointer group/link"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF6B4A] transition-colors hover:text-[#E55538] cursor-pointer group/link"
                           >
                             <span>{language === 'ko' ? '자세히 보기' : 'Click to read more'}</span>
                             <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
@@ -277,6 +166,7 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
                       )}
                     </div>
                   </div>
+                </div>
                 </div>
               );
             })}

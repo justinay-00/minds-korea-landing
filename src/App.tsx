@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceIntro from './components/ExperienceIntro';
@@ -14,29 +14,18 @@ import OnboardingModal from './components/OnboardingModal';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [language, setLanguage] = useState<'en' | 'ko'>(() => {
-    const savedLanguage = window.localStorage.getItem('minds-language');
-    return savedLanguage === 'ko' ? 'ko' : 'en';
-  });
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+  const language = 'ko';
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-  const handleLanguageChange = (nextLanguage: 'en' | 'ko') => {
-    setLanguage(nextLanguage);
-    window.localStorage.setItem('minds-language', nextLanguage);
-  };
 
   return (
     <div
       data-language={language}
-      className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-sky-500 selection:text-white"
+      className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-[#FF6B4A] selection:text-white"
     >
       {/* Top Navigation */}
-      <Navbar onOpenModal={handleOpenModal} language={language} onLanguageChange={handleLanguageChange} />
+      <Navbar onOpenModal={handleOpenModal} language={language} />
 
       {/* Main Content Sections */}
       <main className="flex-1">

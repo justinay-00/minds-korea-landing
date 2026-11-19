@@ -1,6 +1,23 @@
 import { ArrowRight } from 'lucide-react';
 import LaptopDemo from './LaptopDemo';
 
+const TITLE_POSES = [
+  '/assets/aistudio/minds-character-laptop.png',
+  '/assets/aistudio/minds-character-cart.png',
+  '/assets/aistudio/minds-character-book.png',
+  '/assets/aistudio/minds-character-research.png',
+];
+
+function TitlePoseCycle() {
+  return (
+    <span className="hero-pose-cycle ml-[0.2em] inline-block h-[1.35em] w-[1.35em] align-[-0.22em]" aria-hidden="true">
+      {TITLE_POSES.map((src, i) => (
+        <img key={src} src={src} alt="" className={`hero-pose hero-pose-${i + 1}`} />
+      ))}
+    </span>
+  );
+}
+
 interface HeroProps {
   onOpenModal: () => void;
   language: 'en' | 'ko';
@@ -8,46 +25,60 @@ interface HeroProps {
 
 export default function Hero({ onOpenModal, language }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-[40px] sm:pt-[60px]">
+    <section className="relative overflow-hidden pt-[12px] sm:pt-[20px]">
       {/* Radial Glow in light mode */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] glow-radial pointer-events-none -z-10" />
 
-      <div className="max-w-5xl mx-auto px-[24px] text-center relative z-10">
-        {/* Value Proposition */}
-        <p className="text-lg sm:text-xl text-slate-600 max-w-none mx-auto leading-relaxed font-normal mb-[20px]">
-          {language === 'ko'
-            ? '할 일은 더 수월하게, 마음은 더 든든하게'
-            : 'Always in your corner: stepping up before you ask, handling the tedious work, and delivering real progress.'}
-        </p>
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
+        <div className="px-[32px] sm:px-[24px]">
+            <p className="mb-[6px] text-base font-medium leading-relaxed text-slate-600 sm:text-lg">
+              {language === 'ko'
+                ? '할 일은 더 수월하게, 마음은 더 든든하게'
+                : 'Always in your corner: stepping up before you ask, handling the tedious work, and delivering real progress.'}
+            </p>
 
-        {/* Refined Display Headline */}
-        <h1 className="mb-[24px] text-3xl font-extrabold leading-tight tracking-tight text-slate-950 text-balance sm:text-5xl sm:leading-[1.2] xl:text-6xl">
-          <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-sky-600 bg-clip-text text-transparent">
-            {language === 'ko' ? (
-              <>
-                <span className="lg:whitespace-nowrap">당신의 일상을 함께 움직이는 AI,</span>
-                <br />
-                마인즈 (Minds)
-              </>
-            ) : (
-              'Meet Your AI Partner, Minds.'
-            )}
-          </span>
-        </h1>
-
-        {/* Primary CTA Button */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-[12px]">
-          <button
-            onClick={onOpenModal}
-            className="group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full border border-white/50 bg-gradient-to-br from-sky-500/85 via-blue-600/85 to-cyan-700/85 px-[24px] py-[16px] text-sm font-semibold text-white shadow-lg shadow-blue-900/20 transition duration-200 hover:from-sky-400 hover:via-blue-500 hover:to-cyan-600 active:scale-[0.98] cursor-pointer sm:px-[36px] sm:text-base"
-          >
-            <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+            <h1 className="mb-[24px] whitespace-nowrap text-2xl font-extrabold leading-snug tracking-tight text-[#161616] sm:whitespace-normal sm:text-[2.75rem] sm:leading-[1.4] xl:text-5xl">
+              {language === 'ko' ? (
+                <>
+                  <span className="sm:whitespace-nowrap">당신의 일상을 함께 움직이는 AI,</span>
+                  <br className="hidden sm:inline" />
+                  마인즈 (Minds).
+                  <TitlePoseCycle />
+                </>
+              ) : (
+                <>
+                  Meet Your AI Partner, Minds.
+                  <TitlePoseCycle />
+                </>
+              )}
+            </h1>
         </div>
+      </div>
 
-        <div className="mt-[48px] sm:mt-[60px]">
-          <LaptopDemo language={language} />
+      <div className="relative isolate">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[#FF6B4A]/8 via-slate-50 to-[#EAF3FF]/70 [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[70%] bg-gradient-to-t from-[#4EA5F1]/25 via-[#EAF3FF]/80 to-transparent" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-72 bg-gradient-to-t from-[#EAF3FF] via-[#EAF3FF]/80 to-transparent"
+        />
+
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <div className="px-[32px] sm:px-[24px]">
+            <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
+              <button
+                onClick={onOpenModal}
+                className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[20px] py-[12px] text-base font-bold text-white shadow-lg shadow-[#405FDF]/25 transition duration-200 hover:from-[#3D7EED] hover:via-[#3D7EED] hover:to-[#4EA5F1] active:scale-[0.98] cursor-pointer sm:px-[24px] sm:text-lg"
+              >
+                <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
+                <ArrowRight className="cta-arrow shrink-0" />
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-[24px]">
+            <LaptopDemo language={language} />
+          </div>
         </div>
       </div>
     </section>
