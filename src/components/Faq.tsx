@@ -11,7 +11,7 @@ export default function Faq({ language }: { language: 'en' | 'ko' }) {
   };
 
   return (
-    <section id="faq" className="relative border-t border-[color-mix(in_srgb,var(--line-strong-cool)_60%,transparent)] bg-gradient-to-r from-[color-mix(in_srgb,var(--blue-soft)_70%,transparent)] via-[var(--bg-modal)] to-[color-mix(in_srgb,var(--orange)_8%,transparent)] py-[24px] sm:py-[28px]">
+    <section id="faq" className="relative bg-gradient-to-r from-[color-mix(in_srgb,var(--blue-soft)_70%,transparent)] via-[var(--bg-modal)] to-[color-mix(in_srgb,var(--orange)_8%,transparent)] py-[24px] sm:py-[28px]">
       <div className="max-w-3xl mx-auto px-[24px] sm:px-[40px] lg:px-[48px]">
         <div className="mb-[12px] text-center sm:mb-[16px]">
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-title-cool)] tracking-tight mt-0 mb-[8px] text-balance">
