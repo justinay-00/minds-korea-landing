@@ -25,11 +25,11 @@ interface HeroProps {
 
 export default function Hero({ onOpenModal, language }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-[12px] sm:pt-[20px]">
+    <section className="relative overflow-hidden">
       {/* Radial Glow in light mode */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] glow-radial pointer-events-none -z-10" />
 
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
+      <div className="relative z-10 mx-auto max-w-5xl pt-[calc(var(--nav-h-v2)+12px)] text-center sm:pt-[calc(var(--nav-h-v2)+20px)]">
         <div className="px-[32px] sm:px-[24px]">
             <p className="mb-[6px] text-base font-medium leading-relaxed text-[var(--text-body-cool)] sm:text-lg">
               {language === 'ko'

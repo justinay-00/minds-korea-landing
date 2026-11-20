@@ -49,7 +49,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
     >
       <Navbar onOpenModal={() => setIsModalOpen(true)} language={language} />
       <main className="flex-1">
-        <article className="mx-auto max-w-3xl px-[16px] py-[40px] sm:px-[24px] sm:py-[56px]">
+        <article className="mx-auto max-w-3xl px-[16px] pb-[40px] pt-[calc(var(--nav-h-v2)+40px)] sm:px-[24px] sm:pb-[56px] sm:pt-[calc(var(--nav-h-v2)+56px)]">
           <h1 className="mb-[12px] text-2xl font-bold tracking-tight text-[var(--text-title-cool)] sm:text-4xl">
             {title}
           </h1>

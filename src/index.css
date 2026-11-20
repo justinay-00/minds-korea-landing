@@ -332,6 +332,113 @@ body {
     inset 0 -2px 0 0 var(--orange);
 }
 
+/* Official Minds floating header (.nav-floating-v2). Copied unscoped from the
+   design harness. Do not set position here — the markup uses fixed. */
+.nav-floating-v2 {
+  padding: 10px 0 0;
+  background: transparent;
+  transition:
+    padding-left 260ms ease,
+    padding-right 260ms ease,
+    background-color 260ms ease,
+    box-shadow 260ms ease,
+    backdrop-filter 260ms ease;
+}
+
+/* Homepage rest: full-bleed frosted bar that hands over to the pill on scroll.
+   Bottom line is an inset shadow, not a border, so removing it does not shift the page. */
+.nav-floating-v2.nav-rest-fill-v2 {
+  background-color: color-mix(in srgb, #ffffff 80%, transparent);
+  box-shadow: inset 0 -1px 0 var(--nav-glass-line);
+}
+
+.nav-floating-v2:has(.nav-bar-glass-v2) {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 767px) {
+  .nav-floating-v2:has(.nav-bar-glass-v2) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.nav-floating-v2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -56px;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--nav-fade) 0%,
+    var(--nav-fade) 14%,
+    color-mix(in srgb, var(--nav-fade) 30%, transparent) 30%,
+    color-mix(in srgb, var(--nav-fade) 0%, transparent) 62%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.nav-home-v2 {
+  --nav-fade: #fff;
+}
+
+.nav-home-v2::after,
+.nav-floating-v2:has(.nav-bar-glass-v2)::after {
+  opacity: 1;
+}
+
+.nav-bar-v2 {
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition:
+    background 260ms ease,
+    border-color 260ms ease,
+    border-radius 260ms ease,
+    box-shadow 260ms ease,
+    backdrop-filter 260ms ease,
+    -webkit-backdrop-filter 260ms ease;
+}
+
+.nav-home-v2 .nav-bar-v2 {
+  backdrop-filter: var(--nav-liquid-filter);
+  -webkit-backdrop-filter: var(--nav-liquid-filter);
+  box-shadow:
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.55),
+    inset 0 0 10px 4px rgba(255, 255, 255, 0.22);
+}
+
+.nav-home-v2 .nav-bar-glass-v2 {
+  box-shadow:
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.55),
+    inset 0 0 10px 4px rgba(255, 255, 255, 0.22),
+    0 6px 24px rgba(17, 17, 26, 0.06),
+    0 12px 40px rgba(17, 17, 26, 0.05);
+}
+
+.nav-bar-glass-v2 {
+  border-radius: 999px;
+  background: var(--nav-glass);
+  border-color: rgba(21, 20, 15, 0.08);
+  backdrop-filter: var(--nav-liquid-filter);
+  -webkit-backdrop-filter: var(--nav-liquid-filter);
+  box-shadow:
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.55),
+    inset 0 0 10px 4px rgba(255, 255, 255, 0.22),
+    0 6px 24px rgba(17, 17, 26, 0.06),
+    0 12px 40px rgba(17, 17, 26, 0.05);
+}
+
 .glass-bubble-tail {
   background: #fff;
 }
