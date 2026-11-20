@@ -24,7 +24,7 @@ export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
           </h2>
           <p className="mx-auto mb-[24px] max-w-none text-sm leading-relaxed text-[var(--text-body-cool)] sm:text-base">
             {language === 'ko'
-              ? '할 일은 더 수월하게, 마음은 더 든든하게. 마인즈와 함께라면 일상은 한층 더 즐거워져요.'
+              ? '복잡한 일은 맡겨두고, 마음은 한결 가볍게. 마인즈와 함께라면 일상은 한층 더 즐거워져요.'
               : 'Leave the busywork to Minds and focus on what matters most to you.'}
           </p>
           <button
