@@ -7,7 +7,7 @@ interface FinalCtaProps {
 
 export default function FinalCta({ language }: FinalCtaProps) {
   return (
-    <section className="relative isolate flex min-h-[350px] flex-col overflow-hidden bg-transparent sm:aspect-[1376/520] sm:min-h-0">
+    <section id="final-cta" data-section="final_cta" className="relative isolate flex min-h-[350px] flex-col overflow-hidden bg-transparent sm:aspect-[1376/520] sm:min-h-0">
       <div className="relative z-10 flex flex-1 items-center justify-center px-[24px] py-[36px] text-center sm:px-[40px]">
         <div className="glass-card-v2 w-full max-w-3xl rounded-2xl px-[24px] py-[36px] sm:px-[40px] sm:py-[48px]">
           <h2 className="mb-[16px] text-3xl font-bold tracking-tight text-[var(--text-title-cool)] text-balance sm:text-4xl xl:text-5xl">
@@ -27,6 +27,9 @@ export default function FinalCta({ language }: FinalCtaProps) {
               : 'Leave the busywork to Minds and focus on what matters most to you.'}
           </p>
           <button
+            type="button"
+            data-cta-id="cta_try_app"
+            data-cta-position="final_cta"
             className="group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
