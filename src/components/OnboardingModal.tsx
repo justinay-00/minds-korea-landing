@@ -70,14 +70,14 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
       <div
-        className="relative flex h-[min(560px,90vh,calc(100vw-2rem))] w-[min(560px,90vh,calc(100vw-2rem))] shrink-0 flex-col overflow-hidden rounded-3xl border border-[#CCD5E8] bg-white p-6 shadow-2xl sm:p-8"
+        className="relative flex h-[min(560px,90vh,calc(100vw-2rem))] w-[min(560px,90vh,calc(100vw-2rem))] shrink-0 flex-col overflow-hidden rounded-3xl border border-[var(--line-strong-cool)] bg-white p-6 shadow-2xl sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Glow corner */}
         <div className="absolute top-0 right-0 w-64 h-64 glow-radial opacity-60 pointer-events-none" />
 
         {/* Modal Header */}
-        <div className="flex shrink-0 items-center justify-between border-b border-[#CCD5E8] pb-4">
+        <div className="flex shrink-0 items-center justify-between border-b border-[var(--line-strong-cool)] pb-4">
           <div className="flex items-center gap-3">
             <img
               src="/assets/aistudio/minds-logo-blue-CNYWXNj8_1cee06dc.png"
@@ -88,7 +88,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#9AA0B8] hover:text-[#1E2330] hover:bg-[#E6EAF3] transition-colors"
+            className="p-1.5 rounded-lg text-[var(--text-label-cool)] hover:text-[var(--text-title-cool)] hover:bg-[var(--line-cool)] transition-colors"
             aria-label={language === 'ko' ? '창 닫기' : 'Close modal'}
           >
             <X className="w-5 h-5" />
@@ -104,7 +104,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
           >
             {step === 0 && (
               <div className="my-auto mx-auto w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold tracking-tight text-[#1E2330]">
+                <h3 className="text-2xl font-bold tracking-tight text-[var(--text-title-cool)]">
                   {language === 'ko' ? 'Minds에 오신 것을 환영해요' : 'Welcome to Minds'}
                 </h3>
                 <img
@@ -112,28 +112,28 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                   alt={language === 'ko' ? '일상 업무를 돕는 도구와 함께한 Minds 캐릭터' : 'Minds character with tools for everyday tasks'}
                   className="mx-auto mt-3 h-40 w-full object-contain"
                 />
-                <p className="mt-2 text-sm text-[#6F7791]">
+                <p className="mt-2 text-sm text-[var(--text-muted-cool)]">
                   {language === 'ko' ? '이미 계정이 있으신가요?' : 'Already have an account?'}
                 </p>
                 <button
                   type="button"
                   onClick={() => setLoginMessage(language === 'ko' ? '로그인 기능은 아직 연결되지 않았어요.' : 'Login is not connected yet.')}
-                  className="mt-2 text-sm font-semibold text-[#4F5670] underline underline-offset-2 transition hover:text-indigo-700"
+                  className="mt-2 text-sm font-semibold text-[var(--text-body-cool)] underline underline-offset-2 transition hover:text-indigo-700"
                 >
                   {language === 'ko' ? '로그인' : 'Log in'}
                 </button>
-                <p className="mt-2 min-h-5 text-xs text-[#6F7791]" aria-live="polite">
+                <p className="mt-2 min-h-5 text-xs text-[var(--text-muted-cool)]" aria-live="polite">
                   {loginMessage}
                 </p>
-                <div className="mt-6 border-t border-[#CCD5E8] pt-6">
-                  <p className="mb-4 text-sm text-[#6F7791]">{language === 'ko' ? 'Minds가 처음이신가요?' : 'New to Minds?'}</p>
+                <div className="mt-6 border-t border-[var(--line-strong-cool)] pt-6">
+                  <p className="mb-4 text-sm text-[var(--text-muted-cool)]">{language === 'ko' ? 'Minds가 처음이신가요?' : 'New to Minds?'}</p>
                   <button
                     type="button"
                     onClick={() => {
                       setLoginMessage('');
                       setStep(1);
                     }}
-                    className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FCA044] via-[#FD8D1D] to-[#E87C0C] px-6 py-3 text-lg font-bold text-white backdrop-blur-md transition duration-200 hover:from-[#FD8D1D] hover:via-[#DB7006] hover:to-[#DB7006]"
+                    className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-6 py-3 text-lg font-bold text-white backdrop-blur-md transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)]"
                   >
                     {language === 'ko' ? '시작하기' : 'Get Started'}
                     <ArrowRight className="cta-arrow shrink-0" />
@@ -144,18 +144,18 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
 
             {step === 2 && (
               <div className="my-auto mx-auto w-full max-w-sm text-center">
-                <h3 className="text-2xl font-bold tracking-tight text-[#1E2330]">
+                <h3 className="text-2xl font-bold tracking-tight text-[var(--text-title-cool)]">
                   {language === 'ko' ? '환영해요!' : 'Welcome!'}
                 </h3>
-                <p className="mt-2 text-sm text-[#6F7791]">
+                <p className="mt-2 text-sm text-[var(--text-muted-cool)]">
                   {language === 'ko' ? (
-                    <><span className="font-semibold text-[#4F5670]">{mindName}</span>에게서 새 메시지가 도착했어요.</>
+                    <><span className="font-semibold text-[var(--text-body-cool)]">{mindName}</span>에게서 새 메시지가 도착했어요.</>
                   ) : (
-                    <>You have a new message from <span className="font-semibold text-[#4F5670]">{mindName}</span></>
+                    <>You have a new message from <span className="font-semibold text-[var(--text-body-cool)]">{mindName}</span></>
                   )}
                 </p>
 
-                <div className="animate-character-float my-5 rounded-2xl border border-[#CCD5E8] bg-white p-4 text-left shadow-lg shadow-slate-900/10">
+                <div className="animate-character-float my-5 rounded-2xl border border-[var(--line-strong-cool)] bg-white p-4 text-left shadow-lg shadow-slate-900/10">
                   <div className="flex items-center gap-3">
                     <img
                       src="/assets/aistudio/images_e51d87e1.jpg"
@@ -164,21 +164,21 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="truncate text-sm font-semibold text-[#1E2330]">{mindName}</span>
-                        <span className="shrink-0 text-[11px] text-[#9AA0B8]">{language === 'ko' ? '지금' : 'now'}</span>
+                        <span className="truncate text-sm font-semibold text-[var(--text-title-cool)]">{mindName}</span>
+                        <span className="shrink-0 text-[11px] text-[var(--text-label-cool)]">{language === 'ko' ? '지금' : 'now'}</span>
                       </div>
-                      <span className="block text-xs text-[#6F7791]">{language === 'ko' ? '새 메시지' : 'New message'}</span>
+                      <span className="block text-xs text-[var(--text-muted-cool)]">{language === 'ko' ? '새 메시지' : 'New message'}</span>
                     </div>
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-sky-500" />
                   </div>
-                  <p className="mt-3 select-none text-sm leading-relaxed text-[#4F5670] blur-[3px]">
+                  <p className="mt-3 select-none text-sm leading-relaxed text-[var(--text-body-cool)] blur-[3px]">
                     {language === 'ko'
                       ? `${selectedFocusLabel || '필요한 일'}을(를) 도와드릴 준비가 됐어요.`
                       : `I’m ready to help with ${selectedFocusLabel || 'whatever matters to you'}.`}
                   </p>
                 </div>
 
-                <p className="mb-4 text-sm text-[#6F7791]">
+                <p className="mb-4 text-sm text-[var(--text-muted-cool)]">
                   {language === 'ko' ? '원하는 방식으로 계정을 만들어 보세요.' : 'Choose how you’d like to create your account.'}
                 </p>
                 <div className="space-y-3">
@@ -203,7 +203,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                     </span>
                     {language === 'ko' ? '카카오로 가입하기' : 'Sign up with Kakao'}
                   </button>
-                  <p className="min-h-5 text-xs text-[#6F7791]" aria-live="polite">
+                  <p className="min-h-5 text-xs text-[var(--text-muted-cool)]" aria-live="polite">
                     {loginMessage}
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
             {/* Step 1: Focus selection */}
             {step === 1 && (
               <div className="flex min-h-0 flex-1 flex-col">
-                <h3 className="mb-2 text-lg font-bold tracking-tight text-[#1E2330]">
+                <h3 className="mb-2 text-lg font-bold tracking-tight text-[var(--text-title-cool)]">
                   {language === 'ko' ? '마인즈 이름 짓기' : 'Name your Minds assistant'}
                 </h3>
                 <input
@@ -225,10 +225,10 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                   onChange={(event) => setMindName(event.target.value)}
                   placeholder={language === 'ko' ? '예: 노바' : 'e.g. Nova'}
                   aria-label={language === 'ko' ? '마인즈 이름' : 'Name your Minds assistant'}
-                  className="w-full rounded-xl border border-[#CCD5E8] bg-white px-4 py-2.5 text-sm text-[#1E2330] shadow-2xs placeholder:text-[#9AA0B8] focus:border-indigo-500 focus:outline-none"
+                  className="w-full rounded-xl border border-[var(--line-strong-cool)] bg-white px-4 py-2.5 text-sm text-[var(--text-title-cool)] shadow-2xs placeholder:text-[var(--text-label-cool)] focus:border-indigo-500 focus:outline-none"
                 />
                 <div className="mt-2 mb-4 flex flex-wrap items-center gap-1.5">
-                  <span className="mr-1 text-xs text-[#6F7791]">{language === 'ko' ? '추천 이름' : 'Suggestions'}</span>
+                  <span className="mr-1 text-xs text-[var(--text-muted-cool)]">{language === 'ko' ? '추천 이름' : 'Suggestions'}</span>
                   {suggestedMindNames.map((suggestion) => (
                     <button
                       key={suggestion}
@@ -237,7 +237,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
                         mindName === suggestion
                           ? 'border-slate-700 bg-slate-700 text-white'
-                          : 'border-[#CCD5E8] bg-white text-[#4F5670] hover:border-slate-400 hover:bg-[#F6F7FA]'
+                          : 'border-[var(--line-strong-cool)] bg-white text-[var(--text-body-cool)] hover:border-slate-400 hover:bg-[#F6F7FA]'
                       }`}
                     >
                       {suggestion}
@@ -251,10 +251,10 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                     hasMindName ? 'opacity-100' : 'pointer-events-none opacity-40'
                   }`}
                 >
-                    <h3 className="mb-1.5 text-lg font-bold tracking-tight text-[#1E2330]">
+                    <h3 className="mb-1.5 text-lg font-bold tracking-tight text-[var(--text-title-cool)]">
                       {language === 'ko' ? '마인즈가 어떤 일에 집중하면 좋을까요?' : 'What should your Minds assistant focus on?'}
                     </h3>
-                    <p className="mb-3 text-xs text-[#6F7791]">
+                    <p className="mb-3 text-xs text-[var(--text-muted-cool)]">
                       {language === 'ko' ? '원하는 항목을 선택해 나만의 파트너를 설정해 보세요.' : 'Select a focus to personalize your partner.'}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -270,7 +270,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                             className={`relative inline-flex min-h-9 max-w-full items-center whitespace-nowrap rounded-full border px-3.5 py-1.5 pr-9 text-left text-xs font-medium transition-all ${
                               isSelected
                                 ? 'border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-900/20'
-                                : 'border-[#CCD5E8] bg-white text-[#4F5670] hover:border-slate-300 hover:bg-[#F6F7FA]'
+                                : 'border-[var(--line-strong-cool)] bg-white text-[var(--text-body-cool)] hover:border-slate-300 hover:bg-[#F6F7FA]'
                             }`}
                           >
                             <span>{focus.label}</span>
@@ -289,7 +289,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                         onChange={(event) => setCustomFocus(event.target.value)}
                         placeholder={language === 'ko' ? '마인즈가 어떤 일에 집중하면 좋을지 알려 주세요' : 'Tell us what your Minds assistant should focus on'}
                         aria-label={language === 'ko' ? '마인즈가 집중할 항목 직접 입력' : 'Custom Minds assistant focus'}
-                        className="mt-3 w-full rounded-xl border border-[#CCD5E8] bg-white px-4 py-2.5 text-sm text-[#1E2330] shadow-2xs placeholder:text-[#9AA0B8] focus:border-indigo-500 focus:outline-none"
+                        className="mt-3 w-full rounded-xl border border-[var(--line-strong-cool)] bg-white px-4 py-2.5 text-sm text-[var(--text-title-cool)] shadow-2xs placeholder:text-[var(--text-label-cool)] focus:border-indigo-500 focus:outline-none"
                       />
                     )}
                 </div>
@@ -302,7 +302,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       !selectedFocus ||
                       (selectedFocus === 'other' && !customFocus.trim())
                     }
-                    className="ml-auto flex items-center gap-3 rounded-lg border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-[#1E2330] transition-all hover:border-sky-300 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="ml-auto flex items-center gap-3 rounded-lg border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-[var(--text-title-cool)] transition-all hover:border-sky-300 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <span>{language === 'ko' ? '계속' : 'Continue'}</span>
                     <span className="flex h-7 w-7 items-center justify-center rounded-md bg-sky-600 text-white">
@@ -316,10 +316,10 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
             {/* Step 3: Email signup details */}
             {step === 3 && (
               <form onSubmit={handleSubmit}>
-                <h3 className="text-xl font-bold text-[#1E2330] tracking-tight mb-2">
+                <h3 className="text-xl font-bold text-[var(--text-title-cool)] tracking-tight mb-2">
                   {language === 'ko' ? '나만의 마인즈를 만들어 볼게요' : 'Set up your dedicated Minds assistant'}
                 </h3>
-                <p className="text-sm text-[#4F5670] mb-6">
+                <p className="text-sm text-[var(--text-body-cool)] mb-6">
                   {language === 'ko'
                     ? '안전한 전용 작업 공간을 준비하고 인증 링크를 보내 드릴게요.'
                     : 'We will provision your isolated sandbox and dispatch your secure authorization link.'}
@@ -327,7 +327,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
 
                 <div className="space-y-4 mb-6">
                   <div>
-                    <label className="text-xs font-semibold text-[#4F5670] block mb-1.5">
+                    <label className="text-xs font-semibold text-[var(--text-body-cool)] block mb-1.5">
                       {language === 'ko' ? '이름' : 'Your Full Name'}
                     </label>
                     <input
@@ -336,12 +336,12 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={language === 'ko' ? '예: 홍길동' : 'e.g. Alex Mercer'}
-                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-[#1E2330] placeholder-slate-400 focus:outline-none focus:border-sky-600 shadow-2xs"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-[var(--text-title-cool)] placeholder-slate-400 focus:outline-none focus:border-sky-600 shadow-2xs"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-[#4F5670] block mb-1.5">
+                    <label className="text-xs font-semibold text-[var(--text-body-cool)] block mb-1.5">
                       {language === 'ko' ? '업무용 이메일' : 'Work Email'}
                     </label>
                     <input
@@ -350,21 +350,21 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="alex@company.com"
-                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-[#1E2330] placeholder-slate-400 focus:outline-none focus:border-sky-600 shadow-2xs"
+                      className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-[var(--text-title-cool)] placeholder-slate-400 focus:outline-none focus:border-sky-600 shadow-2xs"
                     />
                   </div>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#F6F7FA] border border-[#CCD5E8] mb-6 text-xs text-[#4F5670] space-y-1">
+                <div className="p-3.5 rounded-xl bg-[#F6F7FA] border border-[var(--line-strong-cool)] mb-6 text-xs text-[var(--text-body-cool)] space-y-1">
                   <div className="flex justify-between">
                     <span>{language === 'ko' ? '집중 분야:' : 'Focus:'}</span>
-                    <span className="text-right text-[#1E2330] font-medium">
+                    <span className="text-right text-[var(--text-title-cool)] font-medium">
                       {selectedFocusLabel}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span>{language === 'ko' ? '마인즈 이름:' : 'Minds assistant name:'}</span>
-                    <span className="text-right text-[#1E2330] font-medium">{mindName}</span>
+                    <span className="text-right text-[var(--text-title-cool)] font-medium">{mindName}</span>
                   </div>
                 </div>
 
@@ -372,7 +372,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="text-xs text-[#6F7791] hover:text-[#1E2330]"
+                    className="text-xs text-[var(--text-muted-cool)] hover:text-[var(--text-title-cool)]"
                   >
                     {language === 'ko' ? '뒤로' : 'Back'}
                   </button>
@@ -402,13 +402,13 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-[#1E2330] tracking-tight mb-2">
+              <h3 className="text-2xl font-bold text-[var(--text-title-cool)] tracking-tight mb-2">
                 {language === 'ko' ? `${mindName} 준비가 완료됐어요` : `${mindName} is ready`}
               </h3>
-              <p className="text-sm text-[#4F5670] max-w-md mx-auto leading-relaxed">
+              <p className="text-sm text-[var(--text-body-cool)] max-w-md mx-auto leading-relaxed">
                 {language === 'ko'
-                  ? <>{name}님, 환영해요. 전용 작업 공간 준비를 시작했고 인증 링크를 <span className="text-[#1E2330] font-mono font-medium">{email}</span>(으)로 보냈어요.</>
-                  : <>Welcome, {name}. We’ve queued your isolated environment and dispatched the authorization token to <span className="text-[#1E2330] font-mono font-medium">{email}</span>.</>}
+                  ? <>{name}님, 환영해요. 전용 작업 공간 준비를 시작했고 인증 링크를 <span className="text-[var(--text-title-cool)] font-mono font-medium">{email}</span>(으)로 보냈어요.</>
+                  : <>Welcome, {name}. We’ve queued your isolated environment and dispatched the authorization token to <span className="text-[var(--text-title-cool)] font-mono font-medium">{email}</span>.</>}
               </p>
             </div>
 
@@ -421,11 +421,11 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                     alt="Minds"
                     className="w-5 h-5 rounded-full object-cover border border-sky-200"
                   />
-                  <span className="text-xs font-semibold text-[#1E2330]">Minds</span>
+                  <span className="text-xs font-semibold text-[var(--text-title-cool)]">Minds</span>
                 </div>
-                <span className="text-[10px] text-[#6F7791] font-mono">Minds</span>
+                <span className="text-[10px] text-[var(--text-muted-cool)] font-mono">Minds</span>
               </div>
-              <p className="text-xs text-[#4F5670] leading-relaxed font-mono">
+              <p className="text-xs text-[var(--text-body-cool)] leading-relaxed font-mono">
                 {language === 'ko'
                   ? `"${name.split(' ')[0]}님, 안녕하세요! ${mindName}이 준비됐어요. 필요할 때 언제든 불러 주세요."`
                   : `"Hey ${name.split(' ')[0]}, ${mindName} is online. I'm ready when you are."`}

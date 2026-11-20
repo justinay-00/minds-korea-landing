@@ -1,7 +1,9 @@
 @import "tailwindcss";
+@import "./harness-tokens.css";
 
 .page-wash {
-  background: linear-gradient(180deg, #f6f7fa 0%, #fbfcfe 100%);
+  /* Official harness canvas wash. The top stop has no named token; the bottom is --bg-modal. */
+  background: linear-gradient(180deg, #f6f7fa 0%, var(--bg-modal) 100%);
 }
 
 
@@ -328,7 +330,7 @@ body {
     rgba(113, 101, 234, 0.1),
     transparent 42%,
     rgba(61, 126, 237, 0.08) 68%,
-    rgba(253, 141, 29, 0.07)
+    rgb(from var(--orange) r g b / 0.07)
   );
   mix-blend-mode: soft-light;
 }
@@ -500,7 +502,7 @@ body {
 }
 
 .legal-prose {
-  color: #4f5670;
+  color: var(--text-body-cool);
   font-size: 0.95rem;
   line-height: 1.75;
 }
@@ -511,7 +513,7 @@ body {
 
 .legal-prose h2 {
   margin: 2rem 0 0.75rem;
-  color: #1e2330;
+  color: var(--text-title-cool);
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -521,7 +523,7 @@ body {
 .legal-prose h3,
 .legal-prose h4 {
   margin: 1.5rem 0 0.5rem;
-  color: #1e2330;
+  color: var(--text-title-cool);
   font-size: 1.05rem;
   font-weight: 650;
   letter-spacing: -0.01em;
@@ -547,14 +549,14 @@ body {
 }
 
 .legal-prose a {
-  color: #425CB3;
+  color: var(--blue-lit);
   text-decoration: underline;
-  text-decoration-color: rgb(61 126 237 / 0.3);
+  text-decoration-color: rgb(from var(--blue-lit) r g b / 0.3);
   text-underline-offset: 2px;
 }
 
 .legal-prose a:hover {
-  color: #7D91D4;
+  color: var(--blue-tint);
 }
 
 .legal-prose table {
@@ -566,7 +568,7 @@ body {
 
 .legal-prose th,
 .legal-prose td {
-  border-bottom: 1px solid #e6eaf3;
+  border-bottom: 1px solid var(--line-cool);
   padding: 0.5rem 0.75rem 0.5rem 0;
   text-align: left;
   vertical-align: top;

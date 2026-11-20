@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div
       data-language={language}
-      className="min-h-screen page-wash text-[#1E2330] flex flex-col justify-between selection:bg-[#FD8D1D] selection:text-white"
+      className="min-h-screen page-wash text-[var(--text-title-cool)] flex flex-col justify-between selection:bg-[var(--orange)] selection:text-white"
     >
       {/* Top Navigation */}
       <Navbar onOpenModal={handleOpenModal} language={language} />

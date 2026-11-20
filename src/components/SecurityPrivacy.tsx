@@ -53,13 +53,13 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
   ];
 
   return (
-    <section id="security" ref={revealRef} className="reveal-on-scroll relative overflow-hidden border-t border-[#CCD5E8]/60 bg-gradient-to-r from-[#EAEFFF]/70 via-[#FBFCFE] to-[#FD8D1D]/8 py-[24px] sm:py-[44px]">
+    <section id="security" ref={revealRef} className="reveal-on-scroll relative overflow-hidden border-t border-[color-mix(in_srgb,var(--line-strong-cool)_60%,transparent)] bg-gradient-to-r from-[color-mix(in_srgb,var(--blue-soft)_70%,transparent)] via-[var(--bg-modal)] to-[color-mix(in_srgb,var(--orange)_8%,transparent)] py-[24px] sm:py-[44px]">
       <div className="privacy-grain pointer-events-none absolute inset-0 -z-0" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-[24px] sm:px-[40px] lg:px-[48px]">
         {/* 1. Section Header & Copy */}
         <div className="reveal-item mb-[12px] w-full text-left sm:mb-[24px]" style={{ ['--reveal-delay' as string]: '0ms' }}>
-          <h2 className="mb-[8px] text-2xl font-bold tracking-tight text-[#1E2330] text-balance sm:text-4xl xl:text-5xl">
+          <h2 className="mb-[8px] text-2xl font-bold tracking-tight text-[var(--text-title-cool)] text-balance sm:text-4xl xl:text-5xl">
             <span className="block">
               {language === 'ko' ? '개인정보는 엄격하게 보호돼요.' : 'Your data stays yours.'}
             </span>
@@ -77,42 +77,42 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
             <div className="@container relative group w-[86%] max-w-[360px] [container-type:inline-size] lg:w-full lg:max-w-[520px]">
               <div className="pointer-events-none absolute -inset-2 -z-10 hidden" />
 
-              <div className="relative flex flex-col overflow-hidden rounded-[16px] border border-white/50 bg-gradient-to-br from-[#394F95] via-[#425CB3] to-[#FD8D1D] p-2.5 text-white aspect-[1.586/1]">
-                <div className="pointer-events-none absolute inset-x-0 z-30 h-[2px] animate-card-scanner bg-gradient-to-r from-[#FD8D1D]/35 via-[#FD8D1D] to-[#FD8D1D]/35 shadow-[0_0_16px_rgba(253,141,29,0.9),0_0_5px_rgba(253,141,29,1)]" />
-                <div className="pointer-events-none absolute inset-x-0 z-20 h-8 -translate-y-6 animate-card-scanner bg-gradient-to-b from-[#FD8D1D]/55 via-[#FD8D1D]/18 to-transparent" />
+              <div className="relative flex flex-col overflow-hidden rounded-[16px] border border-white/50 bg-gradient-to-br from-[var(--blue)] via-[var(--blue-lit)] to-[var(--orange)] p-2.5 text-white aspect-[1.586/1]">
+                <div className="pointer-events-none absolute inset-x-0 z-30 h-[2px] animate-card-scanner bg-gradient-to-r from-[color-mix(in_srgb,var(--orange)_35%,transparent)] via-[var(--orange)] to-[color-mix(in_srgb,var(--orange)_35%,transparent)] shadow-[0_0_16px_rgb(from_var(--orange)_r_g_b_/0.9),0_0_5px_rgb(from_var(--orange)_r_g_b_/1)]" />
+                <div className="pointer-events-none absolute inset-x-0 z-20 h-8 -translate-y-6 animate-card-scanner bg-gradient-to-b from-[color-mix(in_srgb,var(--orange)_55%,transparent)] via-[color-mix(in_srgb,var(--orange)_18%,transparent)] to-transparent" />
 
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-[#FD8D1D]/20" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-[color-mix(in_srgb,var(--orange)_20%,transparent)]" />
 
                 <div className="glass-card-v2 glass-static relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-white/70 px-[20px] py-[5cqi]">
                   <div className="id-panel-texture" aria-hidden="true" />
-                  <div className="relative z-10 mb-[3.7cqi] border-b border-[#CCD5E8]/70 pb-[2.4cqi]">
-                    <span className="text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[#6F7791]">
+                  <div className="relative z-10 mb-[3.7cqi] border-b border-[color-mix(in_srgb,var(--line-strong-cool)_70%,transparent)] pb-[2.4cqi]">
+                    <span className="text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[var(--text-muted-cool)]">
                       {language === 'ko' ? '사용자 개인 정보' : 'User ID Card'}
                     </span>
                   </div>
                   <div className="relative z-10 grid grid-cols-[26%_minmax(0,1fr)] items-center gap-4">
                     <div
-                      className="relative aspect-[80/88] w-full overflow-hidden rounded-2xl border border-[#CCD5E8] bg-[#E6EAF3]"
+                      className="relative aspect-[80/88] w-full overflow-hidden rounded-2xl border border-[var(--line-strong-cool)] bg-[var(--line-cool)]"
                       role="img"
                       aria-label={language === 'ko' ? '프로필 자리 표시' : 'Profile placeholder'}
                     >
-                      <div className="absolute left-1/2 top-[18%] h-[41%] w-[45%] -translate-x-1/2 rounded-full bg-[#CCD5E8]" />
-                      <div className="absolute -bottom-[27%] left-1/2 h-[73%] w-[90%] -translate-x-1/2 rounded-full bg-[#CCD5E8]" />
+                      <div className="absolute left-1/2 top-[18%] h-[41%] w-[45%] -translate-x-1/2 rounded-full bg-[var(--line-strong-cool)]" />
+                      <div className="absolute -bottom-[27%] left-1/2 h-[73%] w-[90%] -translate-x-1/2 rounded-full bg-[var(--line-strong-cool)]" />
                     </div>
                     <div className="min-w-0 space-y-[2.4cqi]">
                       <div>
-                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[#6F7791]">
+                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[var(--text-muted-cool)]">
                           {language === 'ko' ? '이름' : 'Name'}
                         </span>
-                        <span className="block truncate text-[clamp(1rem,5.2cqi,1.5rem)] font-bold leading-tight tracking-tight text-[#1E2330]">
+                        <span className="block truncate text-[clamp(1rem,5.2cqi,1.5rem)] font-bold leading-tight tracking-tight text-[var(--text-title-cool)]">
                           {language === 'ko' ? '김지호' : 'Ji Ho Kim'}
                         </span>
                       </div>
                       <div>
-                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[#6F7791]">
+                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-[var(--text-muted-cool)]">
                           {language === 'ko' ? '디지털 ID' : 'Digital ID'}
                         </span>
-                        <span className="block truncate font-mono text-[clamp(0.75rem,3.6cqi,1rem)] text-[#4F5670]">@jiho.moca</span>
+                        <span className="block truncate font-mono text-[clamp(0.75rem,3.6cqi,1rem)] text-[var(--text-body-cool)]">@jiho.moca</span>
                       </div>
                     </div>
                   </div>
@@ -132,15 +132,15 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
                 >
                 <div className="glass-card-v2 group flex h-full w-full flex-col rounded-2xl px-[12px] py-[6px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200">
                   <div className="flex h-full items-center gap-2.5 sm:gap-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#FD8D1D]/25 bg-[#FD8D1D]/10 text-xs font-bold tabular-nums tracking-tight text-[#FD8D1D] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[color-mix(in_srgb,var(--orange)_25%,transparent)] bg-[color-mix(in_srgb,var(--orange)_10%,transparent)] text-xs font-bold tabular-nums tracking-tight text-[var(--orange)] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
                       {pillar.number}
                     </div>
 
                     <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-center">
-                      <h3 className="mb-[2px] text-base font-bold tracking-tight text-[#1E2330] sm:mb-[4px] sm:text-lg">
+                      <h3 className="mb-[2px] text-base font-bold tracking-tight text-[var(--text-title-cool)] sm:mb-[4px] sm:text-lg">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs leading-relaxed text-[#4F5670] sm:text-sm">
+                      <p className="text-xs leading-relaxed text-[var(--text-body-cool)] sm:text-sm">
                         {pillar.description}
                       </p>
 
@@ -153,7 +153,7 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
                               e.preventDefault();
                               onOpenModal();
                             }}
-                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-[#FD8D1D] transition-colors hover:text-[#DB7006] group/link"
+                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-[var(--orange)] transition-colors hover:text-[var(--orange-hover)] group/link"
                           >
                             <span>{language === 'ko' ? '자세히 보기' : 'Click to read more'}</span>
                             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

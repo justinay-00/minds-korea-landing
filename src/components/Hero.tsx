@@ -31,13 +31,13 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <div className="px-[32px] sm:px-[24px]">
-            <p className="mb-[6px] text-base font-medium leading-relaxed text-[#4F5670] sm:text-lg">
+            <p className="mb-[6px] text-base font-medium leading-relaxed text-[var(--text-body-cool)] sm:text-lg">
               {language === 'ko'
                 ? '할 일은 더 수월하게, 마음은 더 든든하게'
                 : 'Always in your corner: stepping up before you ask, handling the tedious work, and delivering real progress.'}
             </p>
 
-            <h1 className="mb-[16px] whitespace-nowrap text-2xl font-extrabold leading-snug tracking-tight text-[#1E2330] sm:mb-[24px] sm:whitespace-normal sm:text-[2.75rem] sm:leading-[1.4] xl:text-5xl">
+            <h1 className="mb-[16px] whitespace-nowrap text-2xl font-extrabold leading-snug tracking-tight text-[var(--text-title-cool)] sm:mb-[24px] sm:whitespace-normal sm:text-[2.75rem] sm:leading-[1.4] xl:text-5xl">
               {language === 'ko' ? (
                 <>
                   <span className="sm:whitespace-nowrap">당신의 일상을 함께 움직이는 AI,</span>
@@ -56,11 +56,11 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
       </div>
 
       <div className="relative isolate">
-        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[#FD8D1D]/18 via-[#EAEFFF]/60 to-[#EAEFFF] [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[70%] bg-gradient-to-t from-[#7D91D4]/40 via-[#EAEFFF]/90 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-[color-mix(in_srgb,var(--orange)_18%,transparent)] via-[color-mix(in_srgb,var(--blue-soft)_60%,transparent)] to-[var(--blue-soft)] [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_100%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[70%] bg-gradient-to-t from-[color-mix(in_srgb,var(--blue-tint)_40%,transparent)] via-[color-mix(in_srgb,var(--blue-soft)_90%,transparent)] to-transparent" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-72 bg-gradient-to-t from-[#EAEFFF] via-[#EAEFFF]/90 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-72 bg-gradient-to-t from-[var(--blue-soft)] via-[color-mix(in_srgb,var(--blue-soft)_90%,transparent)] to-transparent"
         />
 
         <div className="relative z-10 mx-auto max-w-5xl text-center">
@@ -68,7 +68,7 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
             <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
               <button
                 onClick={onOpenModal}
-                className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#FCA044] via-[#FD8D1D] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[#FD8D1D] hover:via-[#DB7006] hover:to-[#DB7006] cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
+                className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)] cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
                 <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
                 <ArrowRight className="cta-arrow shrink-0" />
