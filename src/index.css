@@ -5,6 +5,9 @@
   /* Official glass fills from design-harness tokens.css (not in the first extracted :root). */
   --glass-card: rgba(255, 255, 255, 0.85);
   --glass-card-line: rgba(255, 255, 255, 0.9);
+  /* Official lockup minimum width, and clear space equal to the height of the "M". */
+  --logo-lockup-min: 120px;
+  --logo-clear-m: calc(var(--logo-lockup-min) * 155.2 / 811);
 }
 
 .page-wash {
