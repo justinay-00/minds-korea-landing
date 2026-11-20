@@ -4,11 +4,10 @@ import {
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 interface SecurityPrivacyProps {
-  onOpenModal: () => void;
   language: 'en' | 'ko';
 }
 
-export default function SecurityPrivacy({ onOpenModal, language }: SecurityPrivacyProps) {
+export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
   const revealRef = useRevealOnScroll<HTMLElement>();
   const pillars = language === 'ko' ? [
     {
@@ -149,10 +148,6 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
                         <div className="mt-1.5 sm:mt-2">
                           <button
                             type="button"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              onOpenModal();
-                            }}
                             className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-[var(--orange)] transition-colors hover:text-[var(--orange-hover)] group/link"
                           >
                             <span>{language === 'ko' ? '자세히 보기' : 'Click to read more'}</span>

@@ -1,9 +1,8 @@
 interface FooterProps {
-  onOpenModal: () => void;
   language: 'en' | 'ko';
 }
 
-export default function Footer({ onOpenModal, language }: FooterProps) {
+export default function Footer({ language }: FooterProps) {
   return (
     <footer className="glass-card-v2 glass-static glass-accent-bottom relative z-10 border-t border-[color-mix(in_srgb,var(--line-strong-cool)_70%,transparent)] text-sm text-[var(--text-body-cool)]">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-[12px] sm:px-[40px] lg:px-[48px]">
@@ -30,7 +29,6 @@ export default function Footer({ onOpenModal, language }: FooterProps) {
             </a>
           </div>
           <button
-            onClick={onOpenModal}
             className="cursor-pointer text-xs font-semibold text-[var(--blue-lit)] transition-colors hover:text-[var(--blue-tint)]"
           >
             {language === 'ko' ? '나만의 마인즈 (Minds) 만나기' : 'Meet your Minds assistant'}

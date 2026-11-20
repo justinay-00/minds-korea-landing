@@ -83,15 +83,15 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
 
   const scenarioTitleRow = (scenario: (typeof scenarios)[number]) => (
     <div className="px-[8px] sm:px-[12px]">
-      <div className="flex items-center gap-2 px-3 pb-2.5 pt-0.5 sm:gap-2.5 sm:px-5">
+      <div className="flex items-center px-3 pb-2.5 pt-0.5 sm:px-5">
         <span className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" aria-hidden="true" />
-        <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+        <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5 sm:gap-2">
           {scenarioLogo(scenario)}
-          <div className="min-w-0 flex-1">
-            <span className="invisible block truncate text-[11px] font-semibold leading-tight" aria-hidden="true">
+          <div className="min-w-0 max-w-[70%]">
+            <span className="invisible block truncate text-center text-[11px] font-semibold leading-tight" aria-hidden="true">
               {mindsLabelText}
             </span>
-            <span className="block truncate text-[12px] font-semibold leading-tight text-slate-900 sm:text-[15px]">
+            <span className="block truncate text-center text-[12px] font-semibold leading-tight text-slate-900 sm:text-[15px]">
               {scenario.title}
             </span>
           </div>
@@ -342,7 +342,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     const isConfirmed = complete ? false : !!options.isConfirmed;
 
     return (
-      <div className="flex flex-col gap-2 max-[375px]:gap-1">
+      <div className="flex flex-col gap-2 max-[375px]:gap-1 sm:pt-4">
         <div className="ml-[-24px] flex w-full flex-col gap-2 max-[375px]:gap-1 sm:ml-[-80px]">
           {(showTyping1 || showMsg1) && messageBubble(threadMessages[0] || '', showTyping1 && !showMsg1, false, false, animate)}
           {(showTyping2 || showMsg2) && messageBubble(threadMessages[1] || '', showTyping2 && !showMsg2, false, false, animate)}
@@ -462,15 +462,15 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                         </div>
                       </div>
                       <div
-                        className="relative flex items-center gap-2 px-3 pb-2.5 pt-0.5 sm:gap-2.5 sm:px-5"
+                        className="relative flex items-center px-3 pb-2.5 pt-0.5 sm:px-5"
                         aria-hidden="true"
                       >
                         <span className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" />
-                        <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+                        <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5 sm:gap-2">
                           <span className="h-6 w-6 shrink-0 sm:h-8 sm:w-8" />
-                          <div className="min-w-0 flex-1">
-                            <span className="block truncate text-[11px] font-semibold leading-tight">&nbsp;</span>
-                            <span className="block truncate text-[12px] font-semibold leading-tight sm:text-[15px]">&nbsp;</span>
+                          <div className="min-w-0 max-w-[70%]">
+                            <span className="block truncate text-center text-[11px] font-semibold leading-tight">&nbsp;</span>
+                            <span className="block truncate text-center text-[12px] font-semibold leading-tight sm:text-[15px]">&nbsp;</span>
                           </div>
                         </div>
                         <span className="h-6 w-6 shrink-0 sm:h-7 sm:w-7" />
@@ -510,7 +510,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                 src="/assets/aistudio/minds-character-orb.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[var(--blue-soft)] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[122px]"
+                className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[var(--blue-soft)] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[138px]"
               />
               <div
                 ref={overlayRef}
@@ -558,7 +558,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
               </div>
               <div className="pointer-events-none absolute inset-x-0 top-[52px] z-50 sm:top-[56px]">
                 <div className="px-[8px] sm:px-[12px]">
-                  <div className="flex items-center gap-2 px-3 pb-2.5 pt-0.5 sm:gap-2.5 sm:px-5">
+                  <div className="flex items-center px-3 pb-2.5 pt-0.5 sm:px-5">
                     <button
                       type="button"
                       onClick={() => animateToScenario(-1)}
@@ -567,13 +567,13 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                     >
                       <ChevronLeft className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                     </button>
-                    <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+                    <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5 sm:gap-2">
                       <span className="h-6 w-6 shrink-0 sm:h-8 sm:w-8" aria-hidden="true" />
-                      <div className="min-w-0 flex-1">
-                        <span className="block truncate text-[11px] font-semibold leading-tight text-slate-500">
+                      <div className="min-w-0 max-w-[70%]">
+                        <span className="block truncate text-center text-[11px] font-semibold leading-tight text-slate-500">
                           {mindsLabelText}
                         </span>
-                        <span className="invisible block truncate text-[12px] font-semibold leading-tight sm:text-[15px]" aria-hidden="true">
+                        <span className="invisible block truncate text-center text-[12px] font-semibold leading-tight sm:text-[15px]" aria-hidden="true">
                           &nbsp;
                         </span>
                       </div>

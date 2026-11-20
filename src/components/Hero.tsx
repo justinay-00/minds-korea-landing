@@ -19,11 +19,10 @@ function TitlePoseCycle() {
 }
 
 interface HeroProps {
-  onOpenModal: () => void;
   language: 'en' | 'ko';
 }
 
-export default function Hero({ onOpenModal, language }: HeroProps) {
+export default function Hero({ language }: HeroProps) {
   return (
     <section className="relative overflow-hidden">
       {/* Radial Glow in light mode */}
@@ -67,7 +66,6 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
           <div className="px-[32px] sm:px-[24px]">
             <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
               <button
-                onClick={onOpenModal}
                 className="group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
                 <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>

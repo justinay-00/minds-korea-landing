@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import OnboardingModal from './OnboardingModal';
 import privacyHtml from '../data/privacy-policy.html?raw';
 import termsHtml from '../data/terms-of-use.html?raw';
 
@@ -30,7 +29,6 @@ function stripOfficialTitle(html: string) {
 }
 
 export default function LegalPage({ kind, language }: LegalPageProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const page = PAGES[kind];
   const title = language === 'ko' ? page.titleKo : page.titleEn;
 
@@ -47,7 +45,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
       data-language={language}
       className="flex min-h-screen flex-col justify-between page-wash text-[var(--text-title-cool)] selection:bg-[var(--orange)] selection:text-white"
     >
-      <Navbar onOpenModal={() => setIsModalOpen(true)} language={language} />
+      <Navbar language={language} />
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-[16px] pb-[40px] pt-[calc(var(--nav-h-v2)+40px)] sm:px-[24px] sm:pb-[56px] sm:pt-[calc(var(--nav-h-v2)+56px)]">
           <h1 className="mb-[12px] text-2xl font-bold tracking-tight text-[var(--text-title-cool)] sm:text-4xl">
@@ -88,8 +86,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
           />
         </article>
       </main>
-      <Footer onOpenModal={() => setIsModalOpen(true)} language={language} />
-      <OnboardingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} language={language} />
+      <Footer language={language} />
     </div>
   );
 }
