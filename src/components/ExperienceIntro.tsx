@@ -130,7 +130,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
 
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
           <button
-            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
@@ -175,7 +175,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
 
           <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <button
-              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
             >
               <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
               <ArrowRight className="cta-arrow shrink-0" />

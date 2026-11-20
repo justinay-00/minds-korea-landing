@@ -27,7 +27,7 @@ export default function FinalCta({ language }: FinalCtaProps) {
               : 'Leave the busywork to Minds and focus on what matters most to you.'}
           </p>
           <button
-            className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+            className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
