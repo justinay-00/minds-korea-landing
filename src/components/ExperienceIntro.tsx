@@ -132,7 +132,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
           <button
             onClick={onOpenModal}
-            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)] sm:px-[24px] sm:py-[12px] sm:text-lg"
+            className="group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
@@ -178,7 +178,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <button
               onClick={onOpenModal}
-              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)] sm:px-[24px] sm:py-[12px] sm:text-lg"
+              className="group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
             >
               <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
               <ArrowRight className="cta-arrow shrink-0" />

@@ -6,6 +6,21 @@
   background: linear-gradient(180deg, #f6f7fa 0%, var(--bg-modal) 100%);
 }
 
+/* Official harness lit orange CTA (gradient + inset rim shadow). */
+.btn-lit-orange-v2:not(:disabled) {
+  background: var(--btn-primary-orange-bg);
+  box-shadow: var(--btn-primary-orange-shadow);
+}
+.btn-lit-orange-v2:not(:disabled):hover {
+  background: linear-gradient(180deg, var(--orange) 0%, var(--orange-hover) 100%);
+}
+.btn-lit-orange-v2:disabled {
+  background: var(--orange);
+  box-shadow: none;
+}
+
+
+
 
 @theme {
   --font-sans: Manrope, 'SUIT Variable', SUIT, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;

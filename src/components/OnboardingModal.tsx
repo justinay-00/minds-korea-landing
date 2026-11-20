@@ -133,7 +133,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       setLoginMessage('');
                       setStep(1);
                     }}
-                    className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-6 py-3 text-lg font-bold text-white backdrop-blur-md transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)]"
+                    className="group flex w-full items-center justify-center gap-2 rounded-full btn-lit-orange-v2 px-6 py-3 text-lg font-bold text-white transition duration-200"
                   >
                     {language === 'ko' ? '시작하기' : 'Get Started'}
                     <ArrowRight className="cta-arrow shrink-0" />

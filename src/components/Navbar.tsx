@@ -42,7 +42,7 @@ export default function Navbar({ onOpenModal, language }: NavbarProps) {
           </button>
           <button
             onClick={onOpenModal}
-            className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-[12px] py-[8px] text-sm font-medium text-white transition hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)] cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
+            className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[12px] py-[8px] text-sm font-medium text-white transition cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
             <span>{language === 'ko' ? '시작하기' : 'Get Started'}</span>
           </button>

@@ -68,7 +68,7 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
             <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
               <button
                 onClick={onOpenModal}
-                className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[var(--orange-lit)] via-[var(--orange)] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[var(--orange)] hover:via-[var(--orange-hover)] hover:to-[var(--orange-hover)] cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
+                className="group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-orange-v2 px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
                 <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
                 <ArrowRight className="cta-arrow shrink-0" />
