@@ -386,7 +386,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
 
         {showUserReply && (
           <div className={`${animate ? 'animate-user-pop ' : ''}ml-auto mr-[20px] w-[min(72%,300px)] sm:mr-[-48px] sm:w-[min(70%,300px)]`}>
-            <div className="rounded-2xl rounded-tr-sm bg-[#7165EA] px-3.5 py-2 text-center text-[12px] font-semibold leading-snug text-white shadow-[0_18px_44px_-12px_rgba(61,126,237,0.4)] max-[375px]:px-2.5 max-[375px]:py-1.5 sm:px-3 sm:py-1.5 sm:text-[15px]">
+            <div className="rounded-2xl rounded-tr-sm bg-[#6076BE] px-3.5 py-2 text-center text-[12px] font-semibold leading-snug text-white shadow-[0_18px_44px_-12px_rgba(61,126,237,0.4)] max-[375px]:px-2.5 max-[375px]:py-1.5 sm:px-3 sm:py-1.5 sm:text-[15px]">
               {getScenarioUserReply(scenario.id)}
               <span
                 className={`mt-1 block text-right text-[10px] font-medium tracking-wide text-white/75 transition-opacity duration-300 ${showReadReceipt ? 'opacity-100' : 'opacity-0'}`}
