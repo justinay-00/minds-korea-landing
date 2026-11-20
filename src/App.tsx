@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react';
+import { useCanvasSpotlight } from './hooks/useCanvasSpotlight';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceIntro from './components/ExperienceIntro';
@@ -20,6 +21,7 @@ function currentPath() {
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const language = 'ko';
+  useCanvasSpotlight();
   const path = currentPath();
 
   const handleOpenModal = () => setIsModalOpen(true);

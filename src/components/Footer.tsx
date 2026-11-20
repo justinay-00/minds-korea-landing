@@ -5,7 +5,7 @@ interface FooterProps {
 
 export default function Footer({ onOpenModal, language }: FooterProps) {
   return (
-    <footer className="glass-card-v2 glass-static relative z-10 border-t border-[color-mix(in_srgb,var(--line-strong-cool)_70%,transparent)] text-sm text-[var(--text-body-cool)] shadow-[inset_0_-2px_0_0_var(--orange)]">
+    <footer className="glass-card-v2 glass-static glass-accent-bottom relative z-10 border-t border-[color-mix(in_srgb,var(--line-strong-cool)_70%,transparent)] text-sm text-[var(--text-body-cool)]">
       <div className="mx-auto flex h-[72px] max-w-5xl items-center justify-between gap-[8px] px-[12px] pb-[6px] pt-[2px] sm:h-auto sm:px-[40px] sm:py-4 lg:px-[48px]">
         <div className="flex shrink-0 items-center gap-3">
           <a href="/" className="shrink-0">

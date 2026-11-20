@@ -130,7 +130,7 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
                   className="reveal-item flex h-auto min-h-[8.5rem] w-[min(80%,280px)] shrink-0 snap-start self-stretch lg:h-full lg:min-h-[8.5rem] lg:w-auto lg:shrink"
                   style={{ ['--reveal-delay' as string]: `${80 + index * 100}ms` }}
                 >
-                <div className="glass-card-v2 group flex h-full w-full flex-col rounded-2xl px-[12px] py-[6px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200">
+                <div className="glass-card-v2 group flex h-full w-full flex-col rounded-2xl px-[12px] py-[6px] transition-all duration-200">
                   <div className="flex h-full items-center gap-2.5 sm:gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[color-mix(in_srgb,var(--orange)_25%,transparent)] bg-[color-mix(in_srgb,var(--orange)_10%,transparent)] text-xs font-bold tabular-nums tracking-tight text-[var(--orange)] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
                       {pillar.number}

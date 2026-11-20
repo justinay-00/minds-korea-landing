@@ -18,7 +18,7 @@ export default function Navbar({ onOpenModal, language }: NavbarProps) {
 
   return (
     <header
-      className={`glass-card-v2 glass-static sticky top-0 z-50 transition-all duration-300 border-b shadow-[inset_0_2px_0_0_var(--orange)] ${
+      className={`glass-card-v2 glass-static glass-accent-top sticky top-0 z-50 transition-all duration-300 border-b ${
         scrolled ? 'border-[color-mix(in_srgb,var(--line-strong-cool)_90%,transparent)]' : 'border-[color-mix(in_srgb,var(--line-strong-cool)_50%,transparent)]'
       }`}
     >

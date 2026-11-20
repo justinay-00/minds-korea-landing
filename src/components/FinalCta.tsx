@@ -8,7 +8,7 @@ interface FinalCtaProps {
 
 export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
   return (
-    <section className="relative isolate flex min-h-[350px] flex-col overflow-hidden border-t border-[var(--line-strong-cool)] bg-[#F6F7FA] sm:aspect-[1376/520] sm:min-h-0">
+    <section className="relative isolate flex min-h-[350px] flex-col overflow-hidden border-t border-[var(--line-strong-cool)] bg-transparent sm:aspect-[1376/520] sm:min-h-0">
       <div className="relative z-10 flex flex-1 items-center justify-center px-[24px] py-[36px] text-center sm:px-[40px]">
         <div className="glass-card-v2 w-full max-w-3xl rounded-2xl px-[24px] py-[36px] sm:px-[40px] sm:py-[48px]">
           <h2 className="mb-[16px] text-3xl font-bold tracking-tight text-[var(--text-title-cool)] text-balance sm:text-4xl xl:text-5xl">
