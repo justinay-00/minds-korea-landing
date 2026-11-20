@@ -22,9 +22,9 @@ export default function Navbar({ onOpenModal, language }: NavbarProps) {
         scrolled ? 'border-slate-200/90' : 'border-slate-200/50'
       }`}
     >
-      <div className="mx-auto flex h-[48px] max-w-5xl items-center justify-between gap-[8px] px-[12px] sm:gap-[24px] sm:px-[40px] lg:px-[48px]">
+      <div className="mx-auto flex h-[56px] max-w-5xl items-center justify-between gap-[8px] px-[12px] pb-[6px] pt-[2px] sm:gap-[24px] sm:px-[40px] lg:px-[48px]">
         {/* Brand Wordmark */}
-        <a href="#" className="flex items-center shrink-0 focus-visible:outline-[#3D7EED] rounded-lg">
+        <a href="/" className="flex items-center shrink-0 focus-visible:outline-[#3D7EED] rounded-lg">
           <img
             src="/assets/aistudio/minds-logo-blue.svg"
             alt="Minds by Animoca Brands"
@@ -36,13 +36,13 @@ export default function Navbar({ onOpenModal, language }: NavbarProps) {
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
           <button
             onClick={onOpenModal}
-            className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-slate-600 transition hover:text-slate-900 sm:px-[12px] cursor-pointer"
+            className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
             {language === 'ko' ? '로그인' : 'Log in'}
           </button>
           <button
             onClick={onOpenModal}
-            className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[12px] py-[8px] text-sm font-medium text-white transition hover:from-[#3D7EED] hover:via-[#3D7EED] hover:to-[#4EA5F1] active:scale-[0.98] cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
+            className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[12px] py-[8px] text-sm font-medium text-white transition hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
             <span>{language === 'ko' ? '시작하기' : 'Get Started'}</span>
           </button>

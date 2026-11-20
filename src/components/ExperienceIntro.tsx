@@ -45,15 +45,32 @@ function TypedMessage({ text }: { text: string }) {
   useEffect(() => {
     if (!started) return;
 
-    setShown('');
     let i = 0;
-    const id = window.setInterval(() => {
-      i += 1;
-      setShown(text.slice(0, i));
-      if (i >= text.length) window.clearInterval(id);
-    }, 55);
+    let interval = 0;
+    let pause = 0;
 
-    return () => window.clearInterval(id);
+    const type = () => {
+      interval = window.setInterval(() => {
+        i += 1;
+        setShown(text.slice(0, i));
+        if (i >= text.length) {
+          window.clearInterval(interval);
+          pause = window.setTimeout(() => {
+            i = 0;
+            setShown('');
+            type();
+          }, 1600);
+        }
+      }, 55);
+    };
+
+    setShown('');
+    type();
+
+    return () => {
+      window.clearInterval(interval);
+      window.clearTimeout(pause);
+    };
   }, [started, text]);
 
   return (
@@ -75,18 +92,18 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
   const revealRef = useRevealOnScroll<HTMLElement>();
   const message =
     language === 'ko'
-      ? '오후에 미팅 있는 거 잊지 않았죠? 자료는 제가 미리 챙겨 둘게요...'
+      ? '오후에 미팅 있는 거 잊지 않았죠?\n자료는 제가 미리 챙겨 둘게요...'
       : 'Happy Monday! Reminder from last week’s meeting…';
 
   return (
     <section
       id="experience"
       ref={revealRef}
-      className="reveal-on-scroll relative overflow-hidden border-t border-slate-200/60 bg-slate-50 py-[48px] sm:py-[72px]"
+      className="reveal-on-scroll relative overflow-hidden border-t border-slate-200/60 bg-slate-50 py-[28px] sm:py-[72px]"
     >
       <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 glow-ambient pointer-events-none" />
 
-      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-[24px] px-[16px] md:grid-cols-[1.15fr_0.85fr] md:gap-[40px] md:px-[40px] lg:gap-[60px] lg:px-[48px]">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-[16px] px-[16px] md:grid-cols-[1.15fr_0.85fr] md:gap-[40px] md:px-[40px] lg:gap-[60px] lg:px-[48px]">
         <div className="min-w-0 text-left">
           <h2
             className="reveal-item mb-[16px] whitespace-nowrap text-2xl font-bold tracking-tight text-slate-950 sm:mb-[20px] sm:whitespace-normal sm:text-4xl xl:text-5xl"
@@ -104,7 +121,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           </h2>
 
           <p
-            className="reveal-item mb-[24px] text-sm leading-relaxed text-slate-600 sm:max-w-xl sm:text-lg"
+            className="reveal-item mb-[16px] text-sm leading-relaxed text-slate-600 sm:max-w-xl sm:text-lg md:mb-[24px]"
             style={{ ['--reveal-delay' as string]: '100ms' }}
           >
             {language === 'ko'
@@ -112,36 +129,61 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
               : 'Minds thinks ahead while you’re busy, takes the tedious work off your plate, and pings you with real results.'}
           </p>
 
-          <div className="reveal-item" style={{ ['--reveal-delay' as string]: '180ms' }}>
+          <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
           <button
             onClick={onOpenModal}
-            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[20px] py-[12px] text-base font-bold leading-tight text-white shadow-lg shadow-[#405FDF]/25 transition duration-200 hover:from-[#3D7EED] hover:via-[#3D7EED] hover:to-[#4EA5F1] active:scale-[0.98] sm:px-[24px] sm:text-lg"
+            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
-            <span>{language === 'ko' ? '나만의 마인즈 (Minds) 만들기' : 'Create your own Minds assistant'}</span>
+            <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
           </button>
           </div>
         </div>
 
         <div
-          className="reveal-item relative mx-auto flex w-full min-w-0 max-w-md items-center justify-center md:justify-end"
+          className="reveal-item relative mt-[12px] w-full min-w-0 md:mt-0 md:ml-auto md:max-w-md"
           style={{ ['--reveal-delay' as string]: '160ms' }}
         >
-          <div className="absolute inset-0 rounded-full bg-[#FF6B4A]/12 blur-3xl" />
-          <div className="glass-card-v2 absolute right-0 top-0 z-10 max-w-[230px] rounded-2xl rounded-bl-sm px-[16px] py-[12px] text-left text-sm font-medium leading-relaxed text-slate-700 md:left-2 md:right-auto md:top-8">
-            <TypedMessage text={message} />
-            <span aria-hidden="true" className="glass-bubble-tail absolute -bottom-1 left-5 h-2.5 w-2.5 rotate-45 border-b border-l border-white/80" />
+          <div className="mx-auto flex w-fit max-w-full items-center justify-center gap-[16px] md:mx-0 md:w-full md:items-center md:justify-end">
+          <div className="relative min-w-0 max-w-full md:w-full md:max-w-[312px]">
+          <div className="relative z-10 w-fit shrink-0 md:absolute md:left-2 md:top-8">
+            <span
+              className="absolute -left-1.5 -top-1.5 z-20 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-[#FF3B30] px-1 text-[11px] font-bold leading-none text-white"
+              aria-label={language === 'ko' ? '새 메시지 1개' : '1 new message'}
+            >
+              1
+            </span>
+            <div className="message-slide-from-badge">
+              <div className="glass-card-v2 relative box-border w-fit shrink-0 rounded-2xl px-[16px] py-[12px] whitespace-pre text-left text-sm font-medium leading-relaxed text-slate-700 md:w-auto md:max-w-[230px] md:shrink md:whitespace-normal">
+                <TypedMessage text={message} />
+              </div>
+            </div>
           </div>
-          <div className="relative aspect-square w-full max-w-[220px] sm:max-w-[360px]">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-10 rounded-full bg-gradient-to-br from-[#FF6B4A]/32 via-[#FF6B4A]/42 to-[#E55538]/32 blur-3xl [mask-image:radial-gradient(circle,black_22%,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,black_22%,transparent_68%)]"
-            />
-            <img
-              src="/assets/aistudio/minds-character-orb.png"
-              alt={language === 'ko' ? 'Minds 캐릭터' : 'Minds character'}
-              className="animate-character-float relative z-[1] h-full w-full object-contain drop-shadow-[0_22px_28px_rgba(22,22,22,0.35)]"
-            />
+          <div className="relative mt-3 flex items-center justify-start md:mt-0 md:w-full md:max-w-[312px] md:justify-end">
+            <div className="absolute inset-0 rounded-full bg-[#FF6B4A]/12 blur-3xl" />
+            <div className="relative aspect-square w-[clamp(112px,34vw,176px)] md:w-full md:max-w-[312px]">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-10 rounded-full bg-gradient-to-br from-[#FF6B4A]/32 via-[#FF6B4A]/42 to-[#E55538]/32 blur-3xl [mask-image:radial-gradient(circle,black_22%,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,black_22%,transparent_68%)]"
+              />
+              <img
+                src="/assets/aistudio/minds-character-orb-glossy.png"
+                alt={language === 'ko' ? 'Minds 캐릭터' : 'Minds character'}
+                className="animate-character-float relative z-[1] h-full w-full object-contain drop-shadow-[0_22px_28px_rgba(22,22,22,0.35)]"
+              />
+            </div>
+          </div>
+          </div>
+
+          <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
+            <button
+              onClick={onOpenModal}
+              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+            >
+              <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
+              <ArrowRight className="cta-arrow shrink-0" />
+            </button>
+          </div>
           </div>
         </div>
       </div>

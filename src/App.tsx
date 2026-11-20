@@ -11,13 +11,27 @@ import SecurityPrivacy from './components/SecurityPrivacy';
 import Faq from './components/Faq';
 import FinalCta from './components/FinalCta';
 import OnboardingModal from './components/OnboardingModal';
+import LegalPage from './components/LegalPage';
+
+function currentPath() {
+  return window.location.pathname.replace(/\/+$/, '') || '/';
+}
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const language = 'ko';
+  const path = currentPath();
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
+
+  if (path === '/privacy') {
+    return <LegalPage kind="privacy" language={language} />;
+  }
+
+  if (path === '/terms') {
+    return <LegalPage kind="terms" language={language} />;
+  }
 
   return (
     <div

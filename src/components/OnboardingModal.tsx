@@ -133,7 +133,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       setLoginMessage('');
                       setStep(1);
                     }}
-                    className="group flex w-full items-center justify-center gap-2 rounded-full border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-6 py-3 text-lg font-bold text-white shadow-lg shadow-[#405FDF]/25 backdrop-blur-md transition duration-200 hover:from-[#3D7EED] hover:via-[#3D7EED] hover:to-[#4EA5F1] active:scale-[0.98]"
+                    className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-6 py-3 text-lg font-bold text-white backdrop-blur-md transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0]"
                   >
                     {language === 'ko' ? '시작하기' : 'Get Started'}
                     <ArrowRight className="cta-arrow shrink-0" />
@@ -188,7 +188,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       setLoginMessage('');
                       setStep(3);
                     }}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-700 px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-slate-900/20 transition hover:bg-slate-800 active:scale-[0.98]"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-700 px-5 py-3.5 text-sm font-semibold text-white shadow-md shadow-slate-900/20 transition hover:bg-slate-800"
                   >
                     {language === 'ko' ? '이메일로 가입하기' : 'Sign up with email'}
                     <ArrowRight className="h-4 w-4" />
@@ -196,7 +196,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                   <button
                     type="button"
                     onClick={() => setLoginMessage(language === 'ko' ? '카카오 가입 기능은 아직 연결되지 않았어요.' : 'Kakao sign-up is not connected yet.')}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#FEE500] bg-[#FEE500] px-5 py-3.5 text-sm font-semibold text-[#191919] transition hover:bg-[#F5DC00] active:scale-[0.98]"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#FEE500] bg-[#FEE500] px-5 py-3.5 text-sm font-semibold text-[#191919] transition hover:bg-[#F5DC00]"
                   >
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#191919] text-[11px] font-bold text-[#FEE500]">
                       K
@@ -302,7 +302,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                       !selectedFocus ||
                       (selectedFocus === 'other' && !customFocus.trim())
                     }
-                    className="ml-auto flex items-center gap-3 rounded-lg border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-all hover:border-sky-300 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40 active:scale-[0.98]"
+                    className="ml-auto flex items-center gap-3 rounded-lg border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-slate-900 transition-all hover:border-sky-300 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <span>{language === 'ko' ? '계속' : 'Continue'}</span>
                     <span className="flex h-7 w-7 items-center justify-center rounded-md bg-sky-600 text-white">
@@ -379,7 +379,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                   <button
                     type="submit"
                     disabled={isSubmitting || !name || !email}
-                    className="flex items-center gap-2 rounded-lg bg-slate-800 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-slate-900/20 transition-all hover:bg-slate-700 disabled:opacity-50 active:scale-[0.98]"
+                    className="flex items-center gap-2 rounded-lg bg-slate-800 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-slate-900/20 transition-all hover:bg-slate-700 disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span>{language === 'ko' ? '마인즈 전용 공간을 준비하는 중...' : 'Preparing your Minds workspace...'}</span>

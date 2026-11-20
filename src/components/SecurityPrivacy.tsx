@@ -58,7 +58,7 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
 
       <div className="relative z-10 mx-auto max-w-5xl px-[24px] sm:px-[40px] lg:px-[48px]">
         {/* 1. Section Header & Copy */}
-        <div className="reveal-item mb-[12px] w-full text-left sm:mb-[24px] sm:text-center" style={{ ['--reveal-delay' as string]: '0ms' }}>
+        <div className="reveal-item mb-[12px] w-full text-left sm:mb-[24px]" style={{ ['--reveal-delay' as string]: '0ms' }}>
           <h2 className="mb-[8px] text-2xl font-bold tracking-tight text-slate-950 text-balance sm:text-4xl xl:text-5xl">
             <span className="block">
               {language === 'ko' ? '개인정보는 엄격하게 보호돼요.' : 'Your data stays yours.'}
@@ -67,56 +67,52 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
               {language === 'ko' ? '데이터는 저희가 책임질 테니, 걱정 말아요.' : "Don't worry — we specialize in digital identity."}
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-lg">
-            {language === 'ko'
-              ? '모든 기억과 실행 권한은 오직 나만 직접 관리할 수 있어요.'
-              : 'You stay in control of every memory and permission.'}
-          </p>
         </div>
 
         {/* Main Content Grid: Highly Visual Digital Identity Card on Left, 3 Micro-Pillars on Right */}
-        <div className="grid grid-cols-1 items-start gap-[12px] sm:p-[16px] lg:grid-cols-12 lg:gap-[28px]">
+        <div className="grid grid-cols-1 items-stretch gap-[12px] sm:p-[16px] lg:grid-cols-12 lg:gap-[28px]">
           
           {/* 1. Visual Element: Highly Visual, Clean Digital Identity Card (Left on Desktop, 5 columns) */}
           <div className="reveal-item flex justify-center lg:col-span-6 lg:justify-start lg:pr-4" style={{ ['--reveal-delay' as string]: '80ms' }}>
-            <div className="relative group w-full max-w-[520px]">
+            <div className="@container relative group w-[86%] max-w-[360px] [container-type:inline-size] lg:w-full lg:max-w-[520px]">
               <div className="pointer-events-none absolute -inset-2 -z-10 hidden" />
 
-              <div className="relative flex flex-col overflow-hidden rounded-[16px] border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#FF6B4A] p-2.5 text-white  aspect-[1.586/1] sm:p-3">
-                <div className="pointer-events-none absolute inset-x-0 z-30 h-px animate-card-scanner bg-gradient-to-r from-transparent via-[#FF6B4A] to-transparent shadow-[0_0_8px_rgba(255,107,74,0.55)]" />
-                <div className="pointer-events-none absolute inset-x-0 z-20 h-8 -translate-y-7 animate-card-scanner bg-gradient-to-b from-[#FF6B4A]/12 via-[#FF6B4A]/4 to-transparent" />
+              <div className="relative flex flex-col overflow-hidden rounded-[16px] border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#FF6B4A] p-2.5 text-white aspect-[1.586/1]">
+                <div className="pointer-events-none absolute inset-x-0 z-30 h-[2px] animate-card-scanner bg-gradient-to-r from-[#FF6B4A]/35 via-[#FF6B4A] to-[#FF6B4A]/35 shadow-[0_0_16px_rgba(255,107,74,0.9),0_0_5px_rgba(255,107,74,1)]" />
+                <div className="pointer-events-none absolute inset-x-0 z-20 h-8 -translate-y-6 animate-card-scanner bg-gradient-to-b from-[#FF6B4A]/55 via-[#FF6B4A]/18 to-transparent" />
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-[#FF6B4A]/20" />
 
-                <div className="glass-card-v2 glass-static relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-white/70 px-[20px] py-[16px] sm:px-[32px] sm:py-[28px]">
-                  <div className="mb-3 border-b border-slate-200/70 pb-2 sm:mb-5 sm:pb-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                <div className="glass-card-v2 glass-static relative z-10 my-auto flex h-full min-h-0 w-full flex-1 flex-col justify-center overflow-hidden rounded-xl border border-white/70 px-[20px] py-[5cqi]">
+                  <div className="id-panel-texture" aria-hidden="true" />
+                  <div className="relative z-10 mb-[3.7cqi] border-b border-slate-200/70 pb-[2.4cqi]">
+                    <span className="text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-slate-500">
                       {language === 'ko' ? '사용자 개인 정보' : 'User ID Card'}
                     </span>
                   </div>
-                  <div className="grid grid-cols-[80px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-6">
+                  <div className="relative z-10 grid grid-cols-[26%_minmax(0,1fr)] items-center gap-4">
                     <div
-                      className="relative h-[88px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:h-[128px]"
+                      className="relative aspect-[80/88] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100"
                       role="img"
                       aria-label={language === 'ko' ? '프로필 자리 표시' : 'Profile placeholder'}
                     >
-                      <div className="absolute left-1/2 top-[16px] h-9 w-9 -translate-x-1/2 rounded-full bg-slate-300 sm:top-[22px] sm:h-12 sm:w-12" />
-                      <div className="absolute -bottom-6 left-1/2 h-16 w-[4.5rem] -translate-x-1/2 rounded-full bg-slate-300" />
+                      <div className="absolute left-1/2 top-[18%] h-[41%] w-[45%] -translate-x-1/2 rounded-full bg-slate-300" />
+                      <div className="absolute -bottom-[27%] left-1/2 h-[73%] w-[90%] -translate-x-1/2 rounded-full bg-slate-300" />
                     </div>
-                    <div className="min-w-0 space-y-2 sm:space-y-4">
+                    <div className="min-w-0 space-y-[2.4cqi]">
                       <div>
-                        <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-slate-500">
                           {language === 'ko' ? '이름' : 'Name'}
                         </span>
-                        <span className="block truncate text-lg font-bold tracking-tight text-slate-950 sm:text-2xl">
+                        <span className="block truncate text-[clamp(1rem,5.2cqi,1.5rem)] font-bold leading-tight tracking-tight text-slate-950">
                           {language === 'ko' ? '김지호' : 'Ji Ho Kim'}
                         </span>
                       </div>
                       <div>
-                        <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-sm">
+                        <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-slate-500">
                           {language === 'ko' ? '디지털 ID' : 'Digital ID'}
                         </span>
-                        <span className="block truncate font-mono text-sm text-slate-600 sm:text-base">@jiho.moca</span>
+                        <span className="block truncate font-mono text-[clamp(0.75rem,3.6cqi,1rem)] text-slate-600">@jiho.moca</span>
                       </div>
                     </div>
                   </div>
@@ -126,41 +122,41 @@ export default function SecurityPrivacy({ onOpenModal, language }: SecurityPriva
           </div>
 
           {/* 2. Micro-Pillars (Right on Desktop, 7 columns) */}
-          <div className="lg:col-span-6 space-y-1.5 sm:space-y-2 lg:pl-4">
+          <div className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto lg:col-span-6 lg:grid lg:h-auto lg:grid-rows-3 lg:snap-none lg:gap-2 lg:overflow-visible lg:pl-4">
             {pillars.map((pillar, index) => {
               return (
                 <div
                   key={pillar.number}
-                  className="reveal-item"
+                  className="reveal-item flex h-auto min-h-[8.5rem] w-[min(80%,280px)] shrink-0 snap-start self-stretch lg:h-full lg:min-h-[8.5rem] lg:w-auto lg:shrink"
                   style={{ ['--reveal-delay' as string]: `${80 + index * 100}ms` }}
                 >
-                <div className="glass-card-v2 group rounded-2xl p-[12px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200 sm:p-[16px]">
-                  <div className="flex items-start gap-3 sm:gap-4">
+                <div className="glass-card-v2 group flex h-full w-full flex-col rounded-2xl px-[12px] py-[6px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200">
+                  <div className="flex h-full items-center gap-2.5 sm:gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#FF6B4A]/25 bg-[#FF6B4A]/10 text-xs font-bold tabular-nums tracking-tight text-[#FF6B4A] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
                       {pillar.number}
                     </div>
 
-                    <div className="flex-1 min-w-0">
-                      <h3 className="mb-[4px] text-base font-bold tracking-tight text-slate-950 sm:mb-[8px] sm:text-lg">
+                    <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-center">
+                      <h3 className="mb-[2px] text-base font-bold tracking-tight text-slate-950 sm:mb-[4px] sm:text-lg">
                         {pillar.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">
                         {pillar.description}
                       </p>
 
                       {/* Click to read more button for Moca Network pillar */}
                       {pillar.hasReadMore && (
-                        <div className="mt-2 sm:mt-3">
+                        <div className="mt-1.5 sm:mt-2">
                           <button
                             type="button"
                             onClick={(e) => {
                               e.preventDefault();
                               onOpenModal();
                             }}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF6B4A] transition-colors hover:text-[#E55538] cursor-pointer group/link"
+                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-[#FF6B4A] transition-colors hover:text-[#E55538] group/link"
                           >
                             <span>{language === 'ko' ? '자세히 보기' : 'Click to read more'}</span>
-                            <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                           </button>
                         </div>
                       )}

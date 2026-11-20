@@ -29,7 +29,7 @@ export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
           </p>
           <button
             onClick={onOpenModal}
-            className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full border border-white/50 bg-gradient-to-br from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[20px] py-[12px] text-base font-bold text-white shadow-lg shadow-[#405FDF]/25 transition duration-200 hover:from-[#3D7EED] hover:via-[#3D7EED] hover:to-[#4EA5F1] active:scale-[0.98] sm:px-[24px] sm:text-lg"
+            className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
