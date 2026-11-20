@@ -33,7 +33,7 @@ export default function Hero({ onOpenModal, language }: HeroProps) {
         <div className="px-[32px] sm:px-[24px]">
             <p className="mb-[6px] text-base font-medium leading-relaxed text-[var(--text-body-cool)] sm:text-lg">
               {language === 'ko'
-                ? '할 일은 더 수월하게, 마음은 더 든든하게'
+                ? '복잡한 일은 맡겨두고, 마음은 한결 가볍게'
                 : 'Always in your corner: stepping up before you ask, handling the tedious work, and delivering real progress.'}
             </p>
 
