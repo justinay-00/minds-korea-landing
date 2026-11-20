@@ -45,15 +45,15 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
   return (
     <div
       data-language={language}
-      className="flex min-h-screen flex-col justify-between bg-slate-50 text-slate-900 selection:bg-[#FF6B4A] selection:text-white"
+      className="flex min-h-screen flex-col justify-between page-wash text-[#1E2330] selection:bg-[#FD8D1D] selection:text-white"
     >
       <Navbar onOpenModal={() => setIsModalOpen(true)} language={language} />
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-[16px] py-[40px] sm:px-[24px] sm:py-[56px]">
-          <h1 className="mb-[12px] text-2xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+          <h1 className="mb-[12px] text-2xl font-bold tracking-tight text-[#1E2330] sm:text-4xl">
             {title}
           </h1>
-          <p className="mb-[32px] text-sm leading-relaxed text-slate-500 sm:text-base">
+          <p className="mb-[32px] text-sm leading-relaxed text-[#6F7791] sm:text-base">
             {language === 'ko' ? (
               <>
                 공식 문서 원문을 그대로 담고 있어요. 영문 원본은{' '}
@@ -61,7 +61,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
                   href={page.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-[#3D7EED] underline decoration-[#3D7EED]/30 underline-offset-2 hover:text-[#4EA5F1]"
+                  className="font-medium text-[#425CB3] underline decoration-[#425CB3]/30 underline-offset-2 hover:text-[#7D91D4]"
                 >
                   hellominds.ai
                 </a>
@@ -74,7 +74,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
                   href={page.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-[#3D7EED] underline decoration-[#3D7EED]/30 underline-offset-2 hover:text-[#4EA5F1]"
+                  className="font-medium text-[#425CB3] underline decoration-[#425CB3]/30 underline-offset-2 hover:text-[#7D91D4]"
                 >
                   hellominds.ai
                 </a>

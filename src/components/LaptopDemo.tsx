@@ -12,9 +12,9 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
   const hasSecondMessage = messages.length > 1;
 
   const scenarioHeaderColors: Record<string, string> = {
-    'travel-shield': 'bg-[#4EA5F1]/18',
+    'travel-shield': 'bg-[#7D91D4]/18',
     'invoice-triage': 'bg-[#FFC34A]/18',
-    'cafe-inventory': 'bg-[#FF6B4A]/16',
+    'cafe-inventory': 'bg-[#FD8D1D]/16',
     'competitor-radar': 'bg-[#2ED9A0]/16',
   };
   const scenarioHeaderLogos: Record<string, { src: string; alt: string }> = {
@@ -73,8 +73,8 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
         aria-hidden="true"
       >
         <div className="grid grid-cols-2 gap-[2px]">
-          <span className="h-2 w-2 rounded-[2px] bg-[#3D7EED]" />
-          <span className="h-2 w-2 rounded-[2px] bg-[#FF6B4A]" />
+          <span className="h-2 w-2 rounded-[2px] bg-[#425CB3]" />
+          <span className="h-2 w-2 rounded-[2px] bg-[#FD8D1D]" />
           <span className="h-2 w-2 rounded-[2px] bg-[#FFC34A]" />
           <span className="h-2 w-2 rounded-[2px] bg-[#2ED9A0]" />
         </div>
@@ -287,7 +287,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
         <img
           src="/assets/aistudio/minds-character-orb.png"
           alt=""
-          className="mt-1 h-9 w-9 shrink-0 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg"
+          className="mt-1 h-9 w-9 shrink-0 rounded-full border-2 border-white bg-[#EAEFFF] object-contain shadow-lg"
         />
       ) : (
         <span className="mt-1 h-9 w-9 shrink-0" aria-hidden="true" />
@@ -386,7 +386,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
 
         {showUserReply && (
           <div className={`${animate ? 'animate-user-pop ' : ''}ml-auto mr-[20px] w-[min(72%,300px)] sm:mr-[-48px] sm:w-[min(70%,300px)]`}>
-            <div className="rounded-2xl rounded-tr-sm bg-[#7165EA] px-3.5 py-2 text-center text-[12px] font-semibold leading-snug text-white shadow-[0_18px_44px_-12px_rgba(61,126,237,0.4)] max-[375px]:px-2.5 max-[375px]:py-1.5 sm:px-3 sm:py-1.5 sm:text-[15px]">
+            <div className="rounded-2xl rounded-tr-sm bg-[#6076BE] px-3.5 py-2 text-center text-[12px] font-semibold leading-snug text-white shadow-[0_18px_44px_-12px_rgba(61,126,237,0.4)] max-[375px]:px-2.5 max-[375px]:py-1.5 sm:px-3 sm:py-1.5 sm:text-[15px]">
               {getScenarioUserReply(scenario.id)}
               <span
                 className={`mt-1 block text-right text-[10px] font-medium tracking-wide text-white/75 transition-opacity duration-300 ${showReadReceipt ? 'opacity-100' : 'opacity-0'}`}
@@ -425,7 +425,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                 <div className="pointer-events-none absolute inset-px z-20 rounded-[43px] ring-1 ring-inset ring-white/20" />
                 <div className="relative h-full overflow-hidden rounded-[28px] bg-white sm:rounded-[32px]">
                   <div
-                    className="relative flex h-full w-full min-w-0 select-none flex-col overflow-hidden bg-[#EAF3FF]"
+                    className="relative flex h-full w-full min-w-0 select-none flex-col overflow-hidden bg-[#EAEFFF]"
                     style={{
                       backgroundImage: "url('/assets/aistudio/Screenshot_2026-11-10_at_3.10.10_PM_e4e22b65.png')",
                       backgroundSize: 'cover',
@@ -435,7 +435,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                     <div className="relative z-20">
                       <div
                         aria-hidden="true"
-                        className={`phone-header-fill ${scenarioHeaderColors[activeScenario.id] ?? 'bg-[#4EA5F1]/18'}`}
+                        className={`phone-header-fill ${scenarioHeaderColors[activeScenario.id] ?? 'bg-[#7D91D4]/18'}`}
                       />
                       <div className="relative flex h-11 items-center px-3 sm:px-6">
                         <span className="text-[13px] font-semibold tabular-nums tracking-tight text-slate-900">9:41</span>
@@ -510,7 +510,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                 src="/assets/aistudio/minds-character-orb.png"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[122px]"
+                className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[#EAEFFF] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[122px]"
               />
               <div
                 ref={overlayRef}

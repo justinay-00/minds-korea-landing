@@ -99,14 +99,14 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
     <section
       id="experience"
       ref={revealRef}
-      className="reveal-on-scroll relative overflow-hidden border-t border-slate-200/60 bg-slate-50 py-[28px] sm:py-[72px]"
+      className="reveal-on-scroll relative overflow-hidden border-t border-[#CCD5E8]/60 bg-[#F6F7FA] py-[28px] sm:py-[72px]"
     >
       <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 glow-ambient pointer-events-none" />
 
       <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-[16px] px-[16px] md:grid-cols-[1.15fr_0.85fr] md:gap-[40px] md:px-[40px] lg:gap-[60px] lg:px-[48px]">
         <div className="min-w-0 text-left">
           <h2
-            className="reveal-item mb-[16px] whitespace-nowrap text-2xl font-bold tracking-tight text-slate-950 sm:mb-[20px] sm:whitespace-normal sm:text-4xl xl:text-5xl"
+            className="reveal-item mb-[16px] whitespace-nowrap text-2xl font-bold tracking-tight text-[#1E2330] sm:mb-[20px] sm:whitespace-normal sm:text-4xl xl:text-5xl"
             style={{ ['--reveal-delay' as string]: '0ms' }}
           >
             {language === 'ko' ? (
@@ -121,7 +121,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           </h2>
 
           <p
-            className="reveal-item mb-[16px] text-sm leading-relaxed text-slate-600 sm:max-w-xl sm:text-lg md:mb-[24px]"
+            className="reveal-item mb-[16px] text-sm leading-relaxed text-[#4F5670] sm:max-w-xl sm:text-lg md:mb-[24px]"
             style={{ ['--reveal-delay' as string]: '100ms' }}
           >
             {language === 'ko'
@@ -132,7 +132,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
           <button
             onClick={onOpenModal}
-            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+            className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#FCA044] via-[#FD8D1D] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#FD8D1D] hover:via-[#DB7006] hover:to-[#DB7006] sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
@@ -154,17 +154,17 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
               1
             </span>
             <div className="message-slide-from-badge">
-              <div className="glass-card-v2 relative box-border w-fit shrink-0 rounded-2xl px-[16px] py-[12px] whitespace-pre text-left text-sm font-medium leading-relaxed text-slate-700 md:w-auto md:max-w-[230px] md:shrink md:whitespace-normal">
+              <div className="glass-card-v2 relative box-border w-fit shrink-0 rounded-2xl px-[16px] py-[12px] whitespace-pre text-left text-sm font-medium leading-relaxed text-[#4F5670] md:w-auto md:max-w-[230px] md:shrink md:whitespace-normal">
                 <TypedMessage text={message} />
               </div>
             </div>
           </div>
           <div className="relative mt-3 flex items-center justify-start md:mt-0 md:w-full md:max-w-[312px] md:justify-end">
-            <div className="absolute inset-0 rounded-full bg-[#FF6B4A]/12 blur-3xl" />
+            <div className="absolute inset-0 rounded-full bg-[#FD8D1D]/12 blur-3xl" />
             <div className="relative aspect-square w-[clamp(112px,34vw,176px)] md:w-full md:max-w-[312px]">
               <div
                 aria-hidden="true"
-                className="absolute -inset-10 rounded-full bg-gradient-to-br from-[#FF6B4A]/32 via-[#FF6B4A]/42 to-[#E55538]/32 blur-3xl [mask-image:radial-gradient(circle,black_22%,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,black_22%,transparent_68%)]"
+                className="absolute -inset-10 rounded-full bg-gradient-to-br from-[#FD8D1D]/32 via-[#FD8D1D]/42 to-[#DB7006]/32 blur-3xl [mask-image:radial-gradient(circle,black_22%,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,black_22%,transparent_68%)]"
               />
               <img
                 src="/assets/aistudio/minds-character-orb-glossy.png"
@@ -178,7 +178,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
           <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <button
               onClick={onOpenModal}
-              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
+              className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#FCA044] via-[#FD8D1D] to-[#E87C0C] px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 hover:from-[#FD8D1D] hover:via-[#DB7006] hover:to-[#DB7006] sm:px-[24px] sm:py-[12px] sm:text-lg"
             >
               <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
               <ArrowRight className="cta-arrow shrink-0" />

@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+.page-wash {
+  background: linear-gradient(180deg, #f6f7fa 0%, #fbfcfe 100%);
+}
+
+
 @theme {
   --font-sans: Manrope, 'SUIT Variable', SUIT, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
@@ -323,7 +328,7 @@ body {
     rgba(113, 101, 234, 0.1),
     transparent 42%,
     rgba(61, 126, 237, 0.08) 68%,
-    rgba(255, 107, 74, 0.07)
+    rgba(253, 141, 29, 0.07)
   );
   mix-blend-mode: soft-light;
 }
@@ -495,7 +500,7 @@ body {
 }
 
 .legal-prose {
-  color: #334155;
+  color: #4f5670;
   font-size: 0.95rem;
   line-height: 1.75;
 }
@@ -506,7 +511,7 @@ body {
 
 .legal-prose h2 {
   margin: 2rem 0 0.75rem;
-  color: #0f172a;
+  color: #1e2330;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -516,7 +521,7 @@ body {
 .legal-prose h3,
 .legal-prose h4 {
   margin: 1.5rem 0 0.5rem;
-  color: #0f172a;
+  color: #1e2330;
   font-size: 1.05rem;
   font-weight: 650;
   letter-spacing: -0.01em;
@@ -542,14 +547,14 @@ body {
 }
 
 .legal-prose a {
-  color: #3d7eed;
+  color: #425CB3;
   text-decoration: underline;
   text-decoration-color: rgb(61 126 237 / 0.3);
   text-underline-offset: 2px;
 }
 
 .legal-prose a:hover {
-  color: #4ea5f1;
+  color: #7D91D4;
 }
 
 .legal-prose table {
@@ -561,7 +566,7 @@ body {
 
 .legal-prose th,
 .legal-prose td {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e6eaf3;
   padding: 0.5rem 0.75rem 0.5rem 0;
   text-align: left;
   vertical-align: top;
