@@ -99,7 +99,7 @@ export default function ExperienceIntro({ onOpenModal, language }: ExperienceInt
     <section
       id="experience"
       ref={revealRef}
-      className="reveal-on-scroll relative overflow-hidden border-t border-slate-200/60 bg-slate-50 py-[28px] sm:py-[72px]"
+      className="reveal-on-scroll relative overflow-hidden bg-slate-50 py-[28px] sm:py-[72px]"
     >
       <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 glow-ambient pointer-events-none" />
 
