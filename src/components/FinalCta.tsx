@@ -2,11 +2,10 @@ import { ArrowRight } from 'lucide-react';
 import Footer from './Footer';
 
 interface FinalCtaProps {
-  onOpenModal: () => void;
   language: 'en' | 'ko';
 }
 
-export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
+export default function FinalCta({ language }: FinalCtaProps) {
   return (
     <section className="relative isolate flex min-h-[350px] flex-col overflow-hidden bg-slate-50 sm:aspect-[1376/520] sm:min-h-0">
       <div className="relative z-10 flex flex-1 items-center justify-center px-[24px] py-[36px] text-center sm:px-[40px]">
@@ -28,7 +27,6 @@ export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
               : 'Leave the busywork to Minds and focus on what matters most to you.'}
           </p>
           <button
-            onClick={onOpenModal}
             className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
@@ -36,7 +34,7 @@ export default function FinalCta({ onOpenModal, language }: FinalCtaProps) {
           </button>
         </div>
       </div>
-      <Footer onOpenModal={onOpenModal} language={language} />
+      <Footer language={language} />
     </section>
   );
 }

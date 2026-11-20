@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 
 interface NavbarProps {
-  onOpenModal: () => void;
   language: 'en' | 'ko';
 }
 
-export default function Navbar({ onOpenModal, language }: NavbarProps) {
+export default function Navbar({ language }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -35,13 +34,11 @@ export default function Navbar({ onOpenModal, language }: NavbarProps) {
         {/* Primary Action Buttons */}
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
           <button
-            onClick={onOpenModal}
             className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
             {language === 'ko' ? '로그인' : 'Log in'}
           </button>
           <button
-            onClick={onOpenModal}
             className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[12px] py-[8px] text-sm font-medium text-white transition hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
             <span>{language === 'ko' ? '시작하기' : 'Get Started'}</span>
