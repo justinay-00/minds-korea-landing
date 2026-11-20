@@ -97,6 +97,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
   return (
     <section
       id="experience"
+      data-section="experience"
       ref={revealRef}
       className="reveal-on-scroll relative overflow-hidden bg-slate-50 py-[28px] sm:py-[72px]"
     >
@@ -130,6 +131,9 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
 
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
           <button
+            type="button"
+            data-cta-id="cta_launch_mind"
+            data-cta-position="experience_intro"
             className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
@@ -175,6 +179,9 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
 
           <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <button
+              type="button"
+              data-cta-id="cta_launch_mind"
+              data-cta-position="experience_intro"
               className="cta-light-sweep group inline-flex max-w-full items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold leading-tight text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
             >
               <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>

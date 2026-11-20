@@ -10,6 +10,7 @@ import SecurityPrivacy from './components/SecurityPrivacy';
 import Faq from './components/Faq';
 import FinalCta from './components/FinalCta';
 import LegalPage from './components/LegalPage';
+import { useLandingAnalytics } from './analytics';
 
 function currentPath() {
   return window.location.pathname.replace(/\/+$/, '') || '/';
@@ -17,6 +18,7 @@ function currentPath() {
 
 export default function App() {
   const language = 'ko';
+  useLandingAnalytics();
   const path = currentPath();
 
   if (path === '/privacy') {

@@ -11,7 +11,7 @@ export default function Faq({ language }: { language: 'en' | 'ko' }) {
   };
 
   return (
-    <section id="faq" className="relative bg-gradient-to-r from-[#EAF3FF]/70 via-slate-50 to-[#FF6B4A]/8 py-[24px] sm:py-[28px]">
+    <section id="faq" data-section="faq" className="relative bg-gradient-to-r from-[#EAF3FF]/70 via-slate-50 to-[#FF6B4A]/8 py-[24px] sm:py-[28px]">
       <div className="max-w-3xl mx-auto px-[24px] sm:px-[40px] lg:px-[48px]">
         <div className="mb-[12px] text-center sm:mb-[16px]">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight mt-0 mb-[8px] text-balance">
