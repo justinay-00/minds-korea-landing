@@ -52,7 +52,7 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
   ];
 
   return (
-    <section id="security" ref={revealRef} className="reveal-on-scroll relative overflow-hidden bg-gradient-to-r from-[#EAF3FF]/70 via-slate-50 to-[#FF6B4A]/8 py-[24px] sm:py-[44px]">
+    <section id="security" data-section="security" ref={revealRef} className="reveal-on-scroll relative overflow-hidden bg-gradient-to-r from-[#EAF3FF]/70 via-slate-50 to-[#FF6B4A]/8 py-[24px] sm:py-[44px]">
       <div className="privacy-grain pointer-events-none absolute inset-0 -z-0" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-[24px] sm:px-[40px] lg:px-[48px]">

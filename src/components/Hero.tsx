@@ -24,7 +24,7 @@ interface HeroProps {
 
 export default function Hero({ language }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-[12px] sm:pt-[20px]">
+    <section id="hero" data-section="hero" className="relative overflow-hidden pt-[12px] sm:pt-[20px]">
       {/* Radial Glow in light mode */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] glow-radial pointer-events-none -z-10" />
 
@@ -66,6 +66,9 @@ export default function Hero({ language }: HeroProps) {
           <div className="px-[32px] sm:px-[24px]">
             <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
               <button
+                type="button"
+                data-cta-id="cta_try_app"
+                data-cta-position="hero"
                 className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
                 <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>

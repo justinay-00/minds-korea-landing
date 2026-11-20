@@ -39,6 +39,9 @@ export default function Navbar({ language }: NavbarProps) {
             {language === 'ko' ? '로그인' : 'Log in'}
           </button>
           <button
+            type="button"
+            data-cta-id="cta_try_app"
+            data-cta-position="nav"
             className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full bg-gradient-to-r from-[#405FDF] via-[#3D7EED] to-[#4EA5F1] px-[12px] py-[8px] text-sm font-medium text-white transition hover:from-[#334DC8] hover:via-[#3168D4] hover:to-[#3B8FE0] cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
             <span>{language === 'ko' ? '시작하기' : 'Get Started'}</span>
