@@ -1,0 +1,114 @@
+# Minds design harness
+
+Build campaign and landing pages that look like they came from the Minds design team,
+without being a designer.
+
+## Set it up
+
+Copy three things into your project folder:
+
+```
+your-project/
+├── CLAUDE.md          ← from this repo's root
+├── AGENTS.md          ← from this repo's root
+└── design-harness/    ← this whole folder
+```
+
+`CLAUDE.md` has to sit at the **top level of your project** — Claude Code only reads it
+from there, never from inside a subfolder. That file is what makes everything else apply
+automatically. (`AGENTS.md` is the same content, for tools that look for that name.)
+
+## Requirements
+
+Two Claude Code skills are needed to build pages. Install them once, then start a new
+Claude Code session:
+
+- **`responsive-design`** — adapts a desktop layout to tablet and mobile. From
+  [derek98765/responsive-design](https://github.com/derek98765/responsive-design):
+  ```bash
+  git clone https://github.com/derek98765/responsive-design ~/.claude/skills/responsive-design
+  ```
+- **`image-optimization`** — converts images to `.webp` at the size they render. From
+  [derek98765/image-optimization](https://github.com/derek98765/image-optimization):
+  ```bash
+  git clone https://github.com/derek98765/image-optimization /tmp/image-optimization \
+    && cp -r /tmp/image-optimization/skills/image-optimization ~/.claude/skills/
+  ```
+
+To generate new Mind images (icons, cutouts, toy cards) you also need:
+
+- **The `image-gen` skill** — runs the actual generation. From
+  [derek98765/image-gen](https://github.com/derek98765/image-gen):
+  ```bash
+  git clone https://github.com/derek98765/image-gen /tmp/image-gen \
+    && cp -r /tmp/image-gen/skills/image-gen ~/.claude/skills/
+  ```
+- **Codex CLI or Grok CLI** — `image-gen` drives one of them. Codex needs v0.115 or
+  later and a one-time `codex login`. The `image-gen` skill has the install steps for both.
+- **Python package `Pillow`** — for the image checks: `pip3 install pillow`.
+
+## Use it
+
+Open Claude Code in your project and describe the page you want:
+
+> Build a registration page for our Minds launch event on March 3rd.
+
+That's the whole workflow. Claude picks up the rules and builds to them. You don't need
+to know the design system — it does.
+
+## What you get
+
+A page on the v2 system: cool wash, glass, lit controls, the right type and spacing,
+checked against the rules before it's handed to you.
+
+## If you want to build by hand instead
+
+| You want | Start from |
+|---|---|
+| A static one-page site | `design-harness/styles-and-components/html/starter.html` — copy it, replace the content |
+| Something with forms or logic | `design-harness/styles-and-components/react/` |
+| To see what's available | Open `design-harness/styles-and-components/style-guide.html` in a browser |
+
+Then check your work — point it at what you changed, not the whole project:
+
+```bash
+node design-harness/checks/check-spacing.mjs src
+node design-harness/checks/check-hardcoded.mjs src
+node design-harness/checks/check-button-text.mjs src
+```
+
+## The one thing worth knowing
+
+Spacing numbers are **literal pixels**, and only these 21 exist:
+
+```
+1  2  3  4  8  12  16  20  24  36  40  48  60  72  84  96  108  120  160  200  240
+```
+
+`gap-16` is 16px. But `py-10` is **not** 10px — 10 isn't on the list, so it silently
+renders at 40px and the layout breaks with no error. When in doubt, round down.
+`check-spacing.mjs` catches this.
+
+## What's in here
+
+```
+spec/                    The design rules. Brand-*.md files cover logo, characters,
+                         imagery, icons, and copy voice. The core rules live in ../DESIGN.md.
+styles-and-components/   What you build with — tokens.css, the HTML starter, the React
+                         components, and style-guide.html (every token and component).
+checks/                  Scripts that catch mistakes, plus a human review checklist.
+assets/                  artwork/ (info-graphics, avatars, illustrations),
+                         minds-mascot/ (clean Mind cutouts, toy cards), brand/ (logos, icons, fonts).
+sample-screens/          Full-page screenshots of shipped pages: homepage, onboarding (launch modal),
+                         and the signed-in profile pages.
+```
+
+## Questions a designer would ask you
+
+If you're unsure whether a page is right, the fast answers:
+
+- **What is the ground?** The cool wash. Blooms behind glass on a marketing page.
+- **How much orange?** One lit-orange action per view. Other filled actions are lit blue.
+- **Checked on a phone?** 390px wide. Always.
+
+The full list is in [checks/review-checklist.md](checks/review-checklist.md).
