@@ -23,7 +23,7 @@ export default function Navbar({ language }: NavbarProps) {
       aria-label={language === 'ko' ? '메인 메뉴' : 'Main'}
     >
       <div className={`nav-bar-v2 ${scrolled ? 'nav-bar-glass-v2' : ''}`}>
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-[8px] px-[12px] sm:gap-[24px] sm:px-[40px] lg:px-[48px]">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-[12px] px-[12px] sm:gap-[32px] sm:px-[40px] lg:px-[48px]">
           <a href="/" className="flex shrink-0 items-center rounded-lg focus-visible:outline-[var(--blue-lit)]">
             <img
               src="/assets/aistudio/minds-logo-blue.svg"
@@ -32,12 +32,12 @@ export default function Navbar({ language }: NavbarProps) {
             />
           </a>
 
-          <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
+          <div className="flex shrink-0 items-center gap-[10px] sm:gap-[20px]">
             <a
               href="https://blog.hellominds.ai/ko/blog"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[var(--blue-lit)] transition hover:text-[var(--blue-tint)] sm:px-[12px] sm:text-base"
+              className="inline-flex shrink-0 whitespace-nowrap px-[4px] py-[6px] text-sm font-normal text-[#161616] transition hover:text-slate-700 sm:px-[6px] sm:text-base"
             >
               {language === 'ko' ? '블로그' : 'Blog'}
             </a>
