@@ -744,3 +744,21 @@ body {
   opacity: 1;
   filter: grayscale(0) saturate(1);
 }
+
+/* Privacy pillars: horizontal swipe only (no vertical scroll inside the row) */
+.privacy-pillars-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: none;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1024px) {
+  .privacy-pillars-scroll {
+    overflow: visible;
+    overscroll-behavior: auto;
+    touch-action: auto;
+  }
+}
