@@ -26,15 +26,15 @@ export default function FinalCta({ language }: FinalCtaProps) {
               ? '복잡한 일은 맡겨두고, 마음은 한결 가볍게. 마인즈와 함께라면 일상은 한층 더 즐거워져요.'
               : 'Leave the busywork to Minds and focus on what matters most to you.'}
           </p>
-          <button
-            type="button"
+          <a
+            href="https://app.hellominds.ai/"
             data-cta-id="cta_try_app"
             data-cta-position="final_cta"
             className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
             <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
-          </button>
+          </a>
         </div>
       </div>
       <Footer language={language} />

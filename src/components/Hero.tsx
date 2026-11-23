@@ -77,15 +77,15 @@ export default function Hero({ language }: HeroProps) {
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <div className="px-[32px] sm:px-[24px]">
             <div className="flex flex-col items-center justify-center gap-[12px] sm:flex-row">
-              <button
-                type="button"
+              <a
+                href="https://app.hellominds.ai/"
                 data-cta-id="cta_try_app"
                 data-cta-position="hero"
                 className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
                 <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
                 <ArrowRight className="cta-arrow shrink-0" />
-              </button>
+              </a>
             </div>
           </div>
 

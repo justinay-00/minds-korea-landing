@@ -33,19 +33,20 @@ export default function Navbar({ language }: NavbarProps) {
 
         {/* Primary Action Buttons */}
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
-          <button
+          <a
+            href="https://app.hellominds.ai/"
             className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
             {language === 'ko' ? '로그인' : 'Log in'}
-          </button>
-          <button
-            type="button"
+          </a>
+          <a
+            href="https://app.hellominds.ai/"
             data-cta-id="cta_try_app"
             data-cta-position="nav"
             className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full btn-lit-blue px-[12px] py-[8px] text-sm font-medium text-white transition cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
             <span>{language === 'ko' ? '시작하기' : 'Get Started'}</span>
-          </button>
+          </a>
         </div>
       </div>
     </header>
