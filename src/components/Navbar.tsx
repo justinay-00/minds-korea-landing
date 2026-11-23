@@ -21,7 +21,7 @@ export default function Navbar({ language }: NavbarProps) {
         scrolled ? 'border-slate-200/90' : 'border-slate-200/50'
       }`}
     >
-      <div className="mx-auto flex h-[56px] max-w-5xl items-center justify-between gap-[12px] px-[12px] pb-[6px] pt-[2px] sm:gap-[32px] sm:px-[40px] lg:px-[48px]">
+      <div className="mx-auto flex h-[56px] max-w-5xl items-center justify-between gap-[8px] px-[12px] pb-[6px] pt-[2px] sm:gap-[24px] sm:px-[40px] lg:px-[48px]">
         {/* Brand Wordmark */}
         <a href="/" className="flex items-center shrink-0 focus-visible:outline-[#3D7EED] rounded-lg">
           <img
@@ -32,15 +32,7 @@ export default function Navbar({ language }: NavbarProps) {
         </a>
 
         {/* Primary Action Buttons */}
-        <div className="flex shrink-0 items-center gap-[10px] sm:gap-[20px]">
-          <a
-            href="https://blog.hellominds.ai/ko/blog"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 whitespace-nowrap px-[4px] py-[6px] text-sm font-normal text-[#161616] transition hover:text-slate-700 sm:px-[6px] sm:text-base"
-          >
-            {language === 'ko' ? '블로그' : 'Blog'}
-          </a>
+        <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
           <button
             className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
