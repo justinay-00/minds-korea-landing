@@ -89,11 +89,11 @@ export default function Hero({ language }: HeroProps) {
             </div>
           </div>
 
-          <div className="mt-[12px] sm:mt-[24px]">
+          <div className="mt-[4px] sm:mt-[24px]">
             <LaptopDemo language={language} />
           </div>
 
-          <div className="hero-connectors px-[16px] pb-[24px] pt-[16px] sm:px-[24px] sm:pb-[36px] sm:pt-[22px]">
+          <div className="hero-connectors px-[16px] pb-[14px] pt-[10px] sm:px-[24px] sm:pb-[36px] sm:pt-[22px]">
             <p className="mb-[12px] text-[12px] font-medium tracking-[-0.01em] text-slate-500 sm:mb-[14px] sm:text-[13px]">
               {language === 'ko' ? '100+ 이상의 공식 파트너십' : '100+ official partnerships'}
             </p>

@@ -146,9 +146,9 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           className="reveal-item relative mt-[12px] w-full min-w-0 md:mt-0 md:ml-auto md:max-w-md"
           style={{ ['--reveal-delay' as string]: '160ms' }}
         >
-          <div className="mx-auto flex w-fit max-w-full items-center justify-center gap-[16px] md:mx-0 md:w-full md:items-center md:justify-end">
+          <div className="mx-auto flex w-fit max-w-full flex-col items-center justify-center gap-[16px] md:mx-0 md:w-full md:flex-row md:items-center md:justify-end">
           <div className="relative min-w-0 max-w-full md:w-full md:max-w-[312px]">
-          <div className="relative z-10 w-fit shrink-0 md:absolute md:left-2 md:top-8">
+          <div className="relative z-10 mx-auto w-fit shrink-0 md:absolute md:left-2 md:top-8 md:mx-0">
             <span
               className="absolute -left-1.5 -top-1.5 z-20 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-[#FF3B30] px-1 text-[11px] font-bold leading-none text-white"
               aria-label={language === 'ko' ? '새 메시지 1개' : '1 new message'}
@@ -156,12 +156,12 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
               1
             </span>
             <div className="message-slide-from-badge">
-              <div className="glass-card-v2 relative box-border w-fit shrink-0 rounded-2xl px-[16px] py-[12px] whitespace-pre text-left text-sm font-medium leading-relaxed text-slate-700 md:w-auto md:max-w-[230px] md:shrink md:whitespace-normal">
+              <div className="glass-card-v2 relative box-border w-fit shrink-0 rounded-2xl px-[16px] py-[12px] whitespace-pre text-center text-sm font-medium leading-relaxed text-slate-700 md:w-auto md:max-w-[230px] md:shrink md:whitespace-normal md:text-left">
                 <TypedMessage text={message} />
               </div>
             </div>
           </div>
-          <div className="relative mt-3 flex items-center justify-start md:mt-0 md:w-full md:max-w-[312px] md:justify-end">
+          <div className="relative mt-3 flex items-center justify-center md:mt-0 md:w-full md:max-w-[312px] md:justify-end">
             <div className="absolute inset-0 rounded-full bg-[#FF6B4A]/12 blur-3xl" />
             <div className="relative aspect-square w-[clamp(112px,34vw,176px)] md:w-full md:max-w-[312px]">
               <div
@@ -177,7 +177,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           </div>
           </div>
 
-          <div className="reveal-item flex shrink-0 items-center justify-end md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
+          <div className="reveal-item flex shrink-0 items-center justify-center md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <a
               href="https://app.hellominds.ai/"
               data-cta-id="cta_launch_mind"

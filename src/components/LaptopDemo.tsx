@@ -31,7 +31,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
   const [showReadReceipt, setShowReadReceipt] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [isSwipingOut, setIsSwipingOut] = useState(false);
-  const scenarioDuration = hasSecondMessage ? 7600 : 6200;
+  const scenarioDuration = hasSecondMessage ? 6000 : 4800;
 
   const navigateScenario = (direction: -1 | 1) => {
     setIsSwipingOut(false);
@@ -405,7 +405,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 glow-ambient" />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-10">
-        <div className="relative mx-auto h-auto w-full max-w-[1040px] overflow-x-visible overflow-y-visible pt-[96px] pb-8 sm:h-[704px] sm:overflow-y-clip sm:pt-[140px] sm:pb-0">
+        <div className="relative mx-auto h-auto w-full max-w-[1040px] overflow-x-visible overflow-y-visible pt-[72px] pb-4 sm:h-[704px] sm:overflow-y-clip sm:pt-[140px] sm:pb-0">
           <div className="flex justify-center">
             <div className="relative w-[80%] max-w-[276px] shrink-0 sm:h-[740px] sm:w-full sm:max-w-[560px]">
               <div className="pointer-events-none absolute left-1/2 top-0 z-30 aspect-square w-[320px] max-w-full -translate-x-1/2 sm:top-[-176px] sm:w-[460px] sm:max-w-none">
