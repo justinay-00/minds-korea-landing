@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import privacyHtml from '../data/privacy-policy.html?raw';
+import privacyHtmlKo from '../data/privacy-policy.ko.html?raw';
 import termsHtml from '../data/terms-of-use.html?raw';
+import termsHtmlKo from '../data/terms-of-use.ko.html?raw';
 
 interface LegalPageProps {
   kind: 'privacy' | 'terms';
@@ -14,13 +16,13 @@ const PAGES = {
     titleKo: '개인정보 처리방침',
     titleEn: 'Privacy Policy',
     source: 'https://www.hellominds.ai/privacy-policy',
-    html: privacyHtml,
+    html: { en: privacyHtml, ko: privacyHtmlKo },
   },
   terms: {
     titleKo: '이용약관',
     titleEn: 'Terms of Use',
     source: 'https://www.hellominds.ai/terms-of-use',
-    html: termsHtml,
+    html: { en: termsHtml, ko: termsHtmlKo },
   },
 };
 
@@ -54,7 +56,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
           <p className="mb-[32px] text-sm leading-relaxed text-slate-500 sm:text-base">
             {language === 'ko' ? (
               <>
-                공식 문서 원문을 그대로 담고 있어요. 영문 원본은{' '}
+                공식 영문 정책의 한국어 번역본이에요. 영문 원본은{' '}
                 <a
                   href={page.source}
                   target="_blank"
@@ -82,7 +84,7 @@ export default function LegalPage({ kind, language }: LegalPageProps) {
           </p>
           <div
             className="legal-prose"
-            dangerouslySetInnerHTML={{ __html: stripOfficialTitle(page.html) }}
+            dangerouslySetInnerHTML={{ __html: stripOfficialTitle(page.html[language]) }}
           />
         </article>
       </main>
