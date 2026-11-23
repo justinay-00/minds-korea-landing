@@ -354,32 +354,32 @@ export const FAQS: FaqItem[] = [
   {
     id: 'what-is-minds',
     category: 'Product',
-    question: 'What is the Minds service?',
-    answer: 'Minds is a personal AI partner that remembers you and actually gets things done. Once you give it a job, it keeps going even when you’re away, and reaches out first when it needs your go-ahead.',
+    question: 'What is Minds?',
+    answer: 'Minds is a personal AI partner that remembers you and takes care of real tasks. It keeps working on what you’ve asked it to do, even when you step away, and reaches out when it needs your input.',
   },
   {
     id: 'how-is-minds-different',
     category: 'Product',
-    question: 'How is Minds different from traditional AI?',
-    answer: 'Most AI tools answer a question and then lose the thread. Minds remembers you across conversations, keeps working on the jobs you’ve given it even when you’re not in the chat, and pings you when something needs your attention.',
+    question: 'How is Minds different from other AI tools?',
+    answer: 'Other AI tools often answer a question and lose the context. Minds remembers you across conversations, keeps working on assigned tasks while you’re away from the chat, and lets you know when something needs your attention.',
   },
   {
     id: 'passwords-card-numbers',
     category: 'Security',
-    question: 'Can Minds (the AI) see my passwords or card numbers?',
-    answer: 'No. Minds does not store your full payment card number; payments are handled by a third-party processor. Wallet private keys are also stored encrypted, and the AI cannot see them directly.',
+    question: 'Can Minds see my passwords or card details?',
+    answer: 'No. Minds does not store your full card number; payments are processed by a third-party payment provider. Wallet private keys are encrypted and cannot be viewed directly by the AI.',
   },
   {
     id: 'works-while-away',
     category: 'Product',
-    question: 'Does Minds keep working when I’m away?',
-    answer: 'Yes. Minds can keep working on the jobs you’ve given it even when you’re away or busy, and it will reach out first when it needs your input.',
+    question: 'Will Minds keep working while I’m away?',
+    answer: 'Yes. Minds can continue working on the tasks you’ve assigned while you’re away or busy, and will reach out when it needs your input.',
   },
   {
     id: 'pay-or-book-without-asking',
     category: 'Sovereignty',
-    question: 'Could Minds pay for or book something without asking?',
-    answer: 'Payments and bookings only go ahead within the permissions you set. Minds can prepare and carry out work you’ve asked it to do, but you decide what it’s allowed to execute.',
+    question: 'Can Minds make a payment or booking without my approval?',
+    answer: 'Important actions like payments and bookings are only carried out within the permissions you set. Minds can prepare and handle tasks you assign, but you decide what it is allowed to do.',
   },
 ];
 

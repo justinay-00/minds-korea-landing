@@ -197,7 +197,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
   useEffect(() => {
     if (skipEnterRef.current) {
       skipEnterRef.current = false;
-      const clearSkip = window.setTimeout(() => setSkipEnterAnimation(false), 40);
+      const clearSkip = setTimeout(() => setSkipEnterAnimation(false), 40);
       autoTimersRef.current.push(clearSkip);
     } else {
       setSkipEnterAnimation(false);

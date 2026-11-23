@@ -55,10 +55,10 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
         <div className="reveal-item mb-[12px] w-full text-left sm:mb-[24px]" style={{ ['--reveal-delay' as string]: '0ms' }}>
           <h2 className="mb-[8px] text-2xl font-bold tracking-tight text-slate-950 text-balance sm:text-4xl xl:text-5xl">
             <span className="block">
-              {language === 'ko' ? '개인정보는 엄격하게 보호돼요.' : 'Your data stays yours.'}
+              {language === 'ko' ? '개인정보는 엄격하게 보호돼요.' : 'Your privacy is protected.'}
             </span>
             <span className="block">
-              {language === 'ko' ? '데이터는 저희가 책임질 테니, 걱정 말아요.' : "Don't worry — we specialize in digital identity."}
+              {language === 'ko' ? '데이터는 저희가 책임질 테니, 걱정 말아요.' : 'We take care of your data, so you don’t have to worry.'}
             </span>
           </h2>
         </div>

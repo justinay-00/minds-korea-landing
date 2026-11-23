@@ -24,7 +24,7 @@ export default function FinalCta({ language }: FinalCtaProps) {
           <p className="mx-auto mb-[24px] max-w-none text-sm leading-relaxed text-slate-700 sm:text-base">
             {language === 'ko'
               ? '복잡한 일은 맡겨두고, 마음은 한결 가볍게. 마인즈와 함께라면 일상은 한층 더 즐거워져요.'
-              : 'Leave the busywork to Minds and focus on what matters most to you.'}
+              : 'Leave the busywork to Minds and enjoy a lighter, more joyful everyday life.'}
           </p>
           <a
             href="https://app.hellominds.ai/"
@@ -32,7 +32,7 @@ export default function FinalCta({ language }: FinalCtaProps) {
             data-cta-position="final_cta"
             className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 sm:px-[24px] sm:py-[12px] sm:text-lg"
           >
-            <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Start for Free Now'}</span>
+            <span>{language === 'ko' ? '지금 무료로 시작하기' : 'Get started for free'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
           </a>
         </div>

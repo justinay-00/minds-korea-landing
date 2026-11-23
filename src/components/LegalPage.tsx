@@ -9,6 +9,7 @@ import termsHtmlKo from '../data/terms-of-use.ko.html?raw';
 interface LegalPageProps {
   kind: 'privacy' | 'terms';
   language: 'en' | 'ko';
+  onLanguageChange: (language: 'en' | 'ko') => void;
 }
 
 const PAGES = {
@@ -30,24 +31,21 @@ function stripOfficialTitle(html: string) {
   return html.replace(/<h1>[\s\S]*?<\/h1>/, '');
 }
 
-export default function LegalPage({ kind, language }: LegalPageProps) {
+export default function LegalPage({ kind, language, onLanguageChange }: LegalPageProps) {
   const page = PAGES[kind];
   const title = language === 'ko' ? page.titleKo : page.titleEn;
 
   useEffect(() => {
-    document.title = `${title} | Minds`;
     window.scrollTo(0, 0);
-    return () => {
-      document.title = 'Minds';
-    };
-  }, [title]);
+  }, []);
 
   return (
     <div
       data-language={language}
+      lang={language === 'ko' ? 'ko-KR' : 'en'}
       className="flex min-h-screen flex-col justify-between bg-slate-50 text-slate-900 selection:bg-[#FF6B4A] selection:text-white"
     >
-      <Navbar language={language} />
+      <Navbar language={language} onLanguageChange={onLanguageChange} />
       <main className="flex-1">
         <article className="mx-auto max-w-3xl px-[16px] py-[40px] sm:px-[24px] sm:py-[56px]">
           <h1 className="mb-[12px] text-2xl font-bold tracking-tight text-slate-950 sm:text-4xl">

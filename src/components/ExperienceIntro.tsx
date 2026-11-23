@@ -92,7 +92,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
   const message =
     language === 'ko'
       ? '오후에 미팅 있는 거 잊지 않았죠?\n자료는 제가 미리 챙겨 둘게요...'
-      : 'Happy Monday! Reminder from last week’s meeting…';
+      : 'Remember your meeting this afternoon?\nI’ll get the materials ready...';
 
   return (
     <section
@@ -116,7 +116,11 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
                 함께 나아가요.
               </>
             ) : (
-              'Minds, the AI that prompts to you first.'
+              <>
+                Think together,
+                <br className="hidden sm:inline" />
+                move forward together.
+              </>
             )}
           </h2>
 
@@ -126,7 +130,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           >
             {language === 'ko'
               ? '필요한 순간을 알아채고, 먼저 말을 걸어올 때도 있으니 너무 놀라지 마세요!'
-              : 'Minds thinks ahead while you’re busy, takes the tedious work off your plate, and pings you with real results.'}
+              : 'Minds may notice when you need a hand and reach out first—so don’t be surprised!'}
           </p>
 
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
@@ -142,9 +146,13 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           </a>
             {language === 'ko' ? (
               <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500 sm:text-sm">
-                카카오로 3초만에 가입해보세요
+                카카오로 3초 만에 가입해보세요
               </p>
-            ) : null}
+            ) : (
+              <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+                Sign up with Kakao in just 3 seconds
+              </p>
+            )}
           </div>
           </div>
         </div>
@@ -196,7 +204,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
             </a>
             {language === 'ko' ? (
               <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500">
-                카카오로 3초만에 가입해보세요
+                {language === 'ko' ? '카카오로 3초 만에 가입해보세요' : 'Sign up with Kakao in just 3 seconds'}
               </p>
             ) : null}
           </div>

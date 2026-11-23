@@ -70,10 +70,10 @@ export default function Hero({ language }: HeroProps) {
             <p className="mb-[6px] text-base font-medium leading-relaxed text-slate-600 sm:text-lg">
               {language === 'ko'
                 ? '복잡한 일은 맡겨두고, 마음은 한결 가볍게'
-                : 'Always in your corner: stepping up before you ask, handling the tedious work, and delivering real progress.'}
+                : 'Leave the busywork to Minds and feel a little lighter.'}
             </p>
 
-            <h1 className="mb-[16px] whitespace-nowrap text-2xl font-extrabold leading-snug tracking-tight text-[#161616] sm:mb-[24px] sm:whitespace-normal sm:text-[2.75rem] sm:leading-[1.4] xl:text-5xl">
+            <h1 className="mb-[16px] text-2xl font-extrabold leading-snug tracking-tight text-[#161616] sm:mb-[24px] sm:text-[2.75rem] sm:leading-[1.4] xl:text-5xl">
               {language === 'ko' ? (
                 <>
                   <span className="sm:whitespace-nowrap">당신의 일상을 함께 움직이는 AI,</span>
@@ -83,7 +83,9 @@ export default function Hero({ language }: HeroProps) {
                 </>
               ) : (
                 <>
-                  Meet Your AI Partner, Minds.
+                  An AI partner for your everyday life,
+                  <br />
+                  Minds.
                   <TitlePoseCycle />
                 </>
               )}
@@ -108,7 +110,7 @@ export default function Hero({ language }: HeroProps) {
                 data-cta-position="hero"
                 className="cta-light-sweep group inline-flex items-center justify-center gap-[8px] whitespace-nowrap rounded-full btn-lit-blue px-[16px] py-[10px] text-sm font-bold text-white transition duration-200 cursor-pointer sm:px-[24px] sm:py-[12px] sm:text-lg"
               >
-                <span>{language === 'ko' ? '무료로 시작하기' : 'Try Now for Free'}</span>
+                <span>{language === 'ko' ? '무료로 시작하기' : 'Get started for free'}</span>
                 <ArrowRight className="cta-arrow shrink-0" />
               </a>
             </div>
@@ -120,7 +122,7 @@ export default function Hero({ language }: HeroProps) {
 
           <div className="hero-connectors px-[16px] pb-[14px] pt-[10px] sm:px-[24px] sm:pb-[36px] sm:pt-[22px]">
             <p className="mb-[12px] text-[12px] font-medium tracking-[-0.01em] text-slate-500 sm:mb-[14px] sm:text-[13px]">
-              {language === 'ko' ? '100+ 이상의 공식 파트너십' : '100+ official partnerships'}
+              {language === 'ko' ? '100+ 이상의 공식 파트너십' : 'Connected to 100+ official partners'}
             </p>
             <ul className="hero-connectors-list mx-auto flex w-full max-w-2xl flex-nowrap items-center justify-center gap-x-[8px] sm:gap-x-[28px]">
               {HERO_CONNECTORS.map((connector) => (
