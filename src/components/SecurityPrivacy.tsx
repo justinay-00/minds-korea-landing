@@ -10,39 +10,39 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
     {
       number: '01',
       title: '내 데이터는 내가 소유',
-      description: '마인즈의 기억은 온전히 사용자의 것이에요. 서비스를 떠나거나 초기화해도 데이터는 사용자와 함께해요. 광고 중개업체와 공유하지 않아요.',
+      description: '마인즈의 기억은 온전히 사용자의 것이에요. 언제든 내 데이터를 직접 내보내고 관리할 수 있어요.',
       tag: '직접 관리',
     },
     {
       number: '02',
       title: '암호화된 작업 공간',
-      description: '루틴과 확인 작업은 사용자만 승인할 수 있는 분리된 비공개 환경에서 실행돼요.',
+      description: '루틴과 확인 작업은 기본적으로 사용자만 접근하고 승인할 수 있는 분리된 비공개 환경에서 실행돼요.',
       tag: '정보 유출 방지',
     },
     {
       number: '03',
-      title: 'Moca Network 기반',
-      description: '탈중앙화 신원 기술을 바탕으로 복잡한 설정 없이도 높은 수준의 보안을 제공해요.',
-      tag: '탈중앙화 ID',
+      title: '차세대 보안 및 신원 인증 지원',
+      description: '검증된 암호화 및 신원 인증 기술을 바탕으로 복잡한 설정 없이도 안전한 환경을 제공해요.',
+      tag: '보안 및 신원 인증',
     },
   ] : [
     {
       number: '01',
       title: 'True Data Ownership',
-      description: 'You own your data and preferences. If you leave or reset, your data goes with you. No advertiser brokers, ever.',
-      tag: 'Self-Custody',
+      description: 'Minds’ memory belongs entirely to you. You can export and manage your data yourself at any time.',
+      tag: 'Data Control',
     },
     {
       number: '02',
-      title: 'Encrypted Task Sandboxes',
-      description: 'Routines and checks execute in isolated, private environments that only you can authorize.',
-      tag: 'Zero-Leak',
+      title: 'Encrypted Workspace',
+      description: 'Routines and checks run in an isolated, private environment that, by default, only you can access and approve.',
+      tag: 'Private Workspace',
     },
     {
       number: '03',
-      title: 'Powered by Moca Network',
-      description: 'Built on decentralized identity tech, delivering institutional-grade security with zero complicated setup.',
-      tag: 'Decentralized ID',
+      title: 'Next-Generation Security & Identity Verification',
+      description: 'Verified encryption and identity verification technologies provide a secure environment without complicated setup.',
+      tag: 'Secure Identity',
     },
   ];
 
@@ -99,14 +99,14 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
                           {language === 'ko' ? '이름' : 'Name'}
                         </span>
                         <span className="block truncate text-[clamp(1rem,5.2cqi,1.5rem)] font-bold leading-tight tracking-tight text-slate-950">
-                          {language === 'ko' ? '김지호' : 'Ji Ho Kim'}
+                          {language === 'ko' ? '김지민' : 'Ji Min Kim'}
                         </span>
                       </div>
                       <div>
                         <span className="mb-1 block text-[clamp(0.6875rem,3.2cqi,0.875rem)] font-semibold uppercase tracking-wider text-slate-500">
                           {language === 'ko' ? '디지털 ID' : 'Digital ID'}
                         </span>
-                        <span className="block truncate font-mono text-[clamp(0.75rem,3.6cqi,1rem)] text-slate-600">@jiho.moca</span>
+                        <span className="block truncate font-mono text-[clamp(0.75rem,3.6cqi,1rem)] text-slate-600">@jimin.hellominds.ai</span>
                       </div>
                     </div>
                   </div>
