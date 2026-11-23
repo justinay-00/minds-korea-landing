@@ -34,11 +34,6 @@ export default function Footer({ language }: FooterProps) {
               {language === 'ko' ? '이용약관' : 'Terms'}
             </a>
           </div>
-          <button
-            className="cursor-pointer text-xs font-semibold text-[#3D7EED] transition-colors hover:text-[#4EA5F1]"
-          >
-            {language === 'ko' ? '나만의 마인즈 (Minds) 만나기' : 'Meet your Minds assistant'}
-          </button>
           <p className="truncate text-[10px] leading-tight text-slate-400 sm:text-xs sm:leading-relaxed sm:text-slate-500">
             ©2026 Animoca Brands. All rights reserved.
           </p>
