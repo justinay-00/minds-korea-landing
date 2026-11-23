@@ -103,7 +103,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
     >
       <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 glow-ambient pointer-events-none" />
 
-      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-[16px] px-[16px] md:grid-cols-[1.15fr_0.85fr] md:gap-[40px] md:px-[40px] lg:gap-[60px] lg:px-[48px]">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-[16px] px-[24px] md:grid-cols-[1.15fr_0.85fr] md:gap-[40px] md:px-[40px] lg:gap-[60px] lg:px-[48px]">
         <div className="min-w-0 text-left">
           <h2
             className="reveal-item mb-[16px] whitespace-nowrap text-2xl font-bold tracking-tight text-slate-950 sm:mb-[20px] sm:whitespace-normal sm:text-4xl xl:text-5xl"
