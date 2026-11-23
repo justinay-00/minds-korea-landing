@@ -141,7 +141,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           </a>
             {language === 'ko' ? (
               <p className="mt-2 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
-                카카오로 3초만에 무료로 가입해보세요
+                카카오로 3초만에 가입해보세요
               </p>
             ) : null}
           </div>
@@ -194,7 +194,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
             </a>
             {language === 'ko' ? (
               <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500">
-                카카오로 3초만에 무료로 가입해보세요
+                카카오로 3초만에 가입해보세요
               </p>
             ) : null}
           </div>
