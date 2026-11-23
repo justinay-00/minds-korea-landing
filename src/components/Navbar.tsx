@@ -33,6 +33,14 @@ export default function Navbar({ language }: NavbarProps) {
 
         {/* Primary Action Buttons */}
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
+          <a
+            href="https://blog.hellominds.ai/ko/blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base"
+          >
+            {language === 'ko' ? '블로그' : 'Blog'}
+          </a>
           <button
             className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
