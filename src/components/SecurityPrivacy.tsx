@@ -72,7 +72,7 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
         <div className="grid grid-cols-1 items-stretch gap-[12px] sm:p-[16px] lg:grid-cols-12 lg:gap-[28px]">
           
           {/* 1. Visual Element: Highly Visual, Clean Digital Identity Card (Left on Desktop, 5 columns) */}
-          <div className="reveal-item flex justify-center lg:col-span-6 lg:justify-start lg:pr-4" style={{ ['--reveal-delay' as string]: '80ms' }}>
+          <div className="reveal-item flex justify-start lg:col-span-6 lg:pr-4" style={{ ['--reveal-delay' as string]: '80ms' }}>
             <div className="@container relative group w-[86%] max-w-[360px] [container-type:inline-size] lg:w-full lg:max-w-[520px]">
               <div className="pointer-events-none absolute -inset-2 -z-10 hidden" />
 

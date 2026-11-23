@@ -1,4 +1,5 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import LaptopDemo from './LaptopDemo';
 
 const TITLE_POSES = [
@@ -35,6 +36,30 @@ interface HeroProps {
 }
 
 export default function Hero({ language }: HeroProps) {
+  const [showScrollCue, setShowScrollCue] = useState(true);
+
+  useEffect(() => {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setShowScrollCue(entry.isIntersecting && entry.intersectionRatio >= 0.45);
+      },
+      { threshold: [0, 0.25, 0.45, 0.7, 1] },
+    );
+    io.observe(hero);
+    return () => io.disconnect();
+  }, []);
+
+  const scrollToExperience = () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('experience')?.scrollIntoView({
+      behavior: reduce ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <section id="hero" data-section="hero" className="relative overflow-hidden pt-[12px] sm:pt-[20px]">
       {/* Radial Glow in light mode */}
@@ -89,7 +114,7 @@ export default function Hero({ language }: HeroProps) {
             </div>
           </div>
 
-          <div className="mt-[4px] sm:mt-[24px]">
+          <div className="mt-[8px] sm:mt-[24px]">
             <LaptopDemo language={language} />
           </div>
 
@@ -114,6 +139,17 @@ export default function Hero({ language }: HeroProps) {
           </div>
         </div>
       </div>
+
+      <button
+        type="button"
+        onClick={scrollToExperience}
+        aria-label={language === 'ko' ? '아래로 스크롤' : 'Scroll down'}
+        className={`fixed bottom-5 left-1/2 z-40 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-[#161616] text-white shadow-[0_8px_20px_rgba(22,22,22,0.28)] transition-opacity duration-300 md:hidden ${
+          showScrollCue ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      >
+        <ChevronDown className="hero-scroll-cue-icon h-5 w-5" strokeWidth={2.5} aria-hidden="true" />
+      </button>
     </section>
   );
 }

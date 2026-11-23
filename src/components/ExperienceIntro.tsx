@@ -139,6 +139,11 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
             <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
             <ArrowRight className="cta-arrow shrink-0" />
           </a>
+            {language === 'ko' ? (
+              <p className="mt-2 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+                카카오로 3초만에 무료로 가입해보세요
+              </p>
+            ) : null}
           </div>
         </div>
 
@@ -177,7 +182,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           </div>
           </div>
 
-          <div className="reveal-item flex shrink-0 items-center justify-center md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
+          <div className="reveal-item flex shrink-0 flex-col items-center justify-center md:hidden" style={{ ['--reveal-delay' as string]: '180ms' }}>
             <a
               href="https://app.hellominds.ai/"
               data-cta-id="cta_launch_mind"
@@ -187,6 +192,11 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
               <span>{language === 'ko' ? '나만의 마인즈 만들기' : 'Create your own Minds assistant'}</span>
               <ArrowRight className="cta-arrow shrink-0" />
             </a>
+            {language === 'ko' ? (
+              <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500">
+                카카오로 3초만에 무료로 가입해보세요
+              </p>
+            ) : null}
           </div>
           </div>
         </div>

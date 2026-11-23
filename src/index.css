@@ -51,6 +51,25 @@ body {
   animation: character-float 4s ease-in-out infinite;
 }
 
+@keyframes hero-scroll-cue-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.hero-scroll-cue-icon {
+  animation: hero-scroll-cue-bounce 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-cue-icon {
+    animation: none;
+  }
+}
+
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -426,19 +445,28 @@ body {
   inset: 0;
 }
 
+/* Mobile: keep below-fold content visible (no hide-until-scroll).
+   Desktop (md+): fade/slide in on scroll as before. */
 .reveal-on-scroll .reveal-item {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 520ms ease-out,
-    transform 520ms ease-out;
-  transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal-on-scroll.is-revealed .reveal-item {
-  opacity: 1;
-  transform: translateY(0);
+@media (min-width: 768px) {
+  .reveal-on-scroll .reveal-item {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 520ms ease-out,
+      transform 520ms ease-out;
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .reveal-on-scroll.is-revealed .reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -492,13 +520,22 @@ body {
   display: block;
   min-width: 0;
   transform-origin: left center;
-  clip-path: inset(-8px 100% -8px -10px);
-  transform: translateX(-16px);
-  will-change: clip-path, transform, opacity;
+  /* Mobile default: fully visible so below-fold content isn't blank */
+  clip-path: none;
+  transform: none;
+  opacity: 1;
 }
 
-.reveal-on-scroll.is-revealed .message-slide-from-badge {
-  animation: message-slide-from-badge 720ms cubic-bezier(0.22, 1, 0.36, 1) 280ms both;
+@media (min-width: 768px) {
+  .message-slide-from-badge {
+    clip-path: inset(-8px 100% -8px -10px);
+    transform: translateX(-16px);
+    will-change: clip-path, transform, opacity;
+  }
+
+  .reveal-on-scroll.is-revealed .message-slide-from-badge {
+    animation: message-slide-from-badge 720ms cubic-bezier(0.22, 1, 0.36, 1) 280ms both;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
