@@ -28,11 +28,6 @@ export default function Footer({ language }: FooterProps) {
               {language === 'ko' ? '이용약관' : 'Terms'}
             </a>
           </div>
-          <button
-            className="cursor-pointer text-xs font-semibold text-[var(--blue-lit)] transition-colors hover:text-[var(--blue-tint)]"
-          >
-            {language === 'ko' ? '나만의 마인즈 (Minds) 만나기' : 'Meet your Minds assistant'}
-          </button>
           <p className="truncate text-[10px] leading-tight text-[var(--text-label-cool)] sm:text-xs sm:leading-relaxed sm:text-[var(--text-muted-cool)]">
             ©2026{' '}
             <a
