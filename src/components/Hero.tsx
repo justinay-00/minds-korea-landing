@@ -8,6 +8,16 @@ const TITLE_POSES = [
   '/assets/aistudio/minds-character-research.png',
 ];
 
+const HERO_CONNECTORS = [
+  { name: 'KakaoTalk', src: '/assets/app-icons/kakaotalk.svg' },
+  { name: 'Cafe24', src: '/assets/app-icons/cafe24.png' },
+  { name: 'Gmail', src: '/assets/app-icons/gmail.svg' },
+  { name: 'Instagram', src: '/assets/app-icons/instagram.png' },
+  { name: 'X', src: '/assets/app-icons/x.svg' },
+  { name: 'TikTok', src: '/assets/app-icons/tiktok.png' },
+] as const;
+
+
 function TitlePoseCycle() {
   return (
     <span className="hero-pose-cycle ml-[0.2em] inline-block h-[1.35em] w-[1.35em] align-[-0.22em]" aria-hidden="true">
@@ -79,6 +89,26 @@ export default function Hero({ language }: HeroProps) {
 
           <div className="mt-[12px] sm:mt-[24px]">
             <LaptopDemo language={language} />
+          </div>
+
+          <div className="hero-connectors px-[32px] pb-[24px] pt-[16px] sm:px-[24px] sm:pb-[36px] sm:pt-[22px]">
+            <p className="mb-[12px] text-[12px] font-medium tracking-[-0.01em] text-slate-500 sm:mb-[14px] sm:text-[13px]">
+              {language === 'ko' ? '공식 파트너십 100개 이상' : '100+ official partnerships'}
+            </p>
+            <ul className="hero-connectors-list mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-x-[18px] gap-y-[12px] sm:gap-x-[28px] sm:gap-y-[16px]">
+              {HERO_CONNECTORS.map((connector) => (
+                <li key={connector.name} className="flex items-center justify-center">
+                  <img
+                    src={connector.src}
+                    alt={connector.name}
+                    title={connector.name}
+                    className="hero-connector-logo h-8 w-auto object-contain sm:h-10"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
