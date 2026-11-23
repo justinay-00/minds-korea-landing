@@ -34,17 +34,6 @@ export default function Navbar({ language }: NavbarProps) {
         {/* Primary Action Buttons */}
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
           <button
-            type="button"
-            aria-label={language === 'ko' ? '메뉴' : 'Menu'}
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-[#161616] sm:hidden"
-          >
-            <span className="flex w-[18px] flex-col gap-[3.5px]" aria-hidden="true">
-              <span className="block h-[2px] w-full rounded-full bg-current" />
-              <span className="block h-[2px] w-full rounded-full bg-current" />
-              <span className="block h-[2px] w-full rounded-full bg-current" />
-            </span>
-          </button>
-          <button
             className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
             {language === 'ko' ? '로그인' : 'Log in'}
