@@ -18,7 +18,7 @@ export default function Footer({ language }: FooterProps) {
             href="https://www.animocabrands.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden border-l border-slate-200 pl-3 text-xs text-slate-400 transition-colors hover:text-slate-700 sm:inline"
+            className="inline max-w-[9.5rem] truncate border-l border-slate-200 pl-2 text-[10px] leading-tight text-slate-400 transition-colors hover:text-slate-700 sm:max-w-none sm:pl-3 sm:text-xs sm:leading-normal"
           >
             Minds by Animoca Brands
           </a>
