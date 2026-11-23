@@ -130,6 +130,7 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
           </p>
 
           <div className="reveal-item hidden md:block" style={{ ['--reveal-delay' as string]: '180ms' }}>
+          <div className="inline-flex flex-col items-center">
           <a
             href="https://app.hellominds.ai/"
             data-cta-id="cta_launch_mind"
@@ -140,10 +141,11 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
             <ArrowRight className="cta-arrow shrink-0" />
           </a>
             {language === 'ko' ? (
-              <p className="mt-2 text-xs font-medium leading-snug text-slate-500 sm:text-sm">
+              <p className="mt-2 text-center text-xs font-medium leading-snug text-slate-500 sm:text-sm">
                 카카오로 3초만에 가입해보세요
               </p>
             ) : null}
+          </div>
           </div>
         </div>
 

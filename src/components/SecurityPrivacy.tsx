@@ -1,6 +1,3 @@
-import {
-  ArrowUpRight,
-} from 'lucide-react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 
 interface SecurityPrivacyProps {
@@ -27,7 +24,6 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
       title: 'Moca Network 기반',
       description: '탈중앙화 신원 기술을 바탕으로 복잡한 설정 없이도 높은 수준의 보안을 제공해요.',
       tag: '탈중앙화 ID',
-      hasReadMore: true,
     },
   ] : [
     {
@@ -47,7 +43,6 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
       title: 'Powered by Moca Network',
       description: 'Built on decentralized identity tech, delivering institutional-grade security with zero complicated setup.',
       tag: 'Decentralized ID',
-      hasReadMore: true,
     },
   ];
 
@@ -143,18 +138,6 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
                         {pillar.description}
                       </p>
 
-                      {/* Click to read more button for Moca Network pillar */}
-                      {pillar.hasReadMore && (
-                        <div className="mt-1.5 sm:mt-2">
-                          <button
-                            type="button"
-                            className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-[#FF6B4A] transition-colors hover:text-[#E55538] group/link"
-                          >
-                            <span>{language === 'ko' ? '자세히 보기' : 'Click to read more'}</span>
-                            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                          </button>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
