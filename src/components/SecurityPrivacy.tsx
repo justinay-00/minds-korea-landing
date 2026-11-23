@@ -121,15 +121,15 @@ export default function SecurityPrivacy({ language }: SecurityPrivacyProps) {
           </div>
 
           {/* 2. Micro-Pillars (Right on Desktop, 7 columns) */}
-          <div className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto lg:col-span-6 lg:grid lg:h-auto lg:grid-rows-3 lg:snap-none lg:gap-2 lg:overflow-visible lg:pl-4">
+          <div className="privacy-pillars-scroll no-scrollbar flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain overscroll-y-none touch-pan-x lg:col-span-6 lg:grid lg:h-auto lg:grid-rows-3 lg:snap-none lg:gap-2 lg:overflow-visible lg:overscroll-auto lg:touch-auto lg:pl-4">
             {pillars.map((pillar, index) => {
               return (
                 <div
                   key={pillar.number}
-                  className="reveal-item flex h-auto min-h-[8.5rem] w-[min(80%,280px)] shrink-0 snap-start self-stretch lg:h-full lg:min-h-[8.5rem] lg:w-auto lg:shrink"
+                  className="reveal-item flex h-[10.5rem] min-h-0 w-[min(80%,280px)] shrink-0 snap-start self-stretch overflow-hidden lg:h-full lg:min-h-[8.5rem] lg:w-auto lg:shrink lg:overflow-visible"
                   style={{ ['--reveal-delay' as string]: `${80 + index * 100}ms` }}
                 >
-                <div className="glass-card-v2 group flex h-full w-full flex-col rounded-2xl px-[12px] py-[6px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200">
+                <div className="glass-card-v2 group flex h-full min-h-0 w-full flex-col overflow-hidden rounded-2xl px-[12px] py-[6px] shadow-[0_10px_28px_-8px_rgba(51,65,85,0.22)] transition-all duration-200">
                   <div className="flex h-full items-center gap-2.5 sm:gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#FF6B4A]/25 bg-[#FF6B4A]/10 text-xs font-bold tabular-nums tracking-tight text-[#FF6B4A] shadow-2xs transition-transform group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
                       {pillar.number}
