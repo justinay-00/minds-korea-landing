@@ -12,9 +12,11 @@ const HERO_CONNECTORS = [
   { name: 'KakaoTalk', src: '/assets/app-icons/kakaotalk.svg' },
   { name: 'Cafe24', src: '/assets/app-icons/cafe24.png' },
   { name: 'Gmail', src: '/assets/app-icons/gmail.svg' },
+  { name: 'Google Drive', src: '/assets/app-icons/googledrive.svg' },
   { name: 'Instagram', src: '/assets/app-icons/instagram.png' },
   { name: 'X', src: '/assets/app-icons/x.svg' },
   { name: 'TikTok', src: '/assets/app-icons/tiktok.png' },
+  { name: 'Notion', src: '/assets/app-icons/notion.png' },
 ] as const;
 
 
