@@ -147,14 +147,13 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     if (settleTimer.current) return;
     autoTimersRef.current.forEach(clearTimeout);
     autoTimersRef.current = [];
-    event.currentTarget.setPointerCapture(event.pointerId);
+    // Don't capture yet — early capture + touch-none blocked vertical scroll inside the phone.
     pointerStartX.current = event.clientX;
     pointerStartY.current = event.clientY;
     axisLock.current = null;
     dragWidthRef.current = event.currentTarget.getBoundingClientRect().width || 1;
     dragXRef.current = 0;
     setPanelTransforms(0, false);
-    setIsDragging(true);
   };
 
   const onScenarioPointerMove = (event: PointerEvent<HTMLDivElement>) => {
@@ -164,6 +163,14 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     if (!axisLock.current) {
       if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
       axisLock.current = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      if (axisLock.current === 'x') {
+        try {
+          event.currentTarget.setPointerCapture(event.pointerId);
+        } catch {
+          /* ignore */
+        }
+        setIsDragging(true);
+      }
     }
     if (axisLock.current !== 'x') return;
     event.preventDefault();
@@ -175,11 +182,17 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     if (pointerStartX.current == null) return;
     const dx = dragXRef.current;
     const width = dragWidthRef.current;
+    const locked = axisLock.current;
     pointerStartX.current = null;
     pointerStartY.current = null;
-    const committed = axisLock.current === 'x' && Math.abs(dx) >= Math.min(48, width * 0.18);
     axisLock.current = null;
     setIsDragging(false);
+    // Vertical pans must not steal the gesture — page scroll handles those.
+    if (locked !== 'x') {
+      setPanelTransforms(0, false);
+      return;
+    }
+    const committed = Math.abs(dx) >= Math.min(48, width * 0.18);
     if (!committed) {
       setPanelTransforms(0, true);
       return;
@@ -532,12 +545,16 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
               />
               <div
                 ref={overlayRef}
-                className="absolute inset-x-0 bottom-[8px] top-[52px] z-40 touch-none overflow-hidden sm:bottom-[12px] sm:top-[56px] sm:touch-auto sm:overflow-visible"
+                className="absolute inset-x-0 bottom-[8px] top-[52px] z-[60] touch-pan-y overflow-hidden sm:bottom-[12px] sm:top-[56px] sm:touch-auto sm:overflow-visible"
                 onPointerDown={onScenarioPointerDown}
                 onPointerMove={onScenarioPointerMove}
                 onPointerUp={finishScenarioPointer}
                 onPointerCancel={finishScenarioPointer}
               >
+                {/* Mobile overflow-hidden clips prev/next panels that sit beside the phone.
+                    No inner overflow-y-auto: vertical pans scroll the page.
+                    touch-pan-y (not touch-none) + deferred pointer capture keep page scroll working.
+                    z-[60] keeps message UI in front of the side character orb. */}
                 <div
                   ref={prevPanelRef}
                   className="absolute inset-0 will-change-transform sm:hidden"
@@ -574,7 +591,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                   {scenarioThread(nextScenario, { complete: true })}
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-x-0 top-[52px] z-50 sm:top-[56px]">
+              <div className="pointer-events-none absolute inset-x-0 top-[52px] z-[70] sm:top-[56px]">
                 <div className="px-[8px] sm:px-[12px]">
                   <div className="flex items-center px-3 pb-2.5 pt-0.5 sm:px-5">
                     <button

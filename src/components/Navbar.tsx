@@ -25,7 +25,7 @@ export default function Navbar() {
             alt="Minds by Animoca Brands"
             width="811"
             height="384"
-            className="h-6 w-auto object-contain sm:h-8"
+            className="h-7 w-auto object-contain sm:h-9"
           />
         </a>
 
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
           <a
             href="https://app.hellominds.ai/"
-            className="hidden shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:inline-flex sm:px-[12px] sm:text-base cursor-pointer"
+            className="inline-flex shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:px-[12px] sm:text-base cursor-pointer"
           >
             로그인
           </a>
