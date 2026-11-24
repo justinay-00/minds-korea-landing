@@ -60,12 +60,25 @@ export default function App() {
     }
   }, [route]);
 
-  if (route === '/privacy') {
+  if (route === '/kr/privacy') {
     return <LegalPage kind="privacy" language={language} />;
   }
 
-  if (route === '/terms') {
+  if (route === '/kr/terms') {
     return <LegalPage kind="terms" language={language} />;
+  }
+
+  if (route === '/not-found') {
+    return (
+      <main lang="ko-KR" className="flex min-h-screen items-center justify-center bg-slate-50 px-6 text-center text-slate-900">
+        <div>
+          <h1 className="text-2xl font-bold">페이지를 찾을 수 없습니다</h1>
+          <a href="/kr" className="mt-4 inline-block text-[#3D7EED] underline">
+            홈으로 돌아가기
+          </a>
+        </div>
+      </main>
+    );
   }
 
   return (

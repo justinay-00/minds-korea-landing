@@ -19,7 +19,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex h-[56px] max-w-5xl items-center justify-between gap-[8px] px-[12px] pb-[6px] pt-[2px] sm:gap-[24px] sm:px-[40px] lg:px-[48px]">
         {/* Brand Wordmark */}
-        <a href="/" className="flex items-center shrink-0 focus-visible:outline-[#3D7EED] rounded-lg">
+        <a href="/kr" className="flex items-center shrink-0 focus-visible:outline-[#3D7EED] rounded-lg">
           <img
             src="/assets/aistudio/minds-logo-blue.svg"
             alt="Minds by Animoca Brands"
