@@ -11,13 +11,13 @@ const TITLE_POSES = [
 
 const HERO_CONNECTORS = [
   { name: 'KakaoTalk', src: '/assets/app-icons/kakaotalk.svg' },
-  { name: 'Cafe24', src: '/assets/app-icons/cafe24.png' },
+  { name: 'Cafe24', src: '/assets/app-icons/cafe24.webp' },
   { name: 'Gmail', src: '/assets/app-icons/gmail.svg' },
   { name: 'Google Drive', src: '/assets/app-icons/googledrive.svg' },
-  { name: 'Instagram', src: '/assets/app-icons/instagram.png' },
+  { name: 'Instagram', src: '/assets/app-icons/instagram.webp' },
   { name: 'X', src: '/assets/app-icons/x.svg' },
-  { name: 'TikTok', src: '/assets/app-icons/tiktok.png' },
-  { name: 'Notion', src: '/assets/app-icons/notion.png' },
+  { name: 'TikTok', src: '/assets/app-icons/tiktok.webp' },
+  { name: 'Notion', src: '/assets/app-icons/notion.webp' },
 ] as const;
 
 
@@ -25,7 +25,7 @@ function TitlePoseCycle() {
   return (
     <span className="hero-pose-cycle ml-[0.2em] inline-block h-[1.35em] w-[1.35em] align-[-0.22em]" aria-hidden="true">
       {TITLE_POSES.map((src, i) => (
-        <img key={src} src={src} alt="" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" className={`hero-pose hero-pose-${i + 1}`} />
+        <img key={src} src={src} alt="" width="128" height="128" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" className={`hero-pose hero-pose-${i + 1}`} />
       ))}
     </span>
   );
@@ -131,6 +131,8 @@ export default function Hero({ language }: HeroProps) {
                     src={connector.src}
                     alt={connector.name}
                     title={connector.name}
+                    width="96"
+                    height="96"
                     className="hero-connector-logo h-6 w-auto shrink-0 object-contain sm:h-10"
                     loading="lazy"
                     decoding="async"

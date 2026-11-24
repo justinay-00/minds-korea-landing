@@ -23,6 +23,8 @@ export default function Navbar() {
           <img
             src="/assets/aistudio/minds-logo-blue.svg"
             alt="Minds by Animoca Brands"
+            width="811"
+            height="384"
             className="h-6 w-auto object-contain sm:h-8"
           />
         </a>

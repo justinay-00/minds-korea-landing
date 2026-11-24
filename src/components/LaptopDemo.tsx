@@ -19,7 +19,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
   };
   const scenarioHeaderLogos: Record<string, { src: string; alt: string }> = {
     'travel-shield': { src: '/assets/aistudio/ktx-logo.webp', alt: 'KTX' },
-    'competitor-radar': { src: '/assets/aistudio/mirae-asset-logo.jpg', alt: 'Mirae Asset' },
+    'competitor-radar': { src: '/assets/aistudio/mirae-asset-logo.webp', alt: 'Mirae Asset' },
   };
 
   const [showTyping1, setShowTyping1] = useState(false);
@@ -65,6 +65,10 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
       <img
         src={scenarioHeaderLogos[scenario.id].src}
         alt={scenarioHeaderLogos[scenario.id].alt}
+        width="96"
+        height="96"
+        loading="lazy"
+        decoding="async"
         className="h-6 w-6 shrink-0 rounded-[7px] object-cover sm:h-8 sm:w-8 sm:rounded-[9px]"
       />
     ) : (
@@ -287,6 +291,8 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
         <img
           src="/assets/aistudio/minds-character-orb.webp"
           alt=""
+          width="96"
+          height="96"
           loading="lazy"
           decoding="async"
           className="mt-1 h-9 w-9 shrink-0 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg"
@@ -360,6 +366,10 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                     <img
                       src={scenarioHeaderLogos[scenario.id].src}
                       alt={scenarioHeaderLogos[scenario.id].alt}
+                      width="96"
+                      height="96"
+                      loading="lazy"
+                      decoding="async"
                       className="h-5 w-5 rounded-md border border-slate-200 object-cover sm:h-6 sm:w-6"
                     />
                   )}
@@ -412,9 +422,11 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
             <div className="relative w-[80%] max-w-[276px] shrink-0 sm:h-[740px] sm:w-full sm:max-w-[560px]">
               <div className="pointer-events-none absolute left-1/2 top-0 z-30 aspect-square w-[320px] max-w-full -translate-x-1/2 sm:top-[-176px] sm:w-[460px] sm:max-w-none">
                 <img
-                  src="/assets/aistudio/abbypeeking.png"
+                  src="/assets/aistudio/abbypeeking.webp"
                   alt=""
                   aria-hidden="true"
+                  width="768"
+                  height="768"
                   className="absolute left-0 top-[calc(8px-310/768*100%)] w-full max-w-none sm:top-0"
                 />
               </div>
@@ -429,7 +441,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                   <div
                     className="relative flex h-full w-full min-w-0 select-none flex-col overflow-hidden bg-[#EAF3FF]"
                     style={{
-                      backgroundImage: "url('/assets/aistudio/Screenshot_2026-11-10_at_3.10.10_PM_e4e22b65.png')",
+                      backgroundImage: "url('/assets/aistudio/phone-screen-background.webp')",
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                     }}
@@ -512,6 +524,10 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                 src="/assets/aistudio/minds-character-orb.webp"
                 alt=""
                 aria-hidden="true"
+                width="96"
+                height="96"
+                loading="lazy"
+                decoding="async"
                 className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[138px]"
               />
               <div

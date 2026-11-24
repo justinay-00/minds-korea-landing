@@ -82,6 +82,10 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
             <img
               src="/assets/aistudio/minds-logo-blue-CNYWXNj8_1cee06dc.webp"
               alt="Minds"
+              width="160"
+              height="76"
+              loading="lazy"
+              decoding="async"
               className="h-6 w-auto object-contain"
             />
           </div>
@@ -110,6 +114,10 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                 <img
                   src="/assets/aistudio/minds-login-team.webp"
                   alt={language === 'ko' ? '일상 업무를 돕는 도구와 함께한 Minds 캐릭터' : 'Minds character with tools for everyday tasks'}
+                  width="400"
+                  height="497"
+                  loading="lazy"
+                  decoding="async"
                   className="mx-auto mt-3 h-40 w-full object-contain"
                 />
                 <p className="mt-2 text-sm text-slate-500">
@@ -158,8 +166,12 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
                 <div className="animate-character-float my-5 rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-lg shadow-slate-900/10">
                   <div className="flex items-center gap-3">
                     <img
-                      src="/assets/aistudio/images_e51d87e1.jpg"
+                      src="/assets/aistudio/minds-avatar.webp"
                       alt=""
+                      width="96"
+                      height="96"
+                      loading="lazy"
+                      decoding="async"
                       className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white shadow-sm"
                     />
                     <div className="min-w-0 flex-1">
@@ -417,8 +429,12 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <img
-                    src="/assets/aistudio/images_e51d87e1.jpg"
+                    src="/assets/aistudio/minds-avatar.webp"
                     alt="Minds"
+                    width="96"
+                    height="96"
+                    loading="lazy"
+                    decoding="async"
                     className="w-5 h-5 rounded-full object-cover border border-sky-200"
                   />
                   <span className="text-xs font-semibold text-slate-900">Minds</span>

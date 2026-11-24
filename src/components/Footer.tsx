@@ -10,6 +10,8 @@ export default function Footer({ language }: FooterProps) {
           <img
             src="/assets/aistudio/minds-logo-blue.svg"
             alt={language === 'ko' ? '애니모카 브랜즈의 Minds' : 'Minds by Animoca Brands'}
+            width="811"
+            height="384"
             className="h-6 w-auto object-contain sm:h-7"
           />
         </a>
