@@ -184,8 +184,10 @@ export default function ExperienceIntro({ language }: ExperienceIntroProps) {
                 className="absolute -inset-10 rounded-full bg-gradient-to-br from-[#FF6B4A]/32 via-[#FF6B4A]/42 to-[#E55538]/32 blur-3xl [mask-image:radial-gradient(circle,black_22%,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,black_22%,transparent_68%)]"
               />
               <img
-                src="/assets/aistudio/minds-character-orb-glossy.png"
+                src="/assets/aistudio/minds-character-orb-glossy.webp"
                 alt={language === 'ko' ? 'Minds 캐릭터' : 'Minds character'}
+                loading="lazy"
+                decoding="async"
                 className="animate-character-float relative z-[1] h-full w-full object-contain drop-shadow-[0_22px_28px_rgba(22,22,22,0.35)]"
               />
             </div>

@@ -1,3 +1,5 @@
+export type Language = 'en' | 'ko';
+
 export interface Scenario {
   id: string;
   title: string;

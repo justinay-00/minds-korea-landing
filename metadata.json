@@ -1,6 +1,5 @@
 {
   "name": "Minds — Autonomous AI Companion",
   "description": "Minds is your AI partner for everyday life, helping with routines, tasks, and timely updates.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "requestFramePermissions": []
 }

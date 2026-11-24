@@ -1,20 +1,20 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import posthog from 'posthog-js';
 
 const PAGE = 'home';
 
-type SeenState = {path: string; sections: Set<string>};
+type SeenState = { path: string; sections: Set<string> };
 let seenState: SeenState | null = null;
 
 function sectionsSeenForPath(path: string) {
   if (!seenState || seenState.path !== path) {
-    seenState = {path, sections: new Set()};
+    seenState = { path, sections: new Set() };
   }
   return seenState.sections;
 }
 
 function trackSectionView(section: string) {
-  posthog.capture('section_view', {section, page: PAGE});
+  posthog.capture('section_view', { section, page: PAGE });
 }
 
 function trackCtaClick(ctaId: string, position: string) {
@@ -41,7 +41,7 @@ export function useLandingAnalytics() {
           trackSectionView(section);
         }
       },
-      {threshold: 0.2},
+      { threshold: 0.2 },
     );
 
     document.querySelectorAll('[data-section]').forEach((node) => observer.observe(node));
@@ -55,6 +55,7 @@ export function useLandingAnalytics() {
       const position = el.getAttribute('data-cta-position');
       if (!ctaId || !position) return;
       trackCtaClick(ctaId, position);
+      window.fbq?.('track', 'Lead');
     };
 
     document.addEventListener('click', onClick);

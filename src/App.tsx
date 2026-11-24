@@ -5,55 +5,68 @@
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ExperienceIntro from './components/ExperienceIntro';
-import SecurityPrivacy from './components/SecurityPrivacy';
-import Faq from './components/Faq';
-import FinalCta from './components/FinalCta';
 import LegalPage from './components/LegalPage';
-import { useLandingAnalytics } from './analytics';
-import { useEffect, useState } from 'react';
+import { useLandingAnalytics } from './hooks/useLandingAnalytics';
+import { useLanguage } from './hooks/useLanguage';
+import { getCurrentRoute } from './utils/routing';
+import { getPageMetadata } from './utils/pageMetadata';
+import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from 'react';
 
-function currentPath() {
-  return window.location.pathname.replace(/\/+$/, '') || '/';
+const ExperienceIntro = lazy(() => import('./components/ExperienceIntro'));
+const SecurityPrivacy = lazy(() => import('./components/SecurityPrivacy'));
+const Faq = lazy(() => import('./components/Faq'));
+const FinalCta = lazy(() => import('./components/FinalCta'));
+
+function LazySection({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setShouldRender(true);
+        observer.disconnect();
+      },
+      { rootMargin: '300px 0px' },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref}>
+      {shouldRender ? (
+        <Suspense fallback={null}>{children}</Suspense>
+      ) : null}
+    </div>
+  );
 }
 
 export default function App() {
-  const [language, setLanguage] = useState<'en' | 'ko'>(() => (
-    window.localStorage.getItem('minds-language') === 'en' ? 'en' : 'ko'
-  ));
+  const { language, changeLanguage } = useLanguage();
   useLandingAnalytics();
-  const path = currentPath();
+  const route = getCurrentRoute();
 
   useEffect(() => {
     document.documentElement.lang = language === 'ko' ? 'ko-KR' : 'en';
-    const title = path === '/privacy'
-      ? language === 'ko' ? '개인정보 처리방침 | Minds' : 'Privacy Policy | Minds'
-      : path === '/terms'
-        ? language === 'ko' ? '이용약관 | Minds' : 'Terms of Use | Minds'
-        : language === 'ko'
-          ? '마인즈 (Minds) — 당신의 일상을 함께 움직이는 AI'
-          : 'Minds — Your AI partner for everyday life';
-    document.title = title;
-
+    const metadata = getPageMetadata(route, language);
+    document.title = metadata.title;
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (description) {
-      description.content = language === 'ko'
-        ? '마인즈는 당신의 일상을 함께하는 AI 파트너입니다. 번거로운 일은 덜고 필요한 순간 먼저 다가갑니다.'
-        : 'Minds is your AI partner for everyday life, helping with the busywork and reaching out when you need a hand.';
+      description.content = metadata.description;
     }
-  }, [language, path]);
+  }, [language, route]);
 
-  const handleLanguageChange = (nextLanguage: 'en' | 'ko') => {
-    setLanguage(nextLanguage);
-    window.localStorage.setItem('minds-language', nextLanguage);
-  };
-
-  if (path === '/privacy') {
-    return <LegalPage kind="privacy" language={language} onLanguageChange={handleLanguageChange} />;
+  if (route === '/privacy') {
+    return <LegalPage kind="privacy" language={language} onLanguageChange={changeLanguage} />;
   }
 
-  if (path === '/terms') {
-    return <LegalPage kind="terms" language={language} onLanguageChange={handleLanguageChange} />;
+  if (route === '/terms') {
+    return <LegalPage kind="terms" language={language} onLanguageChange={changeLanguage} />;
   }
 
   return (
@@ -64,15 +77,23 @@ export default function App() {
       className="min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between selection:bg-[#FF6B4A] selection:text-white"
     >
       {/* Top Navigation */}
-      <Navbar language={language} onLanguageChange={handleLanguageChange} />
+      <Navbar language={language} onLanguageChange={changeLanguage} />
 
       {/* Main Content Sections */}
       <main className="flex-1">
         <Hero language={language} />
-        <ExperienceIntro language={language} />
-        <SecurityPrivacy language={language} />
-        <Faq language={language} />
-        <FinalCta language={language} />
+        <LazySection>
+          <ExperienceIntro language={language} />
+        </LazySection>
+        <LazySection>
+          <SecurityPrivacy language={language} />
+        </LazySection>
+        <LazySection>
+          <Faq language={language} />
+        </LazySection>
+        <LazySection>
+          <FinalCta language={language} />
+        </LazySection>
       </main>
 
     </div>

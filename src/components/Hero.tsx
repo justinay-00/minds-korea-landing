@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import LaptopDemo from './LaptopDemo';
 
 const TITLE_POSES = [
-  '/assets/aistudio/minds-character-laptop.png',
-  '/assets/aistudio/minds-character-cart.png',
-  '/assets/aistudio/minds-character-book.png',
-  '/assets/aistudio/minds-character-research.png',
+  '/assets/aistudio/minds-character-laptop.webp',
+  '/assets/aistudio/minds-character-cart.webp',
+  '/assets/aistudio/minds-character-book.webp',
+  '/assets/aistudio/minds-character-research.webp',
 ];
 
 const HERO_CONNECTORS = [
@@ -25,7 +25,7 @@ function TitlePoseCycle() {
   return (
     <span className="hero-pose-cycle ml-[0.2em] inline-block h-[1.35em] w-[1.35em] align-[-0.22em]" aria-hidden="true">
       {TITLE_POSES.map((src, i) => (
-        <img key={src} src={src} alt="" className={`hero-pose hero-pose-${i + 1}`} />
+        <img key={src} src={src} alt="" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" className={`hero-pose hero-pose-${i + 1}`} />
       ))}
     </span>
   );

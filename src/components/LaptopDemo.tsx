@@ -285,8 +285,10 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
     >
       {showAvatar ? (
         <img
-          src="/assets/aistudio/minds-character-orb.png"
+          src="/assets/aistudio/minds-character-orb.webp"
           alt=""
+          loading="lazy"
+          decoding="async"
           className="mt-1 h-9 w-9 shrink-0 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg"
         />
       ) : (
@@ -507,7 +509,7 @@ export default function LaptopDemo({ language }: { language: 'en' | 'ko' }) {
                 ))}
               </div>
               <img
-                src="/assets/aistudio/minds-character-orb.png"
+                src="/assets/aistudio/minds-character-orb.webp"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none absolute left-[-16px] top-[122px] z-50 h-9 w-9 rounded-full border-2 border-white bg-[#EAF3FF] object-contain shadow-lg max-[375px]:top-[110px] sm:left-[-80px] sm:top-[138px]"

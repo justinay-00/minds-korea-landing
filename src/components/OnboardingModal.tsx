@@ -80,7 +80,7 @@ export default function OnboardingModal({ isOpen, onClose, language }: Onboardin
         <div className="flex shrink-0 items-center justify-between border-b border-slate-200 pb-4">
           <div className="flex items-center gap-3">
             <img
-              src="/assets/aistudio/minds-logo-blue-CNYWXNj8_1cee06dc.png"
+              src="/assets/aistudio/minds-logo-blue-CNYWXNj8_1cee06dc.webp"
               alt="Minds"
               className="h-6 w-auto object-contain"
             />
