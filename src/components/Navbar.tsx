@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface NavbarProps {
-  language: 'en' | 'ko';
-  onLanguageChange: (language: 'en' | 'ko') => void;
-}
-
-export default function Navbar({ language, onLanguageChange }: NavbarProps) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,29 +29,11 @@ export default function Navbar({ language, onLanguageChange }: NavbarProps) {
 
         {/* Primary Action Buttons */}
         <div className="flex shrink-0 items-center gap-[4px] sm:gap-[12px]">
-          <div
-            className="flex items-center rounded-full border border-slate-200 bg-white/70 p-[2px] text-[10px] font-semibold sm:text-xs"
-            aria-label={language === 'ko' ? '언어 선택' : 'Select language'}
-          >
-            {(['ko', 'en'] as const).map((option) => (
-              <button
-                key={option}
-                type="button"
-                onClick={() => onLanguageChange(option)}
-                aria-pressed={language === option}
-                className={`rounded-full px-[7px] py-[4px] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#3D7EED] sm:px-[9px] ${
-                  language === option ? 'bg-slate-900 text-white' : 'text-slate-500 hover:text-slate-900'
-                }`}
-              >
-                {option.toUpperCase()}
-              </button>
-            ))}
-          </div>
           <a
             href="https://app.hellominds.ai/"
             className="hidden shrink-0 whitespace-nowrap px-[8px] py-[6px] text-sm font-medium text-[#3D7EED] transition hover:text-[#4EA5F1] sm:inline-flex sm:px-[12px] sm:text-base cursor-pointer"
           >
-            {language === 'ko' ? '로그인' : 'Log in'}
+            로그인
           </a>
           <a
             href="https://app.hellominds.ai/"
@@ -64,7 +41,7 @@ export default function Navbar({ language, onLanguageChange }: NavbarProps) {
             data-cta-position="nav"
             className="flex shrink-0 items-center gap-[4px] whitespace-nowrap rounded-full btn-lit-blue px-[12px] py-[8px] text-sm font-medium text-white transition cursor-pointer sm:gap-[8px] sm:px-[16px] sm:py-[8px] sm:text-base"
           >
-            <span>{language === 'ko' ? '무료로 시작하기' : 'Get Started'}</span>
+            <span>무료로 시작하기</span>
           </a>
         </div>
       </div>
