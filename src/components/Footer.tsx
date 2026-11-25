@@ -30,46 +30,43 @@ export default function Footer({ language }: FooterProps) {
   );
 
   const logo = (
-    <a href="/kr" className="inline-flex shrink-0 items-end self-end">
+    <a href="/kr" className="inline-flex shrink-0 items-center">
       <img
         src="/assets/aistudio/minds-logo-blue.svg"
         alt={language === 'ko' ? '애니모카 브랜즈의 Minds' : 'Minds by Animoca Brands'}
         width="811"
         height="384"
-        className="block h-7 w-auto object-contain object-bottom md:h-8"
+        className="block h-7 w-auto object-contain md:h-9"
       />
     </a>
   );
 
   const copyright = (
-    <p className="self-end text-xs leading-none text-slate-500 md:text-[10px] md:leading-none md:text-slate-400">
+    <p className="text-right text-xs leading-none text-slate-500 md:text-[11px] md:text-slate-400">
       © 2026 Animoca Brands All Rights Reserved
     </p>
   );
 
   return (
     <footer className="glass-card-v2 glass-static relative z-10 border-t border-slate-200/70 text-sm text-slate-700 shadow-[inset_0_-2px_0_0_#FF6B4A]">
-      {/* Mobile: credit+legal one row → logo+© bottom-aligned */}
-      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-[16px] py-4 md:hidden">
-        <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1.5">
-          {credit}
-          <span className="text-slate-300" aria-hidden="true">
-            ·
-          </span>
-          {legal}
+      {/* Mobile: match header px; credit left + legal right; logo left + © right, vertically centered */}
+      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-[12px] py-3 sm:px-[40px] lg:px-[48px] md:hidden">
+        <div className="flex w-full min-w-0 items-center justify-between gap-3">
+          <div className="min-w-0 shrink">{credit}</div>
+          <div className="shrink-0 text-right">{legal}</div>
         </div>
-        <div className="flex flex-wrap items-end gap-x-3 gap-y-2">
+        <div className="flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2">
           {logo}
           {copyright}
         </div>
       </div>
 
-      {/* Desktop: one row — logo + credit + legal + © (logo/© bottoms aligned via items-end) */}
-      <div className="mx-auto hidden max-w-5xl flex-wrap items-end gap-x-4 gap-y-2 px-[40px] py-4 md:flex lg:px-[48px]">
+      {/* Desktop: one row — logo + credit + legal + ©; same horizontal padding as header */}
+      <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-[12px] py-4 sm:px-[40px] md:flex lg:px-[48px]">
         {logo}
         {credit}
         {legal}
-        <div className="ml-auto flex items-end self-end">{copyright}</div>
+        <div className="ml-auto flex items-center">{copyright}</div>
       </div>
     </footer>
   );
